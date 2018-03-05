@@ -1,0 +1,64 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+
+}
+
+header{
+    background-color: grey;
+    height: 10%;
+    width: 100%;
+}
+
+
+section {
+    height: 80%;
+    width: 100%;
+
+
+}
+
+.Homeseite{
+    width: 80%;
+    margin: 0 Auto;
+    margin-top: 5%;
+}
+.Nbuttons{
+    margin: 0 auto;
+    margin-top: 5%;
+
+
+}
+footer{
+    width: 100%;
+    height: 10%;
+
+}
+.newclassy{
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    text-align: center;
+
+}
+.hokus{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+.tabelle{
+    margin: 0 auto;
+    width: 80%;
+
+}
+.header1 {
+    border: 1px solid black;
+    width: 80%;
+}

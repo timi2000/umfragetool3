@@ -1,0 +1,62 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    background-color: tomato;
+}
+
+header{
+    background-color: tomato;
+    height: 10%;
+    width: 100%;
+}
+
+section {
+    height: 80%;
+    width: 100%;
+
+
+}
+
+
+.tabelle{
+    width: 80%;
+    height: 100%;
+    margin:0 auto;
+    margin-top: 5px;
+
+
+}
+.k{
+    margin: 0 auto;
+    padding:0;
+
+
+}
+.form-check-input{
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+
+.Homeseite{
+    width: 80%;
+    height: 80%;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+.kuak{
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+.newclassy{
+    margin: 0 auto;
+    width: 80%;
+
+}
