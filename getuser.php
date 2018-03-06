@@ -9,7 +9,9 @@
 
 
 // phpinfo();
-$con = mysqli_connect('localhost', 'root', '', 'LehrerBewertung'); if (!$con) {
+
+
+$con = mysqli_connect('localhost', 'root', 'root', 'mydb'); if (!$con) {
     die('Could not connect: ' . mysqli_error($con)); }
     echo "hallo sdkf";
    // echo "----> ".$con."/br";

@@ -24,4 +24,25 @@ $positves =  $_POST["positves"];
 $verbesserungsvorschläge = $_POST["verbesserungsvorschläge"];
 echo($frage1. " " .$frage2." " .$frage3. " "  .$frage4. " ".$frage5. " " .$frage6. " ".$frage7." ".$frage8." ".$frage9." ".
 $frage10." ". $frage11." ". $frage12. " ". $frage13." ". $frage14. " ".$frage15. " ".$positves. " ".$verbesserungsvorschläge);
+
+/*$Fragenzusammenfassen = $frage15; $frage1; $frage2; $frage3; $frage4; $frage5; $frage6; $frage7; $frage8; $frage9; $frage10;
+$frage11; $frage12; $frage13; $frage14;*/
+
+/*$sql = "
+  INSERT INTO `Bewertung`
+  ( 
+  `idBewertung` , `FrageNR` , `FrageWert` 
+  
+  ) 
+  VALUES
+  (
+'1','1','1'
+  );
+";*/
+//$db_erg = mysqli_query($db_link, $sql)
+//or die("Anfrage fehlgeschlagen: " . mysqli_error());
+$pdo = new PDO('mysql:host=localhost;dbname=mydb', 'root', 'root');
+$statement = $pdo->prepare("INSERT INTO Bewertung (idBewertung, FrageWert, FrageNR) VALUES (1,1,1)");
+
+$statement->execute(array(1,1,1));
 ?>
