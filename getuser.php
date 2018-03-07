@@ -11,7 +11,7 @@
 // phpinfo();
 
 
-$con = mysqli_connect('localhost', 'root', 'root', 'mydb'); if (!$con) {
+$con = mysqli_connect('localhost', 'root', 'root', 'mydb', '8889'); if (!$con) {
     die('Could not connect: ' . mysqli_error($con)); }
     echo "hallo sdkf";
    // echo "----> ".$con."/br";
