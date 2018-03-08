@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a1ab2fa-d7cb-42b6-a90c-ce8f1758f8ad" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/HTML/test1.html" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d130a9e-bea2-41b3-acc2-5bb41e2c9f50.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/8d130a9e-bea2-41b3-acc2-5bb41e2c9f50.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/HTML/connectdb.php" afterPath="$PROJECT_DIR$/HTML/connectdb.php" />
       <change beforePath="$PROJECT_DIR$/HTML/umfrageAuswerten.php" afterPath="$PROJECT_DIR$/HTML/umfrageAuswerten.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -106,10 +101,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Auswertung.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Auswertung.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HTML/Auswertung.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3097">
+            <state relative-caret-position="6165">
               <caret line="411" column="108" lean-forward="false" selection-start-line="411" selection-start-column="108" selection-end-line="411" selection-end-column="108" />
               <folding />
             </state>
@@ -126,26 +121,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="umfrageAuswerten.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="umfrageAuswerten.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTML/umfrageAuswerten.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="68" column="9" lean-forward="false" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+            <state relative-caret-position="273">
+              <caret line="72" column="8" lean-forward="false" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
               <folding>
-                <marker date="1520501075000" expanded="true" signature="1052:1160" ph="INSERT INTO `Bewertung`... " />
-                <marker date="1520501075000" expanded="true" signature="1456:1526" ph="INSERT INTO Bewertung... " />
-                <marker date="1520501075000" expanded="true" signature="2158:2307" ph="SELECT Frage... Bewertung" />
-                <marker date="1520501075000" expanded="true" signature="2158:2316" ph="SELECT Frage... Bewertung" />
-                <marker date="1520501075000" expanded="true" signature="2339:2668" ph="INSERT INTO Bewertung... " />
-                <marker date="1520501075000" expanded="true" signature="2753:2789" ph="SELECT Frage... Bewertung" />
-                <marker date="1520501075000" expanded="true" signature="2753:2791" ph="SELECT Frage... Bewertung" />
-                <marker date="1520501075000" expanded="true" signature="2793:2879" ph="mysqli_close... " />
-                <marker date="1520501075000" expanded="true" signature="2813:2850" ph="INSERT INTO Bewertung... " />
-                <marker date="1520501075000" expanded="true" signature="2813:2858" ph="INSERT INTO Bewertung... " />
-                <marker date="1520501075000" expanded="true" signature="2813:2877" ph="INSERT INTO Bewertung... " />
-                <marker date="1520501075000" expanded="true" signature="2813:2879" ph="INSERT INTO Bewertung... " />
-                <marker date="1520501075000" expanded="true" signature="3113:3409" ph="INSERT INTO Bewertung... " />
-                <marker date="1520501075000" expanded="true" signature="3459:3540" ph="INSERT INTO Bewertung... " />
+                <marker date="1520516598000" expanded="true" signature="1052:1160" ph="INSERT INTO `Bewertung`... " />
+                <marker date="1520516598000" expanded="true" signature="1456:1526" ph="INSERT INTO Bewertung... " />
+                <marker date="1520516598000" expanded="true" signature="2125:2262" ph="SELECT Frage... Bewertung" />
+                <marker date="1520516598000" expanded="true" signature="2125:2271" ph="SELECT Frage... Bewertung" />
+                <marker date="1520516598000" expanded="true" signature="2294:2593" ph="INSERT INTO Bewertung... " />
+                <marker date="1520516598000" expanded="true" signature="2678:2714" ph="SELECT Frage... Bewertung" />
+                <marker date="1520516598000" expanded="true" signature="2678:2716" ph="SELECT Frage... Bewertung" />
+                <marker date="1520516598000" expanded="true" signature="2718:2804" ph="mysqli_close... " />
+                <marker date="1520516598000" expanded="true" signature="2738:2775" ph="INSERT INTO Bewertung... " />
+                <marker date="1520516598000" expanded="true" signature="2738:2783" ph="INSERT INTO Bewertung... " />
+                <marker date="1520516598000" expanded="true" signature="2738:2802" ph="INSERT INTO Bewertung... " />
+                <marker date="1520516598000" expanded="true" signature="2738:2804" ph="INSERT INTO Bewertung... " />
+                <marker date="1520516598000" expanded="true" signature="3038:3334" ph="INSERT INTO Bewertung... " />
+                <marker date="1520516598000" expanded="true" signature="3384:3465" ph="INSERT INTO Bewertung... " />
               </folding>
             </state>
           </provider>
@@ -386,7 +381,7 @@
       <workItem from="1520323411402" duration="11085000" />
       <workItem from="1520417326945" duration="3843000" />
       <workItem from="1520428036622" duration="5377000" />
-      <workItem from="1520435840792" duration="4052000" />
+      <workItem from="1520435840792" duration="5500000" />
     </task>
     <task id="LOCAL-00001" summary="commit 1">
       <created>1520324613229</created>
@@ -399,7 +394,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50595000" />
+    <option name="totallyTimeSpent" value="52043000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -423,7 +418,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.49676898" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.48707592" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3279743" sideWeight="0.48707592" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36963192" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -776,26 +771,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTML/auswerten.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HTML/test1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/getuser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -808,34 +787,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTML/Auswertung.html">
+    <entry file="file://$PROJECT_DIR$/HTML/auswerten.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3097">
-          <caret line="411" column="108" lean-forward="false" selection-start-line="411" selection-start-column="108" selection-end-line="411" selection-end-column="108" />
+        <state relative-caret-position="150">
+          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getuser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HTML/umfrageAuswerten.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="68" column="9" lean-forward="false" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+        <state relative-caret-position="273">
+          <caret line="72" column="8" lean-forward="false" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
           <folding>
-            <marker date="1520501075000" expanded="true" signature="1052:1160" ph="INSERT INTO `Bewertung`... " />
-            <marker date="1520501075000" expanded="true" signature="1456:1526" ph="INSERT INTO Bewertung... " />
-            <marker date="1520501075000" expanded="true" signature="2158:2307" ph="SELECT Frage... Bewertung" />
-            <marker date="1520501075000" expanded="true" signature="2158:2316" ph="SELECT Frage... Bewertung" />
-            <marker date="1520501075000" expanded="true" signature="2339:2668" ph="INSERT INTO Bewertung... " />
-            <marker date="1520501075000" expanded="true" signature="2753:2789" ph="SELECT Frage... Bewertung" />
-            <marker date="1520501075000" expanded="true" signature="2753:2791" ph="SELECT Frage... Bewertung" />
-            <marker date="1520501075000" expanded="true" signature="2793:2879" ph="mysqli_close... " />
-            <marker date="1520501075000" expanded="true" signature="2813:2850" ph="INSERT INTO Bewertung... " />
-            <marker date="1520501075000" expanded="true" signature="2813:2858" ph="INSERT INTO Bewertung... " />
-            <marker date="1520501075000" expanded="true" signature="2813:2877" ph="INSERT INTO Bewertung... " />
-            <marker date="1520501075000" expanded="true" signature="2813:2879" ph="INSERT INTO Bewertung... " />
-            <marker date="1520501075000" expanded="true" signature="3113:3409" ph="INSERT INTO Bewertung... " />
-            <marker date="1520501075000" expanded="true" signature="3459:3540" ph="INSERT INTO Bewertung... " />
+            <marker date="1520516598000" expanded="true" signature="1052:1160" ph="INSERT INTO `Bewertung`... " />
+            <marker date="1520516598000" expanded="true" signature="1456:1526" ph="INSERT INTO Bewertung... " />
+            <marker date="1520516598000" expanded="true" signature="2125:2262" ph="SELECT Frage... Bewertung" />
+            <marker date="1520516598000" expanded="true" signature="2125:2271" ph="SELECT Frage... Bewertung" />
+            <marker date="1520516598000" expanded="true" signature="2294:2593" ph="INSERT INTO Bewertung... " />
+            <marker date="1520516598000" expanded="true" signature="2678:2714" ph="SELECT Frage... Bewertung" />
+            <marker date="1520516598000" expanded="true" signature="2678:2716" ph="SELECT Frage... Bewertung" />
+            <marker date="1520516598000" expanded="true" signature="2718:2804" ph="mysqli_close... " />
+            <marker date="1520516598000" expanded="true" signature="2738:2775" ph="INSERT INTO Bewertung... " />
+            <marker date="1520516598000" expanded="true" signature="2738:2783" ph="INSERT INTO Bewertung... " />
+            <marker date="1520516598000" expanded="true" signature="2738:2802" ph="INSERT INTO Bewertung... " />
+            <marker date="1520516598000" expanded="true" signature="2738:2804" ph="INSERT INTO Bewertung... " />
+            <marker date="1520516598000" expanded="true" signature="3038:3334" ph="INSERT INTO Bewertung... " />
+            <marker date="1520516598000" expanded="true" signature="3384:3465" ph="INSERT INTO Bewertung... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/Auswertung.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6165">
+          <caret line="411" column="108" lean-forward="false" selection-start-line="411" selection-start-column="108" selection-end-line="411" selection-end-column="108" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -65,12 +65,12 @@ if (mysqli_connect_errno())
 {
     echo "failed to conect to MySQL: ".mysqli_connect_error();
 }
-$Bewertungid =  0;
-$lastid =
-mysqli
-mysqli_query($con,"SELECT idBewertung,Frage1, Frage2, Frage3, Frage4, Frage5, Frage6, Frage7, Frage8, Frage9, Frage10, Frage11, Frage12, Frage13, Frage14, Frage15 FROM Bewertung");
-mysqli_query($con,"INSERT INTO Bewertung (idBewertung, Frage1, Frage2, Frage3, Frage4, Frage5, Frage6, Frage7, Frage8, Frage9, Frage10, Frage11, Frage12, Frage13, Frage14, Frage15) 
-Values ($Bewertungid + 3, $frage1, $frage2, $frage3, $frage4, $frage5, $frage6, $frage7, $frage8, $frage9, $frage10, $frage11, $frage12, $frage13, $frage14, $frage15)");
+
+
+
+mysqli_query($con,"SELECT Frage1, Frage2, Frage3, Frage4, Frage5, Frage6, Frage7, Frage8, Frage9, Frage10, Frage11, Frage12, Frage13, Frage14, Frage15 FROM Bewertung");
+mysqli_query($con,"INSERT INTO Bewertung ( Frage1, Frage2, Frage3, Frage4, Frage5, Frage6, Frage7, Frage8, Frage9, Frage10, Frage11, Frage12, Frage13, Frage14, Frage15) 
+Values ($frage1, $frage2, $frage3, $frage4, $frage5, $frage6, $frage7, $frage8, $frage9, $frage10, $frage11, $frage12, $frage13, $frage14, $frage15)");
 //$lastid =  mysqli_insert_id($con);
 mysqli_close($con);
 
