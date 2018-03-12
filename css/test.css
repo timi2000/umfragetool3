@@ -13,6 +13,8 @@ header{
     background-color: grey;
     height: 10%;
     width: 100%;
+
+
 }
 
 
@@ -58,7 +60,27 @@ footer{
     width: 80%;
 
 }
-.header1 {
-    border: 1px solid black;
-    width: 80%;
+.absendeformular{
+    width:80%;
+    height:90%;
+
+    Margin: 0 auto;
+    padding-top:10%;
+}
+.coolisach {
+    width:100%;
+    padding-bottom: 5%;
+}
+
+.Schrift{
+    color: white;
+    font-size: 1.6rem;
+    text-decoration: none;
+}
+.KlasseErfassen{
+    width:80%;
+    height: 80%;
+
+    margin:0 auto;
+    padding-top: 5%;
 }

@@ -21,9 +21,9 @@ $frage13 = $_POST["group13"];
 $frage14 = $_POST["group14"];
 $frage15 = $_POST["group15"];
 $positves =  $_POST["positves"];
-$verbesserungsvorschläge = $_POST["verbesserungsvorschläge"];
+$negatives = $_POST["negatives"];
 echo($frage1. " " .$frage2." " .$frage3. " "  .$frage4. " ".$frage5. " " .$frage6. " ".$frage7." ".$frage8." ".$frage9." ".
-$frage10." ". $frage11." ". $frage12. " ". $frage13." ". $frage14. " ".$frage15. " ".$positves. " ".$verbesserungsvorschläge);
+$frage10." ". $frage11." ". $frage12. " ". $frage13." ". $frage14. " ".$frage15. " ".$positves. " ".$negatives);
 
 /*$Fragenzusammenfassen = $frage15; $frage1; $frage2; $frage3; $frage4; $frage5; $frage6; $frage7; $frage8; $frage9; $frage10;
 $frage11; $frage12; $frage13; $frage14;*/
@@ -68,9 +68,9 @@ if (mysqli_connect_errno())
 
 
 
-mysqli_query($con,"SELECT Frage1, Frage2, Frage3, Frage4, Frage5, Frage6, Frage7, Frage8, Frage9, Frage10, Frage11, Frage12, Frage13, Frage14, Frage15 FROM Bewertung");
-mysqli_query($con,"INSERT INTO Bewertung ( Frage1, Frage2, Frage3, Frage4, Frage5, Frage6, Frage7, Frage8, Frage9, Frage10, Frage11, Frage12, Frage13, Frage14, Frage15) 
-Values ($frage1, $frage2, $frage3, $frage4, $frage5, $frage6, $frage7, $frage8, $frage9, $frage10, $frage11, $frage12, $frage13, $frage14, $frage15)");
+mysqli_query($con,"SELECT Frage1, Frage2, Frage3, Frage4, Frage5, Frage6, Frage7, Frage8, Frage9, Frage10, Frage11, Frage12, Frage13, Frage14, Frage15 ,pos, neg FROM Bewertung");
+mysqli_query($con,"INSERT INTO Bewertung ( Frage1, Frage2, Frage3, Frage4, Frage5, Frage6, Frage7, Frage8, Frage9, Frage10, Frage11, Frage12, Frage13, Frage14, Frage15, pos, neg) 
+Values ($frage1, $frage2, $frage3, $frage4, $frage5, $frage6, $frage7, $frage8, $frage9, $frage10, $frage11, $frage12, $frage13, $frage14, $frage15 ,'$positves', '$negatives')");
 //$lastid =  mysqli_insert_id($con);
 mysqli_close($con);
 
