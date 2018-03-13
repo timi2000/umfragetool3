@@ -1031,6 +1031,7 @@
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="257" parent="233" name="c_n">
@@ -1052,6 +1053,7 @@
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="261" parent="234" name="Teacher_idTeacher">
@@ -1060,64 +1062,65 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="262" parent="234" name="Class_idClass">
+    <column id="262" parent="234" name="Bewertung_idBewertung">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="263" parent="234" name="Teacher_idTeacher1">
+    <column id="263" parent="234" name="Class_idClass">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="264" parent="234" name="Bewertung_idBewertung">
+    <column id="264" parent="234" name="Teacher_idTeacher1">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="265" parent="234" name="fk_Course_Class1_idx">
+    <index id="265" parent="234" name="fk_Course_Bewertung1_idx">
+      <ColNames>Bewertung_idBewertung</ColNames>
+    </index>
+    <index id="266" parent="234" name="fk_Course_Class1_idx">
       <ColNames>Class_idClass</ColNames>
     </index>
-    <index id="266" parent="234" name="fk_Course_Teacher1_idx">
+    <index id="267" parent="234" name="fk_Course_Teacher1_idx">
       <ColNames>Teacher_idTeacher1</ColNames>
-    </index>
-    <index id="267" parent="234" name="fk_Course_Bewertung1_idx">
-      <ColNames>Bewertung_idBewertung</ColNames>
     </index>
     <key id="268" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idCourse
 Teacher_idTeacher
+Bewertung_idBewertung
 Class_idClass
-Teacher_idTeacher1
-Bewertung_idBewertung</ColNames>
+Teacher_idTeacher1</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="269" parent="234" name="fk_Course_Class1">
-      <ColNames>Class_idClass</ColNames>
-      <RefSchemaName>mydb</RefSchemaName>
-      <RefTableName>Class</RefTableName>
-      <RefColNames>idClass</RefColNames>
-    </foreign-key>
-    <foreign-key id="270" parent="234" name="fk_Course_Teacher1">
-      <ColNames>Teacher_idTeacher1</ColNames>
-      <RefSchemaName>mydb</RefSchemaName>
-      <RefTableName>Teacher</RefTableName>
-      <RefColNames>idTeacher</RefColNames>
-    </foreign-key>
-    <foreign-key id="271" parent="234" name="fk_Course_Bewertung1">
+    <foreign-key id="269" parent="234" name="fk_Course_Bewertung1">
       <ColNames>Bewertung_idBewertung</ColNames>
       <RefSchemaName>mydb</RefSchemaName>
       <RefTableName>Bewertung</RefTableName>
       <RefColNames>idBewertung</RefColNames>
     </foreign-key>
+    <foreign-key id="270" parent="234" name="fk_Course_Class1">
+      <ColNames>Class_idClass</ColNames>
+      <RefSchemaName>mydb</RefSchemaName>
+      <RefTableName>Class</RefTableName>
+      <RefColNames>idClass</RefColNames>
+    </foreign-key>
+    <foreign-key id="271" parent="234" name="fk_Course_Teacher1">
+      <ColNames>Teacher_idTeacher1</ColNames>
+      <RefSchemaName>mydb</RefSchemaName>
+      <RefTableName>Teacher</RefTableName>
+      <RefColNames>idTeacher</RefColNames>
+    </foreign-key>
     <column id="272" parent="235" name="idStudent">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="273" parent="235" name="s_vn">
@@ -1130,44 +1133,55 @@ Bewertung_idBewertung</ColNames>
       <DataType>varchar(45)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="275" parent="235" name="Class_idClass">
+    <column id="275" parent="235" name="s_email">
       <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="276" parent="235" name="Class_idClass">
+      <Position>5</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="276" parent="235" name="fk_Student_Class1_idx">
+    <index id="277" parent="235" name="fk_Student_Class1_idx">
       <ColNames>Class_idClass</ColNames>
     </index>
-    <key id="277" parent="235" name="PRIMARY">
+    <key id="278" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idStudent
 Class_idClass</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="278" parent="235" name="fk_Student_Class1">
+    <foreign-key id="279" parent="235" name="fk_Student_Class1">
       <ColNames>Class_idClass</ColNames>
       <RefSchemaName>mydb</RefSchemaName>
       <RefTableName>Class</RefTableName>
       <RefColNames>idClass</RefColNames>
     </foreign-key>
-    <column id="279" parent="236" name="idTeacher">
+    <column id="280" parent="236" name="idTeacher">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="280" parent="236" name="t_vn">
+    <column id="281" parent="236" name="t_vn">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="281" parent="236" name="t_nn">
+    <column id="282" parent="236" name="t_nn">
       <Position>3</Position>
       <DataType>varchar(45)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="282" parent="236" name="PRIMARY">
+    <column id="283" parent="236" name="t_email">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="284" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idTeacher</ColNames>
       <Primary>1</Primary>
