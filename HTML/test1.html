@@ -12,9 +12,19 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="../js/javaScripten.js"></script>
+
     <script src="scripts.js"></script>
+    <script>
+        $(function() {
 
+            var availableTags = ["Autocomplete.php"];
 
+            $("#tags").autocomplete({
+                source: [ "c++", "java", "php", "coldfusion", "javascript", "asp"]
+            });
+
+        });
+    </script>
 </head>
 
 <header>
@@ -162,7 +172,7 @@
                     <div class="row"  style=" Width: 100%;">
                         <div class="col-sm" style=" Width: 50%; padding:0;">
                           <span class="input-group-btn">
-            <input name="positves" type="text" class="form-control" placeholder="positives" aria-label="Search for...">
+            <input name="positves" type="text" class="form-control"  placeholder="positives" aria-label="Search for...">
                                </span>
                         </div>
 
@@ -174,6 +184,7 @@
                     </div>
                 </div>
             </div>
+            <input type="text" name="fname" id="tags">
             <p> nach drücken des absende Knopfes nicht mehr bearbeitbar!</p>
             <button type="submit" class="btn btn-primary" style="margin-bottom: 5%;" >Formular absenden!</button>
         </div>
