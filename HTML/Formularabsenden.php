@@ -195,9 +195,65 @@
     </div>
     <button type="submit" class="btn btn-primary">Formular absenden</button>
 
+
 </div>
 
 </section>
 </form>
+<form action="Formularabsenden.php" method="post">
+    <button type="submit" class="btn btn-primary">Formular absenasdden</button>
+</form>
+<?php
+include "verbindung.php";
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+include "Sqlite-abfrage.php";
+    include "verbindung.php";
+//if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+
+    // include "verbindung.php";
+
+
+
+   /* $insert = $datenbank -> prepare("INSERT INTO Security
+         ('HAsh', 'NName', 'VName', 'email', 'Tid', 'Semester', 'Klasse', 'Lehrer') 
+  VALUES (:HAsh, :NName, :VName, :email, :Tid, :Semester, :Klasse, :Lehrer)");
+
+    /*  $insert = $datenbank -> prepare("INSERT INTO Security
+       (`HAsh`, `NName`, `VName`, `email`, `Tid`, `Semester`, `Klasse`, `Lehrer`)
+VALUES (:HAsh, :NName, :VName, :email, :Tid, :Semester, :Klasse, :Lehrer)");*/
+
+    // Die Platzhalter werden mit $insert->bindValue() durch den
+    // Inhalt der POST-Variablen ersetzt und maskiert.
+  /*  $eins =  "hashi";
+    $zwei = "Wimder";
+    $drei =  "Tim";
+    $vier = "Tim@cool";
+    $fuenf = 1;
+    $sechs =  2;
+    $sieben = 3;
+    $acht = 4;
+
+    $insert -> bindValue(':HAsh', $eins);
+    $insert->bindValue(':NName', $zwei);
+    $insert->bindValue(':VName', $drei);
+    $insert->bindValue(':email', $vier);
+    $insert->bindValue(':Tid', $fuenf);
+    $insert->bindValue(':Semester', $sechs);
+    $insert->bindValue(':Klasse', $sieben);
+    $insert->bindValue(':Lehrer', $acht);
+    //$insert->bindValue(':HAsh', $_POST["titel"]);
+    //(HAsh, NName, VName, email, Tid, Semester,Klasse, Lehrer)' .
+    $insert->fetch();
+    if ($insert->execute()) {
+        echo '<p>Die Nachricht wurde eingetragen.</p>';
+    }
+    else {
+        // SQL-Fehlermeldung anzeigen.
+        print_r($insert->errorInfo());
+    }*/
+
+}
+?>
 </body>
 </html>

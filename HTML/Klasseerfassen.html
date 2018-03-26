@@ -9,7 +9,78 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/normalize.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="../js/javaScripten.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
 
+
+    <script src="scripts.js">
+    function myFunction(){
+
+            var tableRef = document.getElementById("myTable").getElementsByTagName('tbody')[0];
+        var newRow   = tableRef.insertRow(tableRef.rows.length);
+
+// Insert a cell in the row at index 0
+        var newCell1  = newRow.insertCell(0);
+        var newCell2  = newRow.insertCell(1);
+        var newCell3  = newRow.insertCell(2);
+
+// Append a text node to the cell
+        var newText  = document.createTextNode('<input type="text">');
+        var newText1  = document.createTextNode('<input type="email">')
+        newCell1.appendChild(newText);
+        newCell2.appendChild(newText);
+        newCell3.appendChild(newText);
+
+           /* var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(3);
+            cell
+            cell1.innerHTML = ' <input type=\"text\">';
+            cell2.innerHTML = ' <input type=\"text\">';
+            cell3.innerHTML = ' <input type=\"email\">';*/
+
+
+
+    /*var table_id = "KlassenT";
+    var table = document.getElementById( table_id );
+    var rows = table.getElementsByTagName( "tr" ).length;
+    var tr = table.insertRow( rows );
+    var td1 = document.createElement( "td" );
+    var td2 = document.createElement( "td" );
+    var td3 = document.createElement( "td" );
+    td1.innerHTML = '<input type="text" >';
+    td2.innerHTML = '<input type="text"  >';
+    td3.innerHTML = '<input type="email" >';
+    tr.appendChild( td1 );
+    tr.appendChild( td2 );
+    tr.appendChild( td3 );*/
+
+    }
+    </script>
+    <script>
+        function displayResult()
+        {
+            var table=document.getElementById("myTable");
+
+            //var n = countrows.toString();
+
+            var row=table.insertRow(-1);
+            var countrows = document.getElementById('myTable').rows.length[3];
+            var cell1=row.insertCell(0);
+            var cell2=row.insertCell(1);
+            var cell3=row.insertCell(2);
+            var cell4=row.insertCell(3);
+            cell1.innerHTML= countrows;
+           // cell1.innerHTML= document.write(n);
+            cell2.innerHTML="<input type=\"text\">";
+            cell3.innerHTML="<input type=\"text\">";
+            cell4.innerHTML="<input type=\"email\">";
+        }
+    </script>
 </head>
 <body>
 <header>
@@ -24,20 +95,97 @@
     </div>
 </header>
 <section>
-    <form class="KlasseErfassen">
+    <form class="KlasseErfassen" >
         <div class="form-group">
             <label for="klassenName1">Klassen name</label>
-            <input type="email" class="form-control" id="klassenName1" aria-describedby="emailHelp" placeholder="Klassen Name">
-
-        </div>
-        <div class="form-group">
-            <label for="schülerName1">Schüler name</label>
-            <input type="email" class="form-control" id="schülerName1" aria-describedby="emailHelp" placeholder="Klassen Name">
+            <input type="text" class="form-control" id="klassenName1" aria-describedby="emailHelp" placeholder="Klassen Name">
 
         </div>
 
 
-        <button type="submit" class="btn btn-primary">erstellen</button>
+       <!-- <table id="myTable" >
+            <tr>
+
+                <td><input type="text"  ></td>
+                <td><input type="text"></td>
+                <td><input type="email"></td>
+            </tr>
+            <tr>
+
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="email"></td>
+            </tr>
+            <tr>
+
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="email"></td>
+            </tr>
+            </table>
+-->
+
+        <table class="table table-striped" id="myTable" border="1">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nachname</th>
+                <th scope="col">Vorname</th>
+                <th scope="col">Email</th>
+            </tr>
+            </thead>
+            <tbody >
+            <tr>
+                <th scope="row">1</th>
+                <td><input type="text" name="group" ></td>
+                <td><input type="text"></td>
+                <td><input type="email"></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td><input type="text" name="group" ></td>
+                <td><input type="text"></td>
+                <td><input type="email"></td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <button type="button" onclick="displayResult()">Insert new row</button>
+
+        <!--<table class="table table-striped" id="myTable" >
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nachname</th>
+                <th scope="col">Vorname</th>
+                <th scope="col">Email</th>
+            </tr>
+            </thead>
+            <tbody   >
+           <tr>
+                <th scope="row">1</th>
+                <td><input type="text" name="group" ></td>
+                <td><input type="text"></td>
+                <td><input type="email"></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="email"></td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="email"></td>
+            </tr>
+           </tbody>
+        </table>-->
+        <button type="button" id="button" class="btn btn-primary" onclick="myFunction()">Neues Feld Erzeugen </button>
+
+
+        <button type="submit" class="btn btn-primary"> Klasse erstellen</button>
     </form>
 </section>
 
