@@ -73,14 +73,14 @@
 
 </head>
 <body>
-<form name="formularabsenden " action="FormularAbgesendet.php" method="post">
+<form name="formularabsenden " action="../../../../../Users/timwidmer/.Trash/FormularAbgesendet.php" method="post">
 <header>
     <div class="HeaderBenedictSeite">
         <nav class="nav">
             <a class="nav-link Schrift"  href="benedictSeite.php">Home</a>
 
             <a class="nav-link activ Schrift" href="Formularabsenden.php">Formular absenden</a>
-            <a class="nav-link Schrift" href="Klasseerfassen.html">Klasse erfassen</a>
+            <a class="nav-link Schrift" href="../../../../../Users/timwidmer/.Trash/Klasseerfassen.html">Klasse erfassen</a>
 
         </nav>
     </div>
@@ -200,11 +200,11 @@
 
 </section>
 </form>
-<form action="Formularabsenden.php" method="post">
+<form action="Sqlite-abfrage.php" method="post">
     <button type="submit" class="btn btn-primary">Formular absenasdden</button>
 </form>
 <?php
-include "verbindung.php";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 include "Sqlite-abfrage.php";
     include "verbindung.php";

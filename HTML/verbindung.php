@@ -35,7 +35,7 @@ if (is_readable('/Users/timwidmer/Desktop/Security.db3')) {
 }
 */
 try{
-    $db=new SQLite3("Security.db3");
+    $db=new SQLite3("/Users/timwidmer/Desktop/Security.db3");
     echo "Verbindungsaufbau erfolgreich.";
     $db->close();
 } catch (Exception $ex){
