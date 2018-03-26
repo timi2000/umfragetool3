@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7a1ab2fa-d7cb-42b6-a90c-ce8f1758f8ad" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/HTML/Sqlite-abfrage.php" afterPath="$PROJECT_DIR$/HTML/Sqlite-abfrage.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -91,14 +92,14 @@
       <file leaf-file-name="Sqlite-abfrage.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HTML/Sqlite-abfrage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="18" column="38" lean-forward="false" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+            <state relative-caret-position="261">
+              <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
               <folding>
-                <marker date="1522071840000" expanded="true" signature="144:165" ph="CREATE TABLE... Security" />
-                <marker date="1522071840000" expanded="true" signature="144:509" ph="CREATE TABLE... Security" />
-                <marker date="1522071840000" expanded="true" signature="231:246" ph="/*VARCHAR 10... " />
-                <marker date="1522071840000" expanded="true" signature="254:503" ph="/*NName TEXT... " />
-                <marker date="1522071840000" expanded="true" signature="617:661" ph="INSERT INTO Security... " />
+                <marker date="1522072247000" expanded="true" signature="144:165" ph="CREATE TABLE... Security" />
+                <marker date="1522072247000" expanded="true" signature="144:510" ph="CREATE TABLE... Security" />
+                <marker date="1522072247000" expanded="true" signature="232:247" ph="/*VARCHAR 10... " />
+                <marker date="1522072247000" expanded="true" signature="255:504" ph="/*NName TEXT... " />
+                <marker date="1522072247000" expanded="true" signature="618:662" ph="INSERT INTO Security... " />
               </folding>
             </state>
           </provider>
@@ -183,7 +184,7 @@
       <file leaf-file-name="Formularabsenden.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTML/Formularabsenden.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="872">
               <caret line="216" column="0" lean-forward="true" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
               <folding>
                 <marker date="1522071706000" expanded="true" signature="4504:4525" ph="SELECT c_n F... Class" />
@@ -426,7 +427,7 @@
       <workItem from="1521706951195" duration="8531000" />
       <workItem from="1522045384363" duration="3889000" />
       <workItem from="1522050006097" duration="2223000" />
-      <workItem from="1522052426317" duration="12466000" />
+      <workItem from="1522052426317" duration="12726000" />
     </task>
     <task id="LOCAL-00001" summary="commit 1">
       <created>1520324613229</created>
@@ -439,7 +440,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200134000" />
+    <option name="totallyTimeSpent" value="200394000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -452,6 +453,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="726" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19709209" sideWeight="0.4734411" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3260188" sideWeight="0.49676898" order="6" side_tool="false" content_ui="tabs" />
@@ -462,7 +464,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3275862" sideWeight="0.49676898" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24564184" sideWeight="0.48707592" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24564184" sideWeight="0.48707592" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19359875" sideWeight="0.5265589" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36963192" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -851,14 +853,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTML/Klasseerfassen.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="896">
-          <caret line="72" column="12" lean-forward="false" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HTML/FormularAbgesendet.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1913">
@@ -880,9 +874,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/Klasseerfassen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="896">
+          <caret line="72" column="12" lean-forward="false" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/HTML/Formularabsenden.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="872">
           <caret line="216" column="0" lean-forward="true" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
           <folding>
             <marker date="1522071706000" expanded="true" signature="4504:4525" ph="SELECT c_n F... Class" />
@@ -894,14 +896,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HTML/Sqlite-abfrage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="18" column="38" lean-forward="false" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+        <state relative-caret-position="261">
+          <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
           <folding>
-            <marker date="1522071840000" expanded="true" signature="144:165" ph="CREATE TABLE... Security" />
-            <marker date="1522071840000" expanded="true" signature="144:509" ph="CREATE TABLE... Security" />
-            <marker date="1522071840000" expanded="true" signature="231:246" ph="/*VARCHAR 10... " />
-            <marker date="1522071840000" expanded="true" signature="254:503" ph="/*NName TEXT... " />
-            <marker date="1522071840000" expanded="true" signature="617:661" ph="INSERT INTO Security... " />
+            <marker date="1522072247000" expanded="true" signature="144:165" ph="CREATE TABLE... Security" />
+            <marker date="1522072247000" expanded="true" signature="144:510" ph="CREATE TABLE... Security" />
+            <marker date="1522072247000" expanded="true" signature="232:247" ph="/*VARCHAR 10... " />
+            <marker date="1522072247000" expanded="true" signature="255:504" ph="/*NName TEXT... " />
+            <marker date="1522072247000" expanded="true" signature="618:662" ph="INSERT INTO Security... " />
           </folding>
         </state>
       </provider>

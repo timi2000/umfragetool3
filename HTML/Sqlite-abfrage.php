@@ -9,7 +9,7 @@ try{
     $db=new SQLite3("Security.db3");
     $sql = "CREATE TABLE Security (
         ID INTEGER PRIMARY KEY,
-      HAsh /*TEXT*/ VARCHAR 100/*VARCHAR 100*/,
+      HAsh /*TEXT*/ VARCHAR(100)/*VARCHAR 100*/,
       /*NName TEXT /*VARCHAR 100*/,
       VName TEXT /*VARCHAR 100*/,
       email TEXT /*VARCHAR 100*/,
