@@ -73,14 +73,14 @@
 
 </head>
 <body>
-<form name="formularabsenden " action="../../../../../Users/timwidmer/.Trash/FormularAbgesendet.php" method="post">
+<form name="FormularAbgesende " action="Sqlite-abfrage.php" method="post">
 <header>
     <div class="HeaderBenedictSeite">
         <nav class="nav">
             <a class="nav-link Schrift"  href="benedictSeite.php">Home</a>
 
             <a class="nav-link activ Schrift" href="Formularabsenden.php">Formular absenden</a>
-            <a class="nav-link Schrift" href="../../../../../Users/timwidmer/.Trash/Klasseerfassen.html">Klasse erfassen</a>
+            <a class="nav-link Schrift" href="Klasseerfassen.html">Klasse erfassen</a>
 
         </nav>
     </div>
