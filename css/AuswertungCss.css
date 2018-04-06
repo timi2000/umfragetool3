@@ -19,10 +19,36 @@ section {
     height: 80%;
     width: 100%;
 }
-img{
+#img1{
     width: 30px; 
     height: 30px;
 }
+#img2{
+    width: 30px; 
+    height: 30px;
+}
+
+#img3{
+    width: 30px; 
+    height: 30px;
+}
+
+#img4{
+    width: 30px; 
+    height: 30px;
+}
+
+#img5{
+    width: 30px; 
+    height: 30px;
+}
+
+#img6{
+    width: 30px; 
+    height: 30px;
+}
+
+
 .tabelle{
     width: 80%;
     height: 100%;
@@ -87,9 +113,34 @@ img{
     
         margin-left: 5%;
     }
-    img{
-        height: 22px;
-        width: 22px;
-    }
+    #img1{
+    width: 20px; 
+    height: 20px;
+}
+#img2{
+    width: 20px; 
+    height: 20px;
+}
+
+#img3{
+    width: 20px; 
+    height: 20px;
+}
+
+#img4{
+    width: 20px; 
+    height: 20px;
+}
+
+#img5{
+    width: 20px; 
+    height: 20px;
+}
+
+#img6{
+    width: 20px; 
+    height: 20px;
+}
+
 
 }
