@@ -22,7 +22,7 @@ section {
 .tabelle{
     width: 80%;
     height: 100%;
-    margin:0 auto;
+    margin: 0 auto;
     margin-top: 5px;
 
 
@@ -31,4 +31,57 @@ section {
 .form-check-input{
     margin: 0 auto;
     padding: 0;
+}
+@media(max-width: 420px)
+{
+  
+    header{
+        height: 14%;
+        width: 100%;
+    }
+    .tabelle{
+        width: 100%;
+    }
+    #Negativ{
+        position: absolute;
+        bottom: 10%;
+        right: 13.5%
+        
+    }
+    #Negativbar{
+        position: absolute;
+        left: 70%;
+        top: 90%;
+        width: 30%;
+
+}
+#Positiv{
+    padding-left: 1%;
+}
+#Positivbar{
+    position: absolute;
+    left: 0%;
+    width: 30%;
+}
+
+    .form-check-input {
+        width: 60%;
+        margin: auto;
+    }
+
+    td{
+        font-size: 2.6vw;
+    }
+    th{
+        font-size: 3vw;
+    }
+    #p1{
+      padding-top: 15%;
+      padding-left: 5%;
+    }
+    #FormBtn{
+    
+        margin-left: 5%;
+    }
+
 }

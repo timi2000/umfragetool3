@@ -23,7 +23,7 @@
     <div class="container" style="width: 100%; height: 100%; margin: 0 auto; ">
         <div class="row" style="height: 100%;">
 
-            <div class="col-sm" style="margin: 0 auto; border: 1px solid black;">
+            <div class="col-sm" style="margin: 0 auto; ">
                <h3>Name:</h3>
             </div>
             <div class="col-sm" style="margin: 0 auto;">
@@ -50,7 +50,6 @@
                 <th scope="col"></th>
                 <th scope="col"></th>
                 <th scope="col"></th>
-
 
             </tr>
             </thead>
@@ -489,37 +488,37 @@
             </tr>
             </tbody>
         </table>
-        <div class="input-group" style=" padding: 0; margin-bottom: 5%;">
-            <div class="container" style=" Width: 100%;">
-                <div class="row" style=" Width: 100%;">
-                    <div class="col-sm" style=" Width: 50%; padding:0;">
-                        <h6>Positives</h6>
+        <div class="input-group">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <h6 id="Positiv">Positives</h6>
 
 
                     </div><div class="col-sm">
-                    <h6>Negatives</h6>
+                    <h6 id="Negativ">Negatives</h6>
                 </div>
 
                 </div>
 
-                <div class="row"  style=" Width: 100%;">
-                    <div class="col-sm" style=" Width: 50%; padding:0;">
+                <div class="row" >
+                    <div class="col-sm">
                           <span class="input-group-btn">
-                    <input name="positves" type="text" class="form-control" placeholder="positives" maxlength="55" aria-label="Search for...">
+                    <input name="positves" type="text" class="form-control" placeholder="Positives" id="Positivbar" maxlength="55" aria-label="Search for...">
 
                                </span>
                     </div>
 
                     <div class="col-sm">
                         <span class="input-group-btn">
-                    <input name="negatives"type="text" class="form-control" placeholder="Verbesserungsvorschläge"  maxlength="55" aria-label="Search for...">
+                    <input name="negatives" type="text" class="form-control" placeholder="Negatives" id="Negativbar"  maxlength="55" aria-label="Search for...">
                         </span>
                     </div>
                 </div>
             </div>
         </div>
-        <p> nach drücken des absende Knopfes nicht mehr bearbeitbar!</p>
-        <button type="submit" class="btn btn-primary" style="margin-bottom: 5%;" >Formular absenden!</button>
+        <p id="p1"> nach drücken des absende Knopfes nicht mehr bearbeitbar!</p>
+        <button type="submit" class="btn btn-primary" id="FormBtn" style="margin-bottom: 5%;" >Formular absenden!</button>
     </div>
     </form>
 </section>
