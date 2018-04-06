@@ -28,7 +28,45 @@
     </div>
 </header>
 <section>
+    <form class="KlasseErfassen" action="" method="post">
+        <h1 style = "text-align: center;">Klasse anklicken für mehr Info </h1>
+        <div class="input-group" style="padding-bottom: 5%; padding-top: 3%;" >
+            <input type="text" class="form-control" id="teachersuchen" placeholder="Dozent suchen" aria-label="Search for..."  >
+            <span class="input-group-btn" >
+        <button class="btn btn-secondary" type="button" >Suchen</button>
+      </span>
+        </div>
 
+    <table class="table tabelle" style="text-align: center">
+
+
+        <thead>
+        <tr>
+
+            <th scope="col">Klassenname</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+
+            <td><button type="button" class="btn btn-primary" style="width:100px;">A15</button></td>
+
+        </tr>
+        <tr>
+
+            <td><button type="button" class="btn btn-primary" style="width:100px;">A16</button></td>
+
+        </tr>
+        <tr>
+
+            <td><button type="button" class="btn btn-primary" style="width:100px;">A17</button></td>
+
+        </tr>
+        </tbody>
+    </table>
+
+    </form>
 
 </section>
 </body>
