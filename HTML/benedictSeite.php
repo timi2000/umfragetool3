@@ -40,29 +40,7 @@
         });
     </script>
 
-    <script>
-        $(document).ready(function(){
 
-            $('#cool').typeahead({
-                source: function(query, result)
-                {
-                    $.ajax({
-                        url:"LehrerDarstellen.php",
-                        method:"POST",
-                        data:{query:query},
-                        dataType:"json",
-                        success:function(data)
-                        {
-                            result($.map(data, function(item){
-                                return item;
-                            }));
-                        }
-                    })
-                }
-            });
-
-        });
-    </script>
 
 
 </head>
@@ -75,7 +53,8 @@
             <a class="nav-link Schrift"  href="benedictSeite.php">Home</a>
 
             <a class="nav-link activ Schrift" href="Formularabsenden.php">Formular absenden</a>
-            <a class="nav-link Schrift" href="Klasseerfassen.html">Klasse erfassen</a>
+            <a class="nav-link Schrift" href="klasseerfassen.php">Klasse erfassen</a>
+            <a class="nav-link Schrift" href="Klassenübersicht.php">Klassenübersicht</a>
 
         </nav>
     </div>
@@ -102,28 +81,37 @@
                 </tr>
                 </thead>
                 <tbody id="cool">
+                <?php
+                /**
+                 * Created by PhpStorm.
+                 * User: timwidmer
+                 * Date: 13.03.18
+                 * Time: 16:21
+                 */
+/*
+                $con = mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
+                if (mysqli_connect_errno())
+                {
+                    echo "failed to conect to MySQL: ".mysqli_connect_error();
+                }
+
+                $sql1 = "SELECT t_vn, t_nn FROM Teacher";
+                $result1 = $con->query($sql1);
+                echo '<tbody id="cool">';
 
 
+                while($row = $result1->fetch_assoc()) {
 
-                <tr>
+                    $print = ' <tr><td> <a href="Dozentspezifisch.html"><button type="button" class="btn btn-primary" style="margin-bottom: 5%;"> ' .$row['t_vn'] . " " . $row['t_nn']. ' </button></a></td> </tr>';
+                    echo ("$print");
+                }
+                $con->close();
 
-                    <td> <a href="Dozentspezifisch.html"><button type="button" class="btn btn-primary" style="margin-bottom: 5%;">Marco Glaus</button></a></td>
-
-
-                </tr>
-                <tr>
-
-                    <td> <a href="Dozentspezifisch.html">
-                        <button type="button" class="btn btn-primary" style="margin-bottom: 5%;">Rene Bäder</button>
-                    </a></td>
+                echo '</tbody>';
+                */?>
+                <tr><td><button type="button" class="btn btn-primary" style="margin-bottom: 5%;"><a href="Dozentspezifisch.html">Marco Glaus</a> </button></td></tr>
 
 
-                </tr>
-                <tr>
-                    <td> <a href="Dozentspezifisch.html"><button type="button" class="btn btn-primary" style="margin-bottom: 5%;">larry</button></a></td>
-
-
-                </tr>
                 </tbody>
             </table>
 

@@ -21,20 +21,24 @@ $message = "hallo Tim ";
 $Students = "Select St.s_vn, St.s_nn, St.s_email from Student AS St, Class AS CL
 Where  CL.idClass = St.Class_idClass
 and CL.c_n like '$Klassen'";
+
 /*$studentmail = "Select s_email from Student, Class Where  idClass = Class_idClass
 and c_n like '$Klassen'";*/
 
 
 $result = $con->query($Students);
+
 //$result2 = $con->query($studentmail );
     while ($row = $result->fetch_assoc()) {
         $res = $row['s_vn']." ".$row['s_nn']." ".$row['s_email']." ".$Lehrer." ".$Semester." ".$Klassen;
         $hash = hash('sha512', $res);
         echo $row['s_vn']." ".$row['s_nn']." ".$row['s_email']. " ". $hash."<br>";
+
        // mail( $row['s_email'], $subject ,  $message);
         echo mail($row['s_email'],"Hallo" ,"adasd","parameters");
 
     }
+
 $con->close();
 
 /*$sql ='Insert Into Security(HAsh, NName, VName, email, Tid, Semester,Klasse, Lehrer)' .

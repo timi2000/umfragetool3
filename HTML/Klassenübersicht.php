@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Klassenerfassen</title>
     <link rel="stylesheet" href="../css/test.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -14,10 +14,6 @@
     <script src="../js/javaScripten.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
-
-
-    <script src="scripts.js"></script>
-
 </head>
 <body>
 <header>
@@ -31,35 +27,17 @@
         </nav>
     </div>
 </header>
-<section >
-    <div class="lehrerestellen">
-            <form action="Lehrerneuerfassen.php" method="post">
-        <h1> Lehrer Erstellen </h1>
-        <div class="form-group">
-            <label for="TeacherNName1">Nachname</label>
-            <input type="text" name="TeacherNName"class="form-control" id="TeacherNName1" aria-describedby="emailHelp" placeholder="Nachname">
-
-        </div>
-        <div class="form-group">
-            <label for="TeacherVName1">Vorname</label>
-            <input type="text" name="TeacherVName" class="form-control" id="TeacherVName1" aria-describedby="emailHelp" placeholder="Vorname">
-
-        </div>
-        <div class="form-group">
-            <label for="TeacherEmail1">Email</label>
-            <input type="email" name="TeacherEmail" class="form-control" id="TeacherEmail1" aria-describedby="emailHelp" placeholder="Email">
-
-        </div>
+<section>
 
 
-
-
-        <button type="submit" class="btn btn-primary">Erstellen</button>
-    </form>
-    <button type="submit" class="btn btn-primary">  <a href="benedictSeite.php" style="text-decoration: none; color: white;" >zurück</a></button>
-    </div>
 </section>
-
-
 </body>
 </html>
+
+<?php
+/**
+ * Created by PhpStorm.
+ * User: timwidmer
+ * Date: 05.04.18
+ * Time: 15:43
+ */?>

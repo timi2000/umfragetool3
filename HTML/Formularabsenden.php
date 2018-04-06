@@ -80,7 +80,8 @@
             <a class="nav-link Schrift"  href="benedictSeite.php">Home</a>
 
             <a class="nav-link activ Schrift" href="Formularabsenden.php">Formular absenden</a>
-            <a class="nav-link Schrift" href="Klasseerfassen.html">Klasse erfassen</a>
+            <a class="nav-link Schrift" href="klasseerfassen.php">Klasse erfassen</a>
+            <a class="nav-link Schrift" href="Klassenübersicht.php">Klassenübersicht</a>
 
         </nav>
     </div>
@@ -93,7 +94,7 @@
         <h4 style="padding-right: 10px">Klasse Auswählen  </h4>
         <input type="text" id="klassen" name="Klassen" class="form-control" >
         <div class="input-group-append">
-            <button class="btn btn-outline-secondary dropdown-toggle" name="Klassen" type="Button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Dropdown</button>
+
             <div class="dropdown-menu" >
                  <?php
                  /**
@@ -129,7 +130,7 @@
         <input type="text" id="teacher" name="Lehrer" class="form-control" aria-label="Text input with dropdown button" >
 
         <div class="input-group-append">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+
             <div class="dropdown-menu">
                 <?php
                 /**
@@ -153,20 +154,7 @@
 
                 }
 
-                /*echo ("$print");
-                if (isset($_POST['select_month'])) {
-                if($_POST["select_month"] == "January"){
-                    echo '<option value="January" selected="selected">January</option><option value="February">February</option>';
-                }*/
-                // echo"$reihe";
-                //if( 'selected ="selected"');{
 
-                  //  }
-
-                   //$print='
-                    //$print='<a class="dropdown-item" value="'.$row1['t_vn'].$row1['t_nn'].'">'.$row1['t_vn']." ".$row1['t_nn'].'</a>'
-                /*}
-*/
                 $con->close();
                 ?>
 
@@ -177,19 +165,8 @@
         <h4 style="padding-right: 10px">Semester Auswählen </h4>
         <input type="text" class="form-control" name="Semester" aria-label="Text input with dropdown button" >
         <div class="input-group-append">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
-             <div class="dropdown-menu">
 
-                <a class="dropdown-item" value="1" >1</a>
-                    <a class="dropdown-item" value="2">2</a>
-                <a class="dropdown-item" value="3">3</a>
-                <a class="dropdown-item" value="4">4</a>
-                <a class="dropdown-item" value="5">5</a>
-                <a class="dropdown-item" value="6">6</a>
-                <a class="dropdown-item" value="7">7</a>
-                <a class="dropdown-item" value="8">8</a>
 
-            </div>
 
         </div>
     </div>
@@ -197,63 +174,7 @@
 
 
 </div>
-
 </section>
 </form>
-<form action="FormularAbgesendet.php" method="post">
-    <button type="submit" class="btn btn-primary">Formular absenasdden</button>
-</form>
-<?php
-
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
-include "Sqlite-abfrage.php";
-    include "verbindung.php";
-//if ($_SERVER["REQUEST_METHOD"] == "POST"){
-
-
-    // include "verbindung.php";
-
-
-
-   /* $insert = $datenbank -> prepare("INSERT INTO Security
-         ('HAsh', 'NName', 'VName', 'email', 'Tid', 'Semester', 'Klasse', 'Lehrer') 
-  VALUES (:HAsh, :NName, :VName, :email, :Tid, :Semester, :Klasse, :Lehrer)");
-
-    /*  $insert = $datenbank -> prepare("INSERT INTO Security
-       (`HAsh`, `NName`, `VName`, `email`, `Tid`, `Semester`, `Klasse`, `Lehrer`)
-VALUES (:HAsh, :NName, :VName, :email, :Tid, :Semester, :Klasse, :Lehrer)");*/
-
-    // Die Platzhalter werden mit $insert->bindValue() durch den
-    // Inhalt der POST-Variablen ersetzt und maskiert.
-  /*  $eins =  "hashi";
-    $zwei = "Wimder";
-    $drei =  "Tim";
-    $vier = "Tim@cool";
-    $fuenf = 1;
-    $sechs =  2;
-    $sieben = 3;
-    $acht = 4;
-
-    $insert -> bindValue(':HAsh', $eins);
-    $insert->bindValue(':NName', $zwei);
-    $insert->bindValue(':VName', $drei);
-    $insert->bindValue(':email', $vier);
-    $insert->bindValue(':Tid', $fuenf);
-    $insert->bindValue(':Semester', $sechs);
-    $insert->bindValue(':Klasse', $sieben);
-    $insert->bindValue(':Lehrer', $acht);
-    //$insert->bindValue(':HAsh', $_POST["titel"]);
-    //(HAsh, NName, VName, email, Tid, Semester,Klasse, Lehrer)' .
-    $insert->fetch();
-    if ($insert->execute()) {
-        echo '<p>Die Nachricht wurde eingetragen.</p>';
-    }
-    else {
-        // SQL-Fehlermeldung anzeigen.
-        print_r($insert->errorInfo());
-    }*/
-
-}
-?>
 </body>
 </html>
