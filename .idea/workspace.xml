@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a1ab2fa-d7cb-42b6-a90c-ce8f1758f8ad" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/HTML/Klasseneuerfassen2.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/HTML/Klassenübersicht.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/HTML/MailToStudents.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/HTML/ini.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/HTML/klasseerfassen.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/AuswertungCss.css" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a2959f9-ccf7-4a60-8204-99c7e3b41037.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/6a2959f9-ccf7-4a60-8204-99c7e3b41037.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/HTML/Auswertung.html" afterPath="$PROJECT_DIR$/HTML/Auswertung.html" />
-      <change beforePath="$PROJECT_DIR$/HTML/FormularAbgesendet.php" afterPath="$PROJECT_DIR$/HTML/FormularAbgesendet.php" />
-      <change beforePath="$PROJECT_DIR$/HTML/Formularabsenden.php" afterPath="$PROJECT_DIR$/HTML/Formularabsenden.php" />
-      <change beforePath="$PROJECT_DIR$/HTML/Klasseerfassen.html" afterPath="$PROJECT_DIR$/HTML/Klasseerfassen.html" />
-      <change beforePath="$PROJECT_DIR$/HTML/Klasseneuerfassen.php" afterPath="$PROJECT_DIR$/HTML/Klasseneuerfassen.php" />
-      <change beforePath="$PROJECT_DIR$/HTML/Sqlite-abfrage.php" afterPath="$PROJECT_DIR$/HTML/Sqlite-abfrage.php" />
-      <change beforePath="$PROJECT_DIR$/HTML/benedictSeite.php" afterPath="$PROJECT_DIR$/HTML/benedictSeite.php" />
-      <change beforePath="$PROJECT_DIR$/HTML/neuerLehrer.html" afterPath="$PROJECT_DIR$/HTML/neuerLehrer.html" />
-      <change beforePath="$PROJECT_DIR$/HTML/test1.html" afterPath="$PROJECT_DIR$/HTML/test1.html" />
-      <change beforePath="$PROJECT_DIR$/HTML/umfrageAuswerten.php" afterPath="$PROJECT_DIR$/HTML/umfrageAuswerten.php" />
-      <change beforePath="$PROJECT_DIR$/css/test.css" afterPath="$PROJECT_DIR$/css/test.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -103,7 +85,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Formularabsenden.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Formularabsenden.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTML/Formularabsenden.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1896">
@@ -116,12 +98,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Auswertung.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Auswertung.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HTML/Auswertung.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="-553">
+              <caret line="469" column="32" lean-forward="true" selection-start-line="469" selection-start-column="32" selection-end-line="469" selection-end-column="32" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#section#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#form#0;n#section#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#section#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#section#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -170,16 +157,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Klassenübersicht.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HTML/Klassenübersicht.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="25" column="88" lean-forward="true" selection-start-line="21" selection-start-column="12" selection-end-line="25" selection-end-column="88" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Lehrerneuerfassen.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTML/Lehrerneuerfassen.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -208,7 +185,7 @@
       <file leaf-file-name="Klasseneuerfassen.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTML/Klasseneuerfassen.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
+            <state relative-caret-position="315">
               <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
               <folding>
                 <marker date="1522833742000" expanded="true" signature="407:448" ph="INSERT INTO Class... " />
@@ -221,6 +198,15 @@
                 <marker date="1522833742000" expanded="true" signature="4563:4707" ph="INSERT INTO Student... " />
                 <marker date="1522833742000" expanded="true" signature="4563:4716" ph="INSERT INTO Student... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Security" pinned="false" current-in-tab="false">
+        <entry file="das://table:/44e0c96c/6a2959f9-ccf7-4a60-8204-99c7e3b41037/main.Security">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -277,7 +263,6 @@
         <option value="$PROJECT_DIR$/HTML/Sqlite-abfrage.php" />
         <option value="$PROJECT_DIR$/HTML/FormularAbgesendet.php" />
         <option value="$PROJECT_DIR$/css/AuswertungCss.css" />
-        <option value="$PROJECT_DIR$/HTML/Auswertung.html" />
         <option value="$PROJECT_DIR$/HTML/Klasseerfassen.html" />
         <option value="$PROJECT_DIR$/HTML/Klasseneuerfassen.php" />
         <option value="$PROJECT_DIR$/HTML/umfrageAuswerten.php" />
@@ -288,6 +273,7 @@
         <option value="$PROJECT_DIR$/HTML/benedictSeite.php" />
         <option value="$PROJECT_DIR$/HTML/neuerLehrer.html" />
         <option value="$PROJECT_DIR$/HTML/Formularabsenden.php" />
+        <option value="$PROJECT_DIR$/HTML/Auswertung.html" />
       </list>
     </option>
   </component>
@@ -469,7 +455,7 @@
       <workItem from="1522182516068" duration="39376000" />
       <workItem from="1522735117018" duration="4561000" />
       <workItem from="1522751845342" duration="22450000" />
-      <workItem from="1522863379596" duration="26566000" />
+      <workItem from="1522863379596" duration="27559000" />
     </task>
     <task id="LOCAL-00001" summary="commit 1">
       <created>1520324613229</created>
@@ -482,7 +468,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="324986000" />
+    <option name="totallyTimeSpent" value="325979000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -495,7 +481,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="726" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22294022" sideWeight="0.4734411" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32125986" sideWeight="0.49676898" order="6" side_tool="false" content_ui="tabs" />
@@ -506,7 +491,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32283464" sideWeight="0.48869145" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2536349" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20602219" sideWeight="0.48707592" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20602219" sideWeight="0.48707592" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36963192" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19359875" sideWeight="0.5265589" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -765,13 +750,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/44e0c96c/6a2959f9-ccf7-4a60-8204-99c7e3b41037/main.Security">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HTML/umfrageAuswerten.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="856">
@@ -929,24 +907,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTML/Klasseneuerfassen.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-          <folding>
-            <marker date="1522833742000" expanded="true" signature="407:448" ph="INSERT INTO Class... " />
-            <marker date="1522833742000" expanded="true" signature="1169:1330" ph="INSERT INTO " />
-            <marker date="1522833742000" expanded="true" signature="1916:1957" ph="INSERT INTO Class... " />
-            <marker date="1522833742000" expanded="true" signature="2797:2920" ph="INSERT INTO Student... " />
-            <marker date="1522833742000" expanded="true" signature="3372:3474" ph="INSERT INTO Student... " />
-            <marker date="1522833742000" expanded="true" signature="3929:3979" ph="Select idCla... Class" />
-            <marker date="1522833742000" expanded="true" signature="4563:4704" ph="INSERT INTO Student... " />
-            <marker date="1522833742000" expanded="true" signature="4563:4707" ph="INSERT INTO Student... " />
-            <marker date="1522833742000" expanded="true" signature="4563:4716" ph="INSERT INTO Student... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HTML/klasseerfassen.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -954,14 +914,6 @@
           <folding>
             <marker date="1522936106000" expanded="true" signature="3545:3570" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HTML/Auswertung.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -982,6 +934,44 @@
           <folding>
             <marker date="1522938398000" expanded="true" signature="4406:4427" ph="SELECT c_n F... Class" />
             <marker date="1522938398000" expanded="true" signature="5573:5603" ph="SELECT t_vn,... Teacher" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/Klasseneuerfassen.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+          <folding>
+            <marker date="1522833742000" expanded="true" signature="407:448" ph="INSERT INTO Class... " />
+            <marker date="1522833742000" expanded="true" signature="1169:1330" ph="INSERT INTO " />
+            <marker date="1522833742000" expanded="true" signature="1916:1957" ph="INSERT INTO Class... " />
+            <marker date="1522833742000" expanded="true" signature="2797:2920" ph="INSERT INTO Student... " />
+            <marker date="1522833742000" expanded="true" signature="3372:3474" ph="INSERT INTO Student... " />
+            <marker date="1522833742000" expanded="true" signature="3929:3979" ph="Select idCla... Class" />
+            <marker date="1522833742000" expanded="true" signature="4563:4704" ph="INSERT INTO Student... " />
+            <marker date="1522833742000" expanded="true" signature="4563:4707" ph="INSERT INTO Student... " />
+            <marker date="1522833742000" expanded="true" signature="4563:4716" ph="INSERT INTO Student... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/44e0c96c/6a2959f9-ccf7-4a60-8204-99c7e3b41037/main.Security">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/Auswertung.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-553">
+          <caret line="469" column="32" lean-forward="true" selection-start-line="469" selection-start-column="32" selection-end-line="469" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#section#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#form#0;n#section#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#section#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#section#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
