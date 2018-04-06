@@ -20,7 +20,7 @@ section {
     width: 100%;
 }
 #img1{
-    width: 30px; 
+    width: 60px; 
     height: 30px;
 }
 #img2{
@@ -34,19 +34,10 @@ section {
 }
 
 #img4{
-    width: 30px; 
+    width: 60px; 
     height: 30px;
 }
 
-#img5{
-    width: 30px; 
-    height: 30px;
-}
-
-#img6{
-    width: 30px; 
-    height: 30px;
-}
 
 
 .tabelle{
@@ -114,7 +105,7 @@ section {
         margin-left: 5%;
     }
     #img1{
-    width: 20px; 
+    width: 40px; 
     height: 20px;
 }
 #img2{
@@ -128,19 +119,10 @@ section {
 }
 
 #img4{
-    width: 20px; 
+    width: 40px; 
     height: 20px;
 }
 
-#img5{
-    width: 20px; 
-    height: 20px;
-}
-
-#img6{
-    width: 20px; 
-    height: 20px;
-}
 
 
 }
