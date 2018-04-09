@@ -14,31 +14,6 @@
     <script src="../js/javaScripten.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
-    <script>
-        $(document).ready(function(){
-
-            $('#klassen').typeahead({
-                source: function(query, result)
-                {
-                    $.ajax({
-                        url:"Autocomplete.php",
-                        method:"POST",
-                        data:{query:query},
-                        dataType:"json",
-                        success:function(data)
-                        {
-                            result($.map(data, function(item){
-                                return item;
-                            }));
-                        }
-                    })
-                }
-            });
-
-        });
-    </script>
-
-
 </head>
 <body>
 <header>
@@ -53,58 +28,78 @@
     </div>
 </header>
 <section>
+    <?php  $Klassen = $_POST["KlassenName"];
 
-        <h1 style = "text-align: center; padding-top: 3%; width: 80%; margin: 0 auto; ">Klasse anklicken für mehr Info </h1>
-    <div style="margin: 0 auto ; width: 80%;">
-    <form method="post"  action="Klassenbearbeiten.php">
-        <div class="input-group" style="padding-bottom: 5%; padding-top: 3%;" >
-
-            <input type="text" class="form-control" id="klassen" name="KlassenName" placeholder="Klasse Suchen" aria-label="Search for..."  >
-            <span class="input-group-btn" >
-        <button class="btn btn-secondary" type="submit" >Suchen</button>
-      </span>
-                </form>
-        </div>
-
-    <table class="table tabelle"  style="text-align: center">
-
-
+    $prints =" <html>
+               <h1  style=\"text-align: center; margin: 0 auto; padding-top:3%; padding-bottom: 2%; c\"> $Klassen</h1>
+             </html>";
+    echo"$prints"; ?>
+    <div class="tabelle" >
+    <table class="table table-striped" style="">
         <thead>
         <tr>
-
-            <th scope="col">Klassenname</th>
-
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
         </tr>
         </thead>
         <tbody>
+        <?php
+        /**
+         * Created by PhpStorm.
+         * User: timwidmer
+         * Date: 09.04.18
+         * Time: 12:08
+         */
+        $con = mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
+        if (mysqli_connect_errno())
+        {
+            echo "failed to conect to MySQL: ".mysqli_connect_error();
+        }
+
+       /* $Klassen = $_POST["KlassenName"];
+
+        $prints =" <html>
+               <h1  style=\"text-align: center; padding-top:3%;\"> $Klassen</h1>
+             </html>";
+        echo"$prints";*/
+
+        /* <h1>Hallo Welt</h1>
+ echo '<h1>Hallo Welt</h1>';
+echo "<h1>Hallo Welt</h1>";
+
+$hallo = 'Hallo';
+$welt = 'Welt';
+
+ echo "<h1>$hallo $welt</h1>";
+*/
+        ?>
         <tr>
-
-            <td><button type="button" class="btn btn-primary" style="width:100px;">A15</button></td>
-
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
         </tr>
         <tr>
-
-            <td><button type="button" class="btn btn-primary" style="width:100px;">A16</button></td>
-
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
         </tr>
         <tr>
-
-            <td><button type="button" class="btn btn-primary" style="width:100px;">A17</button></td>
-
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
         </tr>
         </tbody>
     </table>
+        <form action="Klassenübersicht.php">
+        <button type="submit" class="btn btn-primary">zurück</button>
+            <form>
+    </div>
 
-
-</div>
 </section>
 </body>
 </html>
-
-<?php
-/**
- * Created by PhpStorm.
- * User: timwidmer
- * Date: 05.04.18
- * Time: 15:43
- */?>
