@@ -51,7 +51,6 @@
     <div class="HeaderBenedictSeite">
         <nav class="nav">
             <a class="nav-link Schrift"  href="benedictSeite.php">Home</a>
-
             <a class="nav-link activ Schrift" href="Formularabsenden.php">Formular absenden</a>
             <a class="nav-link Schrift" href="klasseerfassen.php">Klasse erfassen</a>
             <a class="nav-link Schrift" href="Klassenübersicht.php">Klassenübersicht</a>
@@ -62,14 +61,16 @@
 <section>
     <div class="Homeseite">
         <div class="newclassy"> <a href="neuerLehrer.html" ><button type="button" class="btn btn-primary">neuer Lehrer erstellen</button></a></div>
+
+<form method="post" action="Dozentspezifisch.php">
         <div class="input-group">
 
-
-            <input type="text" class="form-control" id="teachersuchen" placeholder="Dozent suchen" aria-label="Search for..." style="width: 50%;">
+            <input type="text" class="form-control"  Name="LehrerName" id="teachersuchen" placeholder="Dozent suchen" aria-label="Search for..." style="width: 50%;">
             <span class="input-group-btn">
-        <button class="btn btn-secondary" type="button" >Suchen</button>
+        <button class="btn btn-secondary" type="submit">Suchen</button>
       </span>
         </div>
+        </form>
         <div class="Nbuttons">
 
 
@@ -102,14 +103,14 @@
 
                 while($row = $result1->fetch_assoc()) {
 
-                    $print = ' <tr><td> <a href="Dozentspezifisch.html"><button type="button" class="btn btn-primary" style="margin-bottom: 5%;"> ' .$row['t_vn'] . " " . $row['t_nn']. ' </button></a></td> </tr>';
+                    $print = ' <tr><td> <a href="Dozentspezifisch.php"><button type="button" class="btn btn-primary" style="margin-bottom: 5%;"> ' .$row['t_vn'] . " " . $row['t_nn']. ' </button></a></td> </tr>';
                     echo ("$print");
                 }
                 $con->close();
 
                 echo '</tbody>';
                 */?>
-                <tr><td><button type="button" class="btn btn-primary" style="margin-bottom: 5%;"><a href="Dozentspezifisch.html">Marco Glaus</a> </button></td></tr>
+                <tr><td><button type="button" class="btn btn-primary" style="margin-bottom: 5%;"><a href="Dozentspezifisch.php">Marco Glaus</a> </button></td></tr>
 
 
                 </tbody>

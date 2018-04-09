@@ -22,7 +22,7 @@ print_r($SEmail);*/
 
 
 try{
-    $sql = "INSERT INTO Class(c_n, Semester) VALUES ('$klasse', $Semester)";
+    $sql = "INSERT INTO Class(c_n, Semester) VALUES (?, ?)";
     $kommando = $con->prepare($sql);
     $kommando->bind_param("si", $klasse, $Semester);
     $kommando->execute();

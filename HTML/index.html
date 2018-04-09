@@ -16,7 +16,7 @@
     <script type="text/javascript">
         google.charts.load('current', {'packages':['corechart']});
         google.charts.setOnLoadCallback(drawChart);
-
+,
         function drawChart() {
 
             var data = google.visualization.arrayToDataTable([
@@ -45,34 +45,18 @@
     <div class="container" style="width: 100%; height: 100%; margin: 0 auto; ">
         <div class="row" style="height: 100%;">
             <div class="col-sm" style="margin: 0 auto;">
+         <h4> Dozent</h4>
+            </div>
 
-                <input type="text" style="margin-top:3%;" class="form-control" placeholder="name" aria-label="Name" aria-describedby="basic-addon1">
+            <div class="col-sm">
+
+              <h4> Klasse </h4>
+
             </div>
             <div class="col-sm">
 
-                <div class="dropdown" style="text-align: center">
-                    <button class="btn btn-secondary dropdown-toggle"  style="margin-top:3%;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Klasse
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">C15</a>
-                        <a class="dropdown-item" href="#">C17</a>
-                        <a class="dropdown-item" href="#">C18</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm">
+                <h4>Datum</h4>
 
-                <div class="dropdown" style="text-align: center">
-                    <button class="btn btn-secondary dropdown-toggle"  style="margin-top:3%;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Lehrer
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Bäder</a>
-                        <a class="dropdown-item" href="#">Melber</a>
-                        <a class="dropdown-item" href="#">Glaus</a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

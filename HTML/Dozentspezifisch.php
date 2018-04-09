@@ -17,22 +17,64 @@
 </header>
 <section>
     <div class="hokus">
+
         <table class="table">
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Klasse</th>
-                <th scope="col">Datum</th>
+                <th scope="col">Auswertung</th>
+                <th scope="col">Absende datum </th>
 
             </tr>
             </thead>
             <tbody>
-            <tr>
+
+            <?php
+            $con = mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
+            if (mysqli_connect_errno())
+            {
+                echo "failed to conect to MySQL: ".mysqli_connect_error();
+            }
+            $LehrerName = $_POST["LehrerName"];
+            $lehrerexplodiert  = explode(" ", $LehrerName);
+            $vn = $lehrerexplodiert[ 1 ];
+            $nn = $lehrerexplodiert[ 0 ];
+            $vn = $vn.'%';
+            $nn = $nn.'%';
+            $LehrerID = "Select idTeacher from Teacher Where t_vn like '$vn' and t_nn like '$nn'";
+            $result3 = $con->query($LehrerID);
+            while ($row = $result3->fetch_assoc()) {
+                $res3 = $row['idTeacher'];
+                }
+            echo $LehrerName ." ". $res3;
+
+            echo '<tr>
                 <th scope="row"><a href="index.html" ><button type="button" class="btn btn-primary">Anschauen</button></a></th>
-                <td>c15</td>
+                <td>hoi Tim </td>
                 <td>12.3.2017</td>
 
-            </tr>
+            </tr>';
+
+/*
+            $sql1 = "SELECT t_vn, t_nn FROM Teacher";
+            $result1 = $con->query($sql1);
+            echo '<tbody id="cool">';
+
+
+            while($row = $result1->fetch_assoc()) {
+
+                $print = ' <tr><td> <a href="Dozentspezifisch.php"><button type="button" class="btn btn-primary" style="margin-bottom: 5%;"> ' .$row['t_vn'] . " " . $row['t_nn']. ' </button></a></td> </tr>';
+                echo ("$print");
+            }
+            $con->close();
+
+            echo '</tbody>';
+            */
+           // $select = bewertung
+
+
+            ?>
+
             <tr>
                 <th scope="row"><a href="index.html" ><button type="button" class="btn btn-primary">Anschauen</button></a></th>
                 <td>a14</td>

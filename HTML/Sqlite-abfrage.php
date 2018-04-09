@@ -32,6 +32,7 @@ while ($row = $result2->fetch_assoc()) {
     $res2 = $row['idClass'];
 
 }
+
 $vn = $vn.'%';
 $nn = $nn.'%';
 $LehrerID = "Select idTeacher from Teacher Where t_vn like '$vn' and t_nn like '$nn'";
@@ -83,6 +84,7 @@ VALUES ('$hash','$snn','$svn','$semail', '$res3', '$Semester','$res2')";
     echo $sql;
     if($db->exec($sql)){
          echo "Daten eintragen.<br />";
+
      } else {
          echo "Fehler!";
      }
@@ -92,6 +94,8 @@ VALUES ('$hash','$snn','$svn','$semail', '$res3', '$Semester','$res2')";
         echo "Fehler: " . $ex->getMessage();
     }
 }
+
+
 
 
 $con->close();
