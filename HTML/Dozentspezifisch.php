@@ -13,7 +13,15 @@
 </head>
 <body>
 <header>
-    <h2> Auswahl</h2>
+    <div class="HeaderBenedictSeite">
+        <nav class="nav">
+            <a class="nav-link Schrift"  href="benedictSeite.php">Home</a>
+
+            <a class="nav-link activ Schrift" href="Formularabsenden.php">Formular absenden</a>
+            <a class="nav-link Schrift" href="klasseerfassen.php">Klasse erfassen</a>
+            <a class="nav-link Schrift" href="Klassenübersicht.php">Klassenübersicht</a>
+        </nav>
+    </div>
 </header>
 <section>
     <div class="hokus">

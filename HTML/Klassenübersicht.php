@@ -59,7 +59,8 @@
     <form method="post"  action="Klassenbearbeiten.php">
         <div class="input-group" style="padding-bottom: 5%; padding-top: 3%;" >
 
-            <input type="text" class="form-control" id="klassen" name="KlassenName" placeholder="Klasse Suchen" aria-label="Search for..."  >
+            <input  type="text" class="form-control" id="klassen" name="KlassenName" placeholder="Klasse Suchen" aria-label="Search for..."  >
+
             <span class="input-group-btn" >
         <button class="btn btn-secondary" type="submit" >Suchen</button>
       </span>
@@ -96,7 +97,7 @@
     </table>
 
 
-</div>
+
 </section>
 </body>
 </html>
