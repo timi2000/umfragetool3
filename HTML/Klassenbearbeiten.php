@@ -16,6 +16,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
 
 
+    <script>
+        function wegMitDerReihe()
+        {
+            var table= document.getElementById("myTable2");
+            var row = table.deleteRow(-1);
+
+        }
+    </script>
+
     <script type="text/javascript">
 
         function displayResult()
@@ -23,19 +32,20 @@
         {
 
 
-            var  table=document.getElementById("myTable");
+            var  table=document.getElementById("myTable2");
             //var n = countrows.toString();
             var row = table.insertRow(-1);
-            var countrows = document.getElementById('myTable').rows.length;
+            var countrows = document.getElementById('myTable2').rows.length;
             var cell1=row.insertCell(0);
             var cell2=row.insertCell(1);
             var cell3=row.insertCell(2);
             var cell4=row.insertCell(3);
+            var cell5=row.insertCell(4);
             cell1.innerHTML= countrows;
             cell2.innerHTML="<input type=\"text\" name=\"Nachname[]\" class=\"form-control \"  placeholder=\"Nachname\" > ";
             cell3.innerHTML="<input type=\"text\" name=\"Vorname[]\" class=\"form-control Vorname\"  placeholder=\"Vorname\">";
             cell4.innerHTML="<input type=\"email\" name=\"Email[]\" class=\"form-control email\"   placeholder=\"email\">";
-
+            cell5.innerHTML="<button type=\"button\" class=\"btn btn-danger\" onclick=\"deleteRow(this)\">Aus Klasse entfernen</button>";
         }
 
 
@@ -63,16 +73,17 @@
     </div>
 </header>
 
-    <?php
 
-    $Klassen = $_POST["KlassenName"];
 
-    $prints =" <html>
-               <h1  style=\"text-align: center; margin: 0 auto; padding-top:3%; padding-bottom: 2%; c\"> $Klassen</h1>
+    <form method="post" action="Updateklasse.php">
+        <?php
+
+        $Klassen = $_POST["KlassenName"];
+
+        $prints =" <html>
+               <h1  style=\"text-align: center; margin: 0 auto; padding-top:3%; padding-bottom: 2%; \"> $Klassen</h1>
              </html>";
-    echo"$prints"; ?>
-
-    <form method="post" action="Klassenübersicht.php">
+        echo"$prints"; ?>
     <div class="tabelle" >
 
     <table class="table table-striped" >
@@ -103,46 +114,66 @@
             echo "failed to conect to MySQL: ".mysqli_connect_error();
         }
         $Klassen = $_POST["KlassenName"];
-        $Studentnn = "Select s_nn  from Student Where idClass = Class_idClass and c_n like '$Klassen'";
-        $Studentvn = "Select s_vn  from Student Where idClass = Class_idClass and c_n like '$Klassen'";
-        $Studentemail = "Select s_email  from Student Where idClass = Class_idClass and c_n like '$Klassen'";
+        $klassenid = "Select idClass from Class  Where c_n like '$Klassen'";
+        $result2 = $con->query($klassenid);
+        while ($row = $result2->fetch_assoc()) {
+            $res2 = $row['idClass'];
 
-        $Students = "Select St.s_vn, St.s_nn, St.s_email from Student AS St, Class AS CL
+        }
+        $Students = "Select St.s_vn, St.s_nn, St.s_email , St.idStudent from Student AS St, Class AS CL
 Where  CL.idClass = St.Class_idClass
 and CL.c_n like '$Klassen'";
-        //echo $Students;
 
         $result = $con->query($Students);
-       // echo "<tr>";
-        while ($row = $result->fetch_assoc()) {
 
+        while ($row = $result->fetch_assoc()  ) {
             $svn = $row['s_vn'];
             $snn = $row['s_nn'];
             $semail = $row['s_email'];
+            $Sid = $row['idStudent'];
 
 
-            //  echo "<tr>" ."<th>"." count($row) "."</th>"."<td>". $row['s_vn']."</td>". "<td>".$row['s_nn']."</td>". "<td>".$row['s_email']. "</td>"."</tr>";
-            echo "<tr>" ."<th>"." "."</th>"."<td>"."<input type=\"text\" name=\"vorname[]\" class=\"form-control\"  placeholder=\"Nachname\" value=\" $svn \">"."</td>". "<td>"."<input type=\"text\" name=\"Nachname[]\" class=\"form-control\"  placeholder=\"Nachname\" value=\" $snn \">"."</td>". "<td>"."<input type=\"text\" name=\"vorname[]\" class=\"form-control\"  placeholder=\"email[]\" value=\" $semail \">". "</td>"."<td>".
+
+            $rows= "<tr>"."<th>"."$res2"."</th>"."<td>"."<input type=\"text\" name=\"Nachname[]\" class=\"form-control\"   value=\" $snn \">"."</td>". "<td>"."<input type=\"text\" name=\"Vorname[]\" class=\"form-control\"   value=\" $svn \">"."</td>". "<td>"."<input type=\"email\" name=\"Email[]s\" class=\"form-control\"   value=\" $semail \">". "</td>"."<td>".
                  "<button type=\"button\" class=\"btn btn-danger\" onclick=\"deleteRow(this)\">". "Aus Klasse entfernen "."</button>"."</td>"."</tr>";
 
-            // $res = $row['s_vn']." ".$row['s_nn']s." ".$row['s_email'];
+            echo $rows;
+
 
         }
-        //echo "</tr>";
+
         $con->close();
 
         ?>
         </tbody>
     </table>
-        <div class="col-sm" style="margin: 0 auto; ">
-        <button type="submit" class="btn btn-danger">Veränderung übernehmen</button>
+        <div class="col-sm"  >
+            <button type="submit" class="btn btn-danger">Veränderung übernehmen</button>
         </div>
-    </form>
-        <form action="Klassenübersicht.php">
-                <div class="col-sm" style="margin: 0 auto;">
-        <button type="submit" class="btn btn-primary">zurück</button>
-                </div>
-            </form>
+        </form>
+
+
+                <form action="Klassenübersicht.php">
+                    <div class="col-sm">
+                        <button type="submit" class="btn btn-primary">zurück</button>
+                    </div>
+                </form>
+
+
+
+    <div class="col-sm" style="margin: 0 auto; ">
+        <button type="button" class="btn btn-secundary" onclick="displayResult()">Neue Reihe hinzufügen </button>
+    </div>
+    <div class="col-sm" style="margin: 0 auto; ">
+        <button type="button" class="btn btn-secundary" onclick="wegMitDerReihe()">Klasse Entfernen </button>
+    </div>
+
+
+
+
+
+
+
 
 
 </div>

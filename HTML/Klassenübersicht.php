@@ -54,8 +54,8 @@
 </header>
 <section>
 
-        <h1 style = "text-align: center; padding-top: 3%; width: 80%; margin: 0 auto; ">Klasse anklicken für mehr Info </h1>
-    <div style="margin: 0 auto ; width: 80%;">
+        <h1 style = "text-align: center; padding-top: 5%; width: 80%; margin: 0 auto; "> Wähle eine Klasse Aus </h1>
+    <div style="margin: 0 auto ; width: 80%; padding-top: 5%; ">
     <form method="post"  action="Klassenbearbeiten.php">
         <div class="input-group" style="padding-bottom: 5%; padding-top: 3%;" >
 
@@ -67,34 +67,7 @@
                 </form>
         </div>
 
-    <table class="table tabelle"  style="text-align: center">
 
-
-        <thead>
-        <tr>
-
-            <th scope="col">Klassenname</th>
-
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-
-            <td><button type="button" class="btn btn-primary" style="width:100px;">A15</button></td>
-
-        </tr>
-        <tr>
-
-            <td><button type="button" class="btn btn-primary" style="width:100px;">A16</button></td>
-
-        </tr>
-        <tr>
-
-            <td><button type="button" class="btn btn-primary" style="width:100px;">A17</button></td>
-
-        </tr>
-        </tbody>
-    </table>
 
 
 

@@ -59,6 +59,7 @@
     </div>
 </header>
 <section>
+
     <div class="Homeseite">
         <div class="newclassy"> <a href="neuerLehrer.html" ><button type="button" class="btn btn-primary">neuer Lehrer erstellen</button></a></div>
 
@@ -74,7 +75,7 @@
         <div class="Nbuttons">
 
 
-            <table class="table"  style="text-align: center;">
+            <!--<table class="table"  style="text-align: center;">
                 <thead>
                 <tr>
 
@@ -114,7 +115,7 @@
 
 
                 </tbody>
-            </table>
+            </table>-->
 
         </div>
 
