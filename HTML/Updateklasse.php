@@ -50,13 +50,15 @@ if (mysqli_connect_errno())
 }
 $Klassen = $_POST["KlassenName"];
 $klassenid = "Select idClass from Class  Where c_n like '$Klassen'";
+
 $result2 = $con->query($klassenid);
 
 while ($row = $result2->fetch_assoc()) {
     $res2 = $row['idClass'];
 
 }
-$Students = "Select St.s_vn, St.s_nn, St.s_email, St.idStudent from Student AS St, Class AS CL
+
+$Students = "Select St.s_vn, St.s_nn, St.s_email, St.idStudent, St.Class_idClass from Student AS St, Class AS CL
 Where  CL.idClass = St.Class_idClass
 and CL.c_n like '$Klassen'";
 
@@ -66,13 +68,14 @@ $prints ="<html>
              </html>";
 echo "$prints";
 
-echo '<form name="form1" method="post" action="Updateklasse2.php">
+echo '<form name="form1" method="post" action="Updateklasse3.php">
 <div Style="margin: 0 auto; width: 90%; padding-top: 2%; padding-bottom: 3%;" >
 <table class="table table-striped">';
 
 echo '<thead>
         <tr>
             <th scope="col">#</th>
+            <th scope="col"></th>
             <th scope="col">Nachname</th>
             <th scope="col">Vorname</th>
             <th scope="col">E-mail</th>
@@ -86,10 +89,12 @@ while($row =$result->fetch_assoc()){
     $snn = $row['s_nn'];
     $semail = $row['s_email'];
     $StID = $row['idStudent'];
+    $ClassID = $row['Class_idClass'];
     $res = $row['s_vn']." ".$row['s_nn']." ".$row['s_email']. " ".$row['idStudent'];
 //print out table contents and add id into an array and email into an array
     echo '
 <tr>
+<th><input type="hidden" name="ClassID[]"  class="form-control" value='.$ClassID.' readonly> </th>
 <th><input type="hidden" name="id[]"  class="form-control" value='.$StID.' readonly> </th>
 <td><input type="text" name="Nachname[]" class="form-control" value="'.$snn.'"> </td>
 <td><input type="text" name="Vorname[]" class="form-control" value="'.$svn.'"> </td>

@@ -28,7 +28,7 @@ echo "try funktioniert";
             //Unknown column 'id' in 'where clause'
             // minus value by 1 since arrays start at 0
             $item = $value ;
-            echo $item;
+            echo $value;
             //update table
             // $sql="UPDATE $tbl_name SET name='$name', lastname='$lastname', email='$email' WHERE id='$id'";
 
@@ -36,7 +36,7 @@ echo "try funktioniert";
       s_nn = '$Nachname[$item]',
       s_email = '$email[$item]',
       WHERE idStudent=$value";
- //Geht nicht
+ //Geht nichts
                       $execution = $con->query($sql);
 // geht auch nicht
 $con->close();
