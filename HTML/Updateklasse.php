@@ -1,3 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Klassenerfassen</title>
+    <link rel="stylesheet" href="../css/test.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="../js/javaScripten.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
+
+    <script>
+        function deleteRow(r ) {
+            var i = r.parentNode.parentNode.rowIndex - 1;
+            document.getElementById("tabel3").deleteRow(i);
+        }
+    </script>
+</head>
+<body>
+<header>
+    <div class="HeaderBenedictSeite">
+        <nav class="nav">
+            <a class="nav-link Schrift"  href="benedictSeite.php">Home</a>
+
+            <a class="nav-link activ Schrift" href="Formularabsenden.php">Formular absenden</a>
+            <a class="nav-link Schrift" href="klasseerfassen.php">Klasse erfassen</a>
+            <a class="nav-link Schrift" href="Klassenübersicht.php">Klassenübersicht</a>
+        </nav>
+    </div>
+</header>
+<section>
 <?php
 /**
  * Created by PhpStorm.
@@ -5,75 +42,126 @@
  * Date: 09.04.18
  * Time: 17:16
  */
-var_dump($_POST);
+
 $con = mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
 if (mysqli_connect_errno())
 {
     echo "failed to conect to MySQL: ".mysqli_connect_error();
 }
-$SNname = $_POST["Nachname"];
-$SVname = $_POST["Vorname"];
-$SEmail = $_POST["Email"];
-$klasse = $_POST["KlassenNamen"];
+$Klassen = $_POST["KlassenName"];
+$klassenid = "Select idClass from Class  Where c_n like '$Klassen'";
+$result2 = $con->query($klassenid);
 
-//$idStudent = $_POST["idStudent"];
+while ($row = $result2->fetch_assoc()) {
+    $res2 = $row['idClass'];
 
-//$klassenid = "Select idClass from Class  Where c_n like '$Klassen'";
+}
+$Students = "Select St.s_vn, St.s_nn, St.s_email, St.idStudent from Student AS St, Class AS CL
+Where  CL.idClass = St.Class_idClass
+and CL.c_n like '$Klassen'";
 
-/*$SNAChname = $_POST["Nachnamerein"];*/
-echo $klasse. " ".$SEmail[1];
+$result= $con->query($Students);
+$prints ="<html>
+               <h1  style=\"text-align: center; margin: 0 auto; padding-top:3%; padding-bottom: 2%; \"> $Klassen</h1>
+             </html>";
+echo "$prints";
+
+echo '<form name="form1" method="post" action="Updateklasse2.php">
+<div Style="margin: 0 auto; width: 90%; padding-top: 2%; padding-bottom: 3%;" >
+<table class="table table-striped">';
+
+echo '<thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nachname</th>
+            <th scope="col">Vorname</th>
+            <th scope="col">E-mail</th>
+            <th scope="col"></th>
+            
+        </tr>
+        </thead> <tbody id="tabel3">';
+
+while($row =$result->fetch_assoc()){
+    $svn = $row['s_vn'];
+    $snn = $row['s_nn'];
+    $semail = $row['s_email'];
+    $StID = $row['idStudent'];
+    $res = $row['s_vn']." ".$row['s_nn']." ".$row['s_email']. " ".$row['idStudent'];
+//print out table contents and add id into an array and email into an array
+    echo '
+<tr>
+<th><input type="hidden" name="id[]"  class="form-control" value='.$StID.' readonly> </th>
+<td><input type="text" name="Nachname[]" class="form-control" value="'.$snn.'"> </td>
+<td><input type="text" name="Vorname[]" class="form-control" value="'.$svn.'"> </td>
+<td><input type="email" name="email[]"  class="form-control"  value="'.$semail.'"> </td>
+<td><button type="button" class="btn btn-danger" onclick="deleteRow(this)">Klasse entfernen</button></td>
+</tr>';
+
+
+}
+echo'
+</tbody>
+</table>
+</div>
+<button type="submit" name="Submit" value="Submit" class="btn btn-danger" ">Änderung speicher</button>
+
+</form>';
+
+/*if($_POST["Submit"])*/
+
 /*
-try{
-    $sql = "INSERT INTO Class(c_n, Semester) VALUES (?, ?)";
-    $kommando = $con->prepare($sql);
-    $kommando->bind_param("si", $klasse, $Semester);
-    $kommando->execute();
-    //$id = mysqli_insert_id($con);¨
-    $id = $con->insert_id;
-    echo " Daten mit der ID $id eingetragen.<br />";
-//$con->close();
+//start a table
+echo '<form name="form1" method="post" action="">
+<table width="292" border="0" cellspacing="1" cellpadding="0">';
+
+//start header of table
+echo '<tr>
+<th>&nbsp;</th>
+<th>Name</th>
+<th>Email</th>
+</tr>';
+
+//loop through all results
+while($row =$ergebnis->fetch_object()){
+
+//print out table contents and add id into an array and email into an array
+    echo '<tr>
+<td><input type="hidden" name="id[]" value='.$row->idStudent.' readonly></td>
+<td>'.$row->name.'</td>
+<td><input name="email[]" type="text" id="price" value="'.$row->email.'"></td>
+</tr>';
 }
-catch(Exception $ex){
-    echo "Fehler : " .$ex->getMessage();
-}
+
+//submit button
+echo'<tr>
+<td colspan="3" align="center"><input type="submit" name="Submit" value="Submit"></td>
+</tr>
+</table>
+</form>';
 
 
-
-if(isset($_POST["Nachname"]))
+// if form has been submitted, process it
+if($_POST["Submit"])
 {
-    $SNname = $_POST["Nachname"];
-    $SVname = $_POST['Vorname'];
-    $SEmail = $_POST["Email"];
+    // get data from form
+    $name = $_POST['name'];
+    // loop through all array items
+    foreach($_POST['id'] as $value)
+    {
+        // minus value by 1 since arrays start at 0
+        $item = $value-1;
+        //update table
+        $sql1 = mysqli_query("UPDATE table SET email='$email[$item]' WHERE id='$value'") or die(mysqli_error());
+    }
 
-    $query = '';
-    for($count = 0; $count<count($SNname); $count++)
-    {
-        $SNname_clean = mysqli_real_escape_string($con, $SNname[$count]);
-        $SVname_clean = mysqli_real_escape_string($con, $SVname[$count]);
-        $SEmail_clean = mysqli_real_escape_string($con, $SEmail[$count]);
+// redirect user
+    $_SESSION['success'] = 'Updated';
+    header("location:index.php");
+}
+*/
+$con->close();
 
-        if($SNname_clean != '' && $SVname_clean != '' && $SEmail_clean != '' )
-        {
-            $query .= '
-   INSERT INTO Student(s_vn, s_nn, s_email, Class_idClass) 
-   VALUES("'.$SVname_clean.'", "'.$SNname_clean.'", "'.$SEmail_clean.'", "'.$id.'"); 
-   ';
-        }
-    }
-    if($query != '')
-    {
-        if(mysqli_multi_query($con, $query))
-        {
-            echo 'Item Data Inserted';
-        }
-        else
-        {
-            echo 'Error';
-        }
-    }
-    else
-    {
-        echo 'All Fields are Required';
-    }
-}*/
 ?>
+</section>
+</body>
+</html>

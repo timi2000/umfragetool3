@@ -89,8 +89,8 @@
                     var cell4=row.insertCell(3);
                     cell1.innerHTML= countrows;
                     cell2.innerHTML="<input type=\"text\" name=\"Nachname[]\" class=\"form-control \"  placeholder=\"Nachname\" > ";
-                    cell3.innerHTML="<input type=\"text\" name=\"Vorname[]\" class=\"form-control Vorname\"  placeholder=\"Vorname\">";
-                    cell4.innerHTML="<input type=\"email\" name=\"Email[]\" class=\"form-control email\"   placeholder=\"email\">";
+                    cell3.innerHTML="<input type=\"text\" name=\"Vorname[]\" class=\"form-control \"  placeholder=\"Vorname\">";
+                    cell4.innerHTML="<input type=\"email\" name=\"Email[]\" class=\"form-control \"   placeholder=\"email\">";
 
                  }
 
@@ -106,7 +106,7 @@
         <div class= buttongroup1 ><button type="button"  class="btn btn-primary" onclick="displayResult()">Neue Reihe</button>
         <button type="button"  class="btn btn-primary" onclick="wegMitDerReihe()">Letzte reihe entfernen</button>
 
-        <button type="submit" class="btn btn-primary" >Klasse erstellen</button>
+        <button type="submit" class="btn btn-primary">Klasse erstellen</button>
         </div>
     </form>
 </section>

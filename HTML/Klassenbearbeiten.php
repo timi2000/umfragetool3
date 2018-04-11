@@ -75,15 +75,16 @@
 
 
 
-    <form method="post" action="Updateklasse.php">
+  <!--<form method="post" action="Updateklasse.php">-->
         <?php
 
         $Klassen = $_POST["KlassenName"];
-
-        $prints =" <html>
+echo "<input type=\"text\" name=\"NamenDerKlasse\" class=\"form control\" value=\"$Klassen\">";
+        $prints =" <html> 
                <h1  style=\"text-align: center; margin: 0 auto; padding-top:3%; padding-bottom: 2%; \"> $Klassen</h1>
              </html>";
         echo"$prints"; ?>
+
     <div class="tabelle" >
 
     <table class="table table-striped" >
@@ -116,10 +117,17 @@
         $Klassen = $_POST["KlassenName"];
         $klassenid = "Select idClass from Class  Where c_n like '$Klassen'";
         $result2 = $con->query($klassenid);
-        while ($row = $result2->fetch_assoc()) {
+        $Students = "Select St.s_vn, St.s_nn, St.s_email , St.idStudent from Student AS St, Class AS CL
+Where  CL.idClass = St.Class_idClass
+and CL.c_n like '$Klassen'";
+
+        $result = $con->query($Students);
+
+       while ($row = $result2->fetch_assoc()) {
             $res2 = $row['idClass'];
 
         }
+
         $Students = "Select St.s_vn, St.s_nn, St.s_email , St.idStudent from Student AS St, Class AS CL
 Where  CL.idClass = St.Class_idClass
 and CL.c_n like '$Klassen'";
@@ -130,9 +138,6 @@ and CL.c_n like '$Klassen'";
             $svn = $row['s_vn'];
             $snn = $row['s_nn'];
             $semail = $row['s_email'];
-            $Sid = $row['idStudent'];
-
-
 
             $rows= "<tr>"."<th>"."$res2"."</th>"."<td>"."<input type=\"text\" name=\"Nachname[]\" class=\"form-control\"   value=\" $snn \">"."</td>". "<td>"."<input type=\"text\" name=\"Vorname[]\" class=\"form-control\"   value=\" $svn \">"."</td>". "<td>"."<input type=\"email\" name=\"Email[]s\" class=\"form-control\"   value=\" $semail \">". "</td>"."<td>".
                  "<button type=\"button\" class=\"btn btn-danger\" onclick=\"deleteRow(this)\">". "Aus Klasse entfernen "."</button>"."</td>"."</tr>";
@@ -142,31 +147,34 @@ and CL.c_n like '$Klassen'";
 
         }
 
+        //get data from db
+       // $sql = mysql_query("SELECT * FROM table");
+
+
+
+
         $con->close();
 
         ?>
+
         </tbody>
     </table>
-        <div class="col-sm"  >
-            <button type="submit" class="btn btn-danger">Veränderung übernehmen</button>
-        </div>
-        </form>
-
-
-                <form action="Klassenübersicht.php">
+        <form action="Klassenübersicht.php">
                     <div class="col-sm">
                         <button type="submit" class="btn btn-primary">zurück</button>
                     </div>
                 </form>
-
-
-
-    <div class="col-sm" style="margin: 0 auto; ">
+        <div class="col-sm" style="margin: 0 auto; ">
         <button type="button" class="btn btn-secundary" onclick="displayResult()">Neue Reihe hinzufügen </button>
     </div>
     <div class="col-sm" style="margin: 0 auto; ">
         <button type="button" class="btn btn-secundary" onclick="wegMitDerReihe()">Klasse Entfernen </button>
+
     </div>
+        <div class="col-sm"  >
+            <button type="submit" class="btn btn-danger">Veränderung übernehmen</button>
+
+        </div>
 
 
 

@@ -68,13 +68,11 @@ while ($row = $result->fetch_assoc()) {
     $res = $row['s_vn']." ".$row['s_nn']." ".$row['s_email']. " ".$Lehrer." ".$Semester." ".$Klassen;
 
     $hash = hash('sha512', $res);
-    //echo $row['s_vn']." ".$row['s_nn']." ".$row['s_email']." ". $hash."<br>";
-    // mail( $row['s_email'], $subject ,  $message);
-   // echo mail($row['s_email'],"Hallo" ,"adasd","parameters");
+
     $svn = $row['s_vn'];
     $snn = $row['s_nn'];
     $semail = $row['s_email'];
-    //$Tid= $row[idTeacher];
+
     try{
 
         $db = new SQLite3("/Users/timwidmer/Desktop/Security.db3");

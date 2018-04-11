@@ -37,6 +37,29 @@
 
         });
     </script>
+    <script>
+        $(document).ready(function(){
+
+            $('#kukasd').typeahead({
+                source: function(query, result)
+                {
+                    $.ajax({
+                        url:"Autocomplete.php",
+                        method:"POST",
+                        data:{query:query},
+                        dataType:"json",
+                        success:function(data)
+                        {
+                            result($.map(data, function(item){
+                                return item;
+                            }));
+                        }
+                    })
+                }
+            });
+
+        });
+    </script>
 
 
 </head>
@@ -66,7 +89,17 @@
       </span>
                 </form>
         </div>
+    <div style="margin: 0 auto ; width: 80%; padding-top: 5%; ">
+        <form method="post"  action="Updateklasse.php">
+            <div class="input-group" style="padding-bottom: 5%; padding-top: 3%;" >
 
+                <input  type="text" class="form-control" id="kukasd" name="KlassenName" placeholder="Klasse Suchen 2" aria-label="Search for..."  >
+
+                <span class="input-group-btn" >
+        <button class="btn btn-secondary" type="submit" >Suchen</button>
+      </span>
+        </form>
+    </div>
 
 
 
