@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a1ab2fa-d7cb-42b6-a90c-ce8f1758f8ad" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/HTML/Updateklasse.php" afterPath="$PROJECT_DIR$/HTML/Updateklasse.php" />
-      <change beforePath="$PROJECT_DIR$/HTML/Updateklasse2.php" afterPath="$PROJECT_DIR$/HTML/Updateklasse2.php" />
+      <change beforePath="$PROJECT_DIR$/HTML/Updateklasse3.php" afterPath="$PROJECT_DIR$/HTML/Updateklasse3.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -104,7 +102,7 @@
       <file leaf-file-name="Updateklasse.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTML/Updateklasse.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
+            <state relative-caret-position="-365">
               <caret line="70" column="64" lean-forward="false" selection-start-line="70" selection-start-column="64" selection-end-line="70" selection-end-column="64" />
               <folding>
                 <marker date="1523441322000" expanded="true" signature="2409:2461" ph="Select idCla... Class" />
@@ -159,17 +157,11 @@
       <file leaf-file-name="Updateklasse3.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTML/Updateklasse3.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="29" column="24" lean-forward="false" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+            <state relative-caret-position="155">
+              <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
               <folding>
-                <marker date="1523442147000" expanded="true" signature="914:960" ph="UPDATE MyGuests... " />
-                <marker date="1523442147000" expanded="true" signature="1249:1274" ph="UPDATE Student... " />
-                <marker date="1523442147000" expanded="true" signature="1249:1276" ph="UPDATE Student... " />
-                <marker date="1523442147000" expanded="true" signature="1249:1298" ph="UPDATE Student... " />
-                <marker date="1523442147000" expanded="true" signature="1249:1309" ph="UPDATE Student... " />
-                <marker date="1523442147000" expanded="true" signature="1249:1418" ph="UPDATE Student... " />
-                <marker date="1523442147000" expanded="true" signature="1249:1419" ph="UPDATE Student... " />
-                <marker date="1523442147000" expanded="true" signature="2014:2156" ph="INSERT INTO Security... " />
+                <marker date="1523442425000" expanded="true" signature="929:975" ph="UPDATE MyGuests... " />
+                <marker date="1523442425000" expanded="true" signature="1288:1458" ph="UPDATE Student... " />
               </folding>
             </state>
           </provider>
@@ -178,21 +170,9 @@
       <file leaf-file-name="neuerLehrer.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTML/neuerLehrer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
+            <state relative-caret-position="840">
               <caret line="56" column="68" lean-forward="false" selection-start-line="56" selection-start-column="68" selection-end-line="56" selection-end-column="68" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="klasseerfassen.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HTML/klasseerfassen.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-              <folding>
-                <marker date="1523362669000" expanded="true" signature="3545:3570" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -200,8 +180,8 @@
       <file leaf-file-name="Klasseneuerfassen2.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTML/Klasseneuerfassen2.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11">
-              <caret line="41" column="33" lean-forward="true" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+            <state relative-caret-position="210">
+              <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="9" />
               <folding>
                 <marker date="1523260419000" expanded="true" signature="515:561" ph="INSERT INTO Class... " />
                 <marker date="1523260419000" expanded="true" signature="1430:1570" ph="INSERT INTO item... " />
@@ -223,6 +203,16 @@
                 <marker date="1523260419000" expanded="true" signature="5918:5938" ph="SELECT FROM uploads" />
                 <marker date="1523260419000" expanded="true" signature="6516:6620" ph="INSERT INTO Student... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MailToStudents.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HTML/MailToStudents.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -258,7 +248,7 @@
       <file leaf-file-name="umfrageAuswerten.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTML/umfrageAuswerten.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1313">
+            <state relative-caret-position="1864">
               <caret line="133" column="2" lean-forward="true" selection-start-line="133" selection-start-column="2" selection-end-line="133" selection-end-column="2" />
               <folding>
                 <marker date="1523259350000" expanded="true" signature="2121:2333" ph="INSERT INTO Bewertung... " />
@@ -269,12 +259,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MailToStudents.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HTML/MailToStudents.php">
+      <file leaf-file-name="Klassenbearbeiten.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HTML/Klassenbearbeiten.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
-              <folding />
+            <state relative-caret-position="2025">
+              <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+              <folding>
+                <marker date="1523367519000" expanded="true" signature="3634:3656" ph="..." />
+                <marker date="1523367519000" expanded="true" signature="3634:3774" ph="..." />
+                <marker date="1523367519000" expanded="true" signature="3665:3737" ph="..." />
+                <marker date="1523367519000" expanded="true" signature="4571:4623" ph="Select idCla... Class" />
+                <marker date="1523367519000" expanded="true" signature="4691:4837" ph="Select St.s_... Student" />
+                <marker date="1523367519000" expanded="true" signature="5002:5148" ph="Select St.s_... Student" />
+                <marker date="1523367519000" expanded="true" signature="5351:5369" ph="..." />
+                <marker date="1523367519000" expanded="true" signature="5374:5862" ph="..." />
+                <marker date="1523367519000" expanded="true" signature="5381:5397" ph="..." />
+                <marker date="1523367519000" expanded="true" signature="5711:5854" ph="..." />
+                <marker date="1523367519000" expanded="true" signature="5961:5980" ph="SELECT * FRO... table" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -530,7 +532,7 @@
       <workItem from="1522735117018" duration="4561000" />
       <workItem from="1522751845342" duration="22450000" />
       <workItem from="1522863379596" duration="108508000" />
-      <workItem from="1523439010916" duration="3140000" />
+      <workItem from="1523439010916" duration="3457000" />
     </task>
     <task id="LOCAL-00001" summary="commit 1">
       <created>1520324613229</created>
@@ -543,7 +545,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="410068000" />
+    <option name="totallyTimeSpent" value="410385000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -563,7 +565,7 @@
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32329637" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32543445" sideWeight="0.51130855" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32171157" sideWeight="0.48869145" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25324675" sideWeight="0.4923077" order="1" side_tool="false" content_ui="tabs" />
@@ -889,26 +891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTML/Klassenbearbeiten.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
-          <folding>
-            <marker date="1523367519000" expanded="true" signature="3634:3656" ph="..." />
-            <marker date="1523367519000" expanded="true" signature="3634:3774" ph="..." />
-            <marker date="1523367519000" expanded="true" signature="3665:3737" ph="..." />
-            <marker date="1523367519000" expanded="true" signature="4571:4623" ph="Select idCla... Class" />
-            <marker date="1523367519000" expanded="true" signature="4691:4837" ph="Select St.s_... Student" />
-            <marker date="1523367519000" expanded="true" signature="5002:5148" ph="Select St.s_... Student" />
-            <marker date="1523367519000" expanded="true" signature="5351:5369" ph="..." />
-            <marker date="1523367519000" expanded="true" signature="5374:5862" ph="..." />
-            <marker date="1523367519000" expanded="true" signature="5381:5397" ph="..." />
-            <marker date="1523367519000" expanded="true" signature="5711:5854" ph="..." />
-            <marker date="1523367519000" expanded="true" signature="5961:5980" ph="SELECT * FRO... table" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HTML/LehrerDarstellen.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -926,34 +908,6 @@
           <folding>
             <marker date="1522052841000" expanded="true" signature="335:372" ph="SELECT t_vn,... Teacher" />
             <marker date="1522052841000" expanded="true" signature="395:481" ph="INSERT INTO Teacher... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HTML/MailToStudents.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HTML/neuerLehrer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="56" column="68" lean-forward="false" selection-start-line="56" selection-start-column="68" selection-end-line="56" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HTML/umfrageAuswerten.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1313">
-          <caret line="133" column="2" lean-forward="true" selection-start-line="133" selection-start-column="2" selection-end-line="133" selection-end-column="2" />
-          <folding>
-            <marker date="1523259350000" expanded="true" signature="2121:2333" ph="INSERT INTO Bewertung... " />
-            <marker date="1523259350000" expanded="true" signature="2792:2858" ph="INSERT INTO MyGuests... " />
-            <marker date="1523259350000" expanded="true" signature="3123:3439" ph="INSERT INTO Bewertung... " />
           </folding>
         </state>
       </provider>
@@ -980,34 +934,6 @@
             <marker date="1523368400000" expanded="true" signature="932:984" ph="Select idCla... Class" />
             <marker date="1523368400000" expanded="true" signature="1140:1211" ph="Select idTea... Teacher" />
             <marker date="1523368400000" expanded="true" signature="2057:2199" ph="INSERT INTO Security... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HTML/Klasseneuerfassen2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11">
-          <caret line="41" column="33" lean-forward="true" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
-          <folding>
-            <marker date="1523260419000" expanded="true" signature="515:561" ph="INSERT INTO Class... " />
-            <marker date="1523260419000" expanded="true" signature="1430:1570" ph="INSERT INTO item... " />
-            <marker date="1523260419000" expanded="true" signature="1940:2011" ph="INSERT INTO Student... " />
-            <marker date="1523260419000" expanded="true" signature="2188:2260" ph="INSERT INTO Student... " />
-            <marker date="1523260419000" expanded="true" signature="2420:2492" ph="INSERT INTO Student... " />
-            <marker date="1523260419000" expanded="true" signature="2581:2635" ph="INSERT INTO Student... " />
-            <marker date="1523260419000" expanded="true" signature="2581:2651" ph="INSERT INTO Student... " />
-            <marker date="1523260419000" expanded="true" signature="2927:3017" ph="INSERT INTO Student... " />
-            <marker date="1523260419000" expanded="true" signature="3194:3264" ph="INSERT INTO Student... " />
-            <marker date="1523260419000" expanded="true" signature="3350:3438" ph="INSERT INTO Student... " />
-            <marker date="1523260419000" expanded="true" signature="4021:4112" ph="INSERT INTO Student... " />
-            <marker date="1523260419000" expanded="true" signature="4264:4333" ph="INSERT INTO Student... " />
-            <marker date="1523260419000" expanded="true" signature="4418:4480" ph="INSERT INTO Class... " />
-            <marker date="1523260419000" expanded="true" signature="5120:5168" ph="INSERT INTO REGISTRY... " />
-            <marker date="1523260419000" expanded="true" signature="5187:5228" ph="INSERT INTO Class... " />
-            <marker date="1523260419000" expanded="true" signature="5506:5547" ph="INSERT INTO Class... " />
-            <marker date="1523260419000" expanded="true" signature="5717:5821" ph="INSERT INTO Student... " />
-            <marker date="1523260419000" expanded="true" signature="5918:5938" ph="SELECT FROM uploads" />
-            <marker date="1523260419000" expanded="true" signature="6516:6620" ph="INSERT INTO Student... " />
           </folding>
         </state>
       </provider>
@@ -1040,9 +966,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/Updateklasse3.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+          <folding>
+            <marker date="1523442425000" expanded="true" signature="929:975" ph="UPDATE MyGuests... " />
+            <marker date="1523442425000" expanded="true" signature="1288:1458" ph="UPDATE Student... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/umfrageAuswerten.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1864">
+          <caret line="133" column="2" lean-forward="true" selection-start-line="133" selection-start-column="2" selection-end-line="133" selection-end-column="2" />
+          <folding>
+            <marker date="1523259350000" expanded="true" signature="2121:2333" ph="INSERT INTO Bewertung... " />
+            <marker date="1523259350000" expanded="true" signature="2792:2858" ph="INSERT INTO MyGuests... " />
+            <marker date="1523259350000" expanded="true" signature="3123:3439" ph="INSERT INTO Bewertung... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/HTML/Updateklasse.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
+        <state relative-caret-position="-365">
           <caret line="70" column="64" lean-forward="false" selection-start-line="70" selection-start-column="64" selection-end-line="70" selection-end-column="64" />
           <folding>
             <marker date="1523441322000" expanded="true" signature="2409:2461" ph="Select idCla... Class" />
@@ -1063,19 +1012,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTML/Updateklasse3.php">
+    <entry file="file://$PROJECT_DIR$/HTML/neuerLehrer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="29" column="24" lean-forward="false" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+        <state relative-caret-position="840">
+          <caret line="56" column="68" lean-forward="false" selection-start-line="56" selection-start-column="68" selection-end-line="56" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/MailToStudents.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/Klassenbearbeiten.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2025">
+          <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
           <folding>
-            <marker date="1523442147000" expanded="true" signature="914:960" ph="UPDATE MyGuests... " />
-            <marker date="1523442147000" expanded="true" signature="1249:1274" ph="UPDATE Student... " />
-            <marker date="1523442147000" expanded="true" signature="1249:1276" ph="UPDATE Student... " />
-            <marker date="1523442147000" expanded="true" signature="1249:1298" ph="UPDATE Student... " />
-            <marker date="1523442147000" expanded="true" signature="1249:1309" ph="UPDATE Student... " />
-            <marker date="1523442147000" expanded="true" signature="1249:1418" ph="UPDATE Student... " />
-            <marker date="1523442147000" expanded="true" signature="1249:1419" ph="UPDATE Student... " />
-            <marker date="1523442147000" expanded="true" signature="2014:2156" ph="INSERT INTO Security... " />
+            <marker date="1523367519000" expanded="true" signature="3634:3656" ph="..." />
+            <marker date="1523367519000" expanded="true" signature="3634:3774" ph="..." />
+            <marker date="1523367519000" expanded="true" signature="3665:3737" ph="..." />
+            <marker date="1523367519000" expanded="true" signature="4571:4623" ph="Select idCla... Class" />
+            <marker date="1523367519000" expanded="true" signature="4691:4837" ph="Select St.s_... Student" />
+            <marker date="1523367519000" expanded="true" signature="5002:5148" ph="Select St.s_... Student" />
+            <marker date="1523367519000" expanded="true" signature="5351:5369" ph="..." />
+            <marker date="1523367519000" expanded="true" signature="5374:5862" ph="..." />
+            <marker date="1523367519000" expanded="true" signature="5381:5397" ph="..." />
+            <marker date="1523367519000" expanded="true" signature="5711:5854" ph="..." />
+            <marker date="1523367519000" expanded="true" signature="5961:5980" ph="SELECT * FRO... table" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/Klasseneuerfassen2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="9" />
+          <folding>
+            <marker date="1523260419000" expanded="true" signature="515:561" ph="INSERT INTO Class... " />
+            <marker date="1523260419000" expanded="true" signature="1430:1570" ph="INSERT INTO item... " />
+            <marker date="1523260419000" expanded="true" signature="1940:2011" ph="INSERT INTO Student... " />
+            <marker date="1523260419000" expanded="true" signature="2188:2260" ph="INSERT INTO Student... " />
+            <marker date="1523260419000" expanded="true" signature="2420:2492" ph="INSERT INTO Student... " />
+            <marker date="1523260419000" expanded="true" signature="2581:2635" ph="INSERT INTO Student... " />
+            <marker date="1523260419000" expanded="true" signature="2581:2651" ph="INSERT INTO Student... " />
+            <marker date="1523260419000" expanded="true" signature="2927:3017" ph="INSERT INTO Student... " />
+            <marker date="1523260419000" expanded="true" signature="3194:3264" ph="INSERT INTO Student... " />
+            <marker date="1523260419000" expanded="true" signature="3350:3438" ph="INSERT INTO Student... " />
+            <marker date="1523260419000" expanded="true" signature="4021:4112" ph="INSERT INTO Student... " />
+            <marker date="1523260419000" expanded="true" signature="4264:4333" ph="INSERT INTO Student... " />
+            <marker date="1523260419000" expanded="true" signature="4418:4480" ph="INSERT INTO Class... " />
+            <marker date="1523260419000" expanded="true" signature="5120:5168" ph="INSERT INTO REGISTRY... " />
+            <marker date="1523260419000" expanded="true" signature="5187:5228" ph="INSERT INTO Class... " />
+            <marker date="1523260419000" expanded="true" signature="5506:5547" ph="INSERT INTO Class... " />
+            <marker date="1523260419000" expanded="true" signature="5717:5821" ph="INSERT INTO Student... " />
+            <marker date="1523260419000" expanded="true" signature="5918:5938" ph="SELECT FROM uploads" />
+            <marker date="1523260419000" expanded="true" signature="6516:6620" ph="INSERT INTO Student... " />
           </folding>
         </state>
       </provider>
