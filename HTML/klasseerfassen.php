@@ -30,20 +30,23 @@
 <header>
     <div class="HeaderBenedictSeite">
         <nav class="nav">
-            <a class="nav-link Schrift"  href="benedictSeite.php">Home</a>
+            <a class="nav-link Schrift"  href="benedictSeite.php">Lehrer Übersicht</a>
 
-            <a class="nav-link activ Schrift" href="Formularabsenden.php">Formular absenden</a>
-            <a class="nav-link Schrift" href="klasseerfassen.php">Klasse erfassen</a>
+            <a class="nav-link Schrift" href="Formularabsenden.php">Formular absenden</a>
+            <a class="nav-link activ Schrift" href="klasseerfassen.php">Klasse erfassen</a>
             <a class="nav-link Schrift" href="Klassenübersicht.php">Klassenübersicht</a>
         </nav>
     </div>
 </header>
 <section>
+    <div class="titelbeiarbeit">
+        <h1 class="Uebertitel" > Klasse Erstellen </h1>
+    </div>
 
 
     <form class="KlasseErfassen" action="Klasseneuerfassen2.php" method="post">
         <div class="form-group">
-            <label for="klassenName1">Klassen name</label>
+            <label for="klassenName1">Klassen Name eingeben</label>
             <input type="text" class="form-control" id="klassenName1" name="KlassenNamen" aria-describedby="emailHelp" placeholder="Klassen Name">
 
         </div>
@@ -103,8 +106,8 @@
 
 
 
-        <div class= buttongroup1 ><button type="button"  class="btn btn-primary" onclick="displayResult()">Neue Reihe</button>
-        <button type="button"  class="btn btn-primary" onclick="wegMitDerReihe()">Letzte reihe entfernen</button>
+        <div class= buttongroup1 ><button type="button"  class="btn btn-secundary" onclick="displayResult()">Neue Reihe</button>
+        <button type="button"  class="btn btn-danger" onclick="wegMitDerReihe()">Letzte reihe entfernen</button>
 
         <button type="submit" class="btn btn-primary">Klasse erstellen</button>
         </div>

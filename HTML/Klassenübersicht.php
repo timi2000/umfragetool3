@@ -67,33 +67,27 @@
 <header>
     <div class="HeaderBenedictSeite">
         <nav class="nav">
-            <a class="nav-link Schrift"  href="benedictSeite.php">Home</a>
-
-            <a class="nav-link activ Schrift" href="Formularabsenden.php">Formular absenden</a>
-            <a class="nav-link Schrift" href="klasseerfassen.php">Klasse erfassen</a>
-            <a class="nav-link Schrift" href="Klassenübersicht.php">Klassenübersicht</a>
+            <a class="nav-link Schrift"  href="benedictSeite.php">Lehrer Übersicht</a>
+            <a class="nav-link Schrift" href="Formularabsenden.php">Formular absenden</a>
+            <a class="nav-link  Schrift" href="klasseerfassen.php">Klasse erfassen</a>
+            <a class="nav-link activ Schrift" href="Klassenübersicht.php">Klassenübersicht</a>
         </nav>
     </div>
 </header>
 <section>
+<div class="titeldiv">
+    <h1 class="Uebertitel" > Klassen Übersicht </h1>
+</div>
+    <div class="theButtondiv">
+       <!-- <a href="klasseerfassen.php"><button type="button" class="btn btn-primary ">Neue klasse erstellen</button></a>-->
+    </div>
 
-        <h1 style = "text-align: center; padding-top: 5%; width: 80%; margin: 0 auto; "> Wähle eine Klasse Aus </h1>
-    <div style="margin: 0 auto ; width: 80%; padding-top: 5%; ">
-    <form method="post"  action="Klassenbearbeiten.php">
-        <div class="input-group" style="padding-bottom: 5%; padding-top: 3%;" >
-
-            <input  type="text" class="form-control" id="klassen" name="KlassenName" placeholder="Klasse Suchen" aria-label="Search for..."  >
-
-            <span class="input-group-btn" >
-        <button class="btn btn-secondary" type="submit" >Suchen</button>
-      </span>
-                </form>
-        </div>
-    <div style="margin: 0 auto ; width: 80%; padding-top: 5%; ">
+    <div class="textboxdiv">
         <form method="post"  action="Updateklasse.php">
-            <div class="input-group" style="padding-bottom: 5%; padding-top: 3%;" >
 
-                <input  type="text" class="form-control" id="kukasd" name="KlassenName" placeholder="Klasse Suchen 2" aria-label="Search for..."  >
+            <div class="input-group textbox"  >
+
+                <input  type="text" class="form-control" id="kukasd" name="KlassenName" placeholder="bestehende Klasse Suchen " aria-label="Search for..."  >
 
                 <span class="input-group-btn" >
         <button class="btn btn-secondary" type="submit" >Suchen</button>
@@ -114,4 +108,5 @@
  * User: timwidmer
  * Date: 05.04.18
  * Time: 15:43
- */?>
+ */
+?>

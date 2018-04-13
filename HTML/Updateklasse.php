@@ -16,9 +16,40 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
 
     <script>
+    function deleteStudent(id) {
+    $.post("delete.php" , {sid:id} , function(data){
+    $("#" + id).fadeOut('slow' , function(){$(this).remove();if(data)alert(data);});
+    });
+
+    }
+    </script>
+
+    <script>
         function deleteRow(r ) {
             var i = r.parentNode.parentNode.rowIndex - 1;
             document.getElementById("tabel3").deleteRow(i);
+        }
+
+    </script>
+    <script type="text/javascript">
+        function displayResult()
+        {
+            var  table=document.getElementById("tabel3");
+            //var n = countrows.toString();
+            var row = table.insertRow(-1);
+            var countrows = document.getElementById('tabel3').rows.length;
+            var cell1=row.insertCell(0);
+            var cell2=row.insertCell(1);
+            var cell3=row.insertCell(2);
+            var cell4=row.insertCell(3);
+            var cell5=row.insertCell(4);
+            var cell6=row.insertCell(5);
+            cell1.innerHTML="<input type=\"hidden\" name=\"ClassID1[]\"  class=\"form-control\"  readonly>";
+            cell2.innerHTML="<input type=\"hidden\" name=\"id1[]\"  class=\"form-control\"  readonly>";
+            cell3.innerHTML="<input type=\"text\" name=\"Nachname1[]\" class=\"form-control\" placeholder='Nachname'> ";
+            cell4.innerHTML="<input type=\"text\" name=\"Vorname1[]\" class=\"form-control\" placeholder='Vorname' >";
+            cell5.innerHTML="<input type=\"email\" name=\"email1[]\"  class=\"form-control\" placeholder='Email' >";
+            cell6.innerHTML="<button type=\"button\" name=\"delete\" class=\"btn btn-danger\" onclick=\"deleteRow(this)\">Aus Klasse entfernen</button>";
         }
     </script>
 </head>
@@ -26,11 +57,11 @@
 <header>
     <div class="HeaderBenedictSeite">
         <nav class="nav">
-            <a class="nav-link Schrift"  href="benedictSeite.php">Home</a>
+            <a class="nav-link Schrift"  href="benedictSeite.php">Lehrer Übersicht</a>
 
-            <a class="nav-link activ Schrift" href="Formularabsenden.php">Formular absenden</a>
+            <a class="nav-link Schrift" href="Formularabsenden.php">Formular absenden</a>
             <a class="nav-link Schrift" href="klasseerfassen.php">Klasse erfassen</a>
-            <a class="nav-link Schrift" href="Klassenübersicht.php">Klassenübersicht</a>
+            <a class="nav-link activ Schrift" href="Klassenübersicht.php">Klassenübersicht</a>
         </nav>
     </div>
 </header>
@@ -80,6 +111,7 @@ echo '<thead>
             <th scope="col">Vorname</th>
             <th scope="col">E-mail</th>
             <th scope="col"></th>
+             <th scope="col"> number</th>
             
         </tr>
         </thead> <tbody id="tabel3">';
@@ -90,28 +122,42 @@ while($row =$result->fetch_assoc()){
     $semail = $row['s_email'];
     $StID = $row['idStudent'];
     $ClassID = $row['Class_idClass'];
+    $rowcount = count($row);
+
     $res = $row['s_vn']." ".$row['s_nn']." ".$row['s_email']. " ".$row['idStudent'];
 //print out table contents and add id into an array and email into an array
     echo '
-<tr>
+<tr id="' . $row['idStudent'] . '">
+
 <th><input type="hidden" name="ClassID[]"  class="form-control" value='.$ClassID.' readonly> </th>
 <th><input type="hidden" name="id[]"  class="form-control" value='.$StID.' readonly> </th>
 <td><input type="text" name="Nachname[]" class="form-control" value="'.$snn.'"> </td>
 <td><input type="text" name="Vorname[]" class="form-control" value="'.$svn.'"> </td>
 <td><input type="email" name="email[]"  class="form-control"  value="'.$semail.'"> </td>
-<td><button type="button" class="btn btn-danger" onclick="deleteRow(this)">Klasse entfernen</button></td>
-</tr>';
+<td><button type="button" class="btn btn-danger" name="delete" onclick="deleteStudent('.$row['idStudent'].')">Aus Klasse entfernen</button></td>
+</tr> ';
 
 
 }
 echo'
-</tbody>
-</table>
-</div>
-<button type="submit" name="Submit" value="Submit" class="btn btn-danger" ">Änderung speicher</button>
+    </tbody>
+        </table >
+        <a href="Klassenübersicht.php "><button style="margin-right:2%;"type="button" class="btn btn-primary" >zurück</button></a>
+        <button style="margin-right:2%;" type="button" class="btn btn-secundary " onclick="displayResult()">Neue Reihe hinzufügen </button>
+        <button style="margin-right:2%;" type="submit" name="Submit" value="Submit" class="btn btn-danger "  >Änderung speicher</button>
+</form>
+   
+</div>';
 
-</form>';
 
+
+
+
+
+
+/*if(isset($_REQUEST['delete'])) {
+    $sql_s = " DELETE FROM Student WHERE idStudent='" .r . "' AND vin='" . $_REQUEST['vin'] . "' ";
+}*/
 /*if($_POST["Submit"])*/
 
 /*

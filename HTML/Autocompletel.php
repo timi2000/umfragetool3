@@ -20,6 +20,7 @@ echo json_encode($arr);
 */
 
 $request = mysqli_real_escape_string($con, $_POST["query"]);
+
 $query = "SELECT t_nn ,t_vn FROM Teacher WHERE t_nn LIKE '%".$request."%'";
 //$query = "SELECT teachern FROM Teacher WHERE t_nn LIKE '%".$request."%'";
 //$query1 =" SELECT idTeacher From Teacher ";

@@ -24,7 +24,7 @@ $positves =  $_POST["positves"];
 $negatives = $_POST["negatives"];
 echo($frage1. " " .$frage2." " .$frage3. " "  .$frage4. " ".$frage5. " " .$frage6. " ".$frage7." ".$frage8." ".$frage9." ".
 $frage10." ". $frage11." ". $frage12. " ". $frage13." ". $frage14. " " .$positves. " " .$negatives);
-
+echo"<H1>Bewertung wurde versendet</h1>";
 /*$Fragenzusammenfassen = $frage15; $frage1; $frage2; $frage3; $frage4; $frage5; $frage6; $frage7; $frage8; $frage9; $frage10;
 $frage11; $frage12; $frage13; $frage14;*/
 

@@ -98,6 +98,13 @@ VALUES ('$hash','$snn','$svn','$semail', '$res3', '$Semester','$res2')";
 
 $con->close();
 
+
+
+echo"<form action=\"Formularabsenden.php\">
+                    <div class=\"col-sm\">
+                        <button type=\"submit\" class=\"btn btn-danger\">zurück</button>
+                    </div>
+                </form>";
 /*try{
 
 $db = new SQLite3("/Users/timwidmer/Desktop/Security.db3");

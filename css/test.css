@@ -65,7 +65,7 @@ footer{
     height:90%;
 
     Margin: 0 auto;
-    padding-top:10%;
+    padding-top:4%;
 }
 .coolisach {
     width:100%;
@@ -82,7 +82,7 @@ footer{
     height: 80%;
 
     margin:0 auto;
-    padding-top: 5%;
+    padding-top: 3%;
 }
 .lehrerestellen{
     width: 80%;
@@ -103,4 +103,46 @@ footer{
     text-align: center;
     padding-top: 3%;
     padding-bottom: 3%;
+}
+
+.containerBtnButtom{
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom:5%;
+}
+.titeldiv
+{
+    width: 100%;
+
+    margin-top: 6%;
+}
+.Uebertitel{
+   text-align: center;
+    width: 80%;
+    margin: 0 auto;
+
+}
+.theButtondiv{
+    text-align: center;
+    width: 100%;
+
+    margin-top: 3%;
+}
+.textboxdiv{
+   margin: 0 auto ;
+    width: 80%;
+    padding-top: 3%;
+}
+.textbox{
+
+
+}
+.activ{
+    color: rgb(35, 85, 175);
+}
+
+
+.titelbeiarbeit{
+    width: 100%;
+    margin-top: 3%;
 }

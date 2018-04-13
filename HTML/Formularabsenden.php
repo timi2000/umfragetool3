@@ -73,11 +73,11 @@
 
 </head>
 <body>
-<form name="FormularAbgesende " action="Sqlite-abfrage.php" method="post">
+
 <header>
     <div class="HeaderBenedictSeite">
         <nav class="nav">
-            <a class="nav-link Schrift"  href="benedictSeite.php">Home</a>
+            <a class="nav-link Schrift"  href="benedictSeite.php">Lehrer Übersicht</a>
 
             <a class="nav-link activ Schrift" href="Formularabsenden.php">Formular absenden</a>
             <a class="nav-link Schrift" href="klasseerfassen.php">Klasse erfassen</a>
@@ -87,79 +87,22 @@
     </div>
 </header>
 <section>
-
+    <form name="FormularAbgesende " action="Sqlite-abfrage.php" method="post">
+    <div class="titelbeiarbeit">
+        <h1 class="Uebertitel"> Formular Absenden </h1>
+    </div>
 <div class="absendeformular">
 
     <div class="input-group coolisach">
         <h4 style="padding-right: 10px">Klasse Auswählen  </h4>
-        <input type="text" id="klassen" name="Klassen" class="form-control" >
-        <div class="input-group-append">
-
-            <div class="dropdown-menu" >
-                 <?php
-                 /**
-                  * Created by PhpStorm.
-                  * User: timwidmer
-                  * Date: 13.03.18
-                  * Time: 16:21
-                  */
-
-                 $con = mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
-                 if (mysqli_connect_errno())
-                 {
-                     echo "failed to conect to MySQL: ".mysqli_connect_error();
-                 }
-                 $sql1 = "SELECT c_n FROM Class";
-                 $result1 = $con->query($sql1);
-                 while($row = $result1->fetch_assoc()) {
-                     $print='<a class="dropdown-item" value= "'.$row['c_n'].'">'.$row['c_n'].'</a>';
-                     echo ("$print");
-
-                 }
-
-                 $con->close();
-                 ?>
-            </div>
-
-        </div>
-
+        <input type="text" id="klassen" name="Klassen" class="form-control">
     </div>
 
     <div class="input-group coolisach">
         <h4 style="padding-right: 10px"> Lehrer Auswählen </h4>
         <input type="text" id="teacher" name="Lehrer" class="form-control" aria-label="Text input with dropdown button" >
 
-        <div class="input-group-append">
 
-            <div class="dropdown-menu">
-                <?php
-                /**
-                 * Created by PhpStorm.
-                 * User: timwidmer
-                 * Date: 13.03.18
-                 * Time: 16:21
-                 */
-
-                $con = mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
-                if (mysqli_connect_errno())
-                {
-                    echo "failed to conect to MySQL: ".mysqli_connect_error();
-                }
-                $sql2 = "SELECT t_vn, t_nn FROM Teacher ";
-                $result2 = $con->query($sql2);
-                while($row1 = $result2->fetch_assoc()) {
-
-                    $print = ' <a class="dropdown-item" <option value="$reihe" selected="selected">' . $row1['t_vn'] . " " . $row1['t_nn'] . '</a> </option>';
-                    echo ("$print");
-
-                }
-
-
-                $con->close();
-                ?>
-
-            </div>
-        </div>
     </div>
     <div class="input-group coolisach">
         <h4 style="padding-right: 10px">Semester Auswählen </h4>
@@ -171,7 +114,6 @@
         </div>
     </div>
     <button type="submit" class="btn btn-primary">Formular absenden</button>
-
 
 </div>
 </section>

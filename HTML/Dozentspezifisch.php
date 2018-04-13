@@ -15,9 +15,9 @@
 <header>
     <div class="HeaderBenedictSeite">
         <nav class="nav">
-            <a class="nav-link Schrift"  href="benedictSeite.php">Home</a>
+            <a class="nav-link activ Schrift"  href="benedictSeite.php">Lehrer Übersicht</a>
 
-            <a class="nav-link activ Schrift" href="Formularabsenden.php">Formular absenden</a>
+            <a class="nav-link  Schrift" href="Formularabsenden.php">Formular absenden</a>
             <a class="nav-link Schrift" href="klasseerfassen.php">Klasse erfassen</a>
             <a class="nav-link Schrift" href="Klassenübersicht.php">Klassenübersicht</a>
         </nav>
@@ -43,12 +43,22 @@
             {
                 echo "failed to conect to MySQL: ".mysqli_connect_error();
             }
+
+
             $LehrerName = $_POST["LehrerName"];
             $lehrerexplodiert  = explode(" ", $LehrerName);
             $vn = $lehrerexplodiert[ 1 ];
             $nn = $lehrerexplodiert[ 0 ];
             $vn = $vn.'%';
             $nn = $nn.'%';
+            $sql = "INSERT INTO Teacher(t_vn, t_nn, t_email) Values (?,?,?)";
+            $kommando = $con->prepare($sql);
+            $kommando->bind_param("sss", $Nachname, $Vorname, $Email);
+            $kommando->execute();
+            $con->close();
+
+            $sql = "Select idTeacher from Teacher Where t_vn like '$vn' and t_nn like '$nn'";
+
             $LehrerID = "Select idTeacher from Teacher Where t_vn like '$vn' and t_nn like '$nn'";
             $result3 = $con->query($LehrerID);
             while ($row = $result3->fetch_assoc()) {

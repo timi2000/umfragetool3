@@ -50,8 +50,8 @@
 
     <div class="HeaderBenedictSeite">
         <nav class="nav">
-            <a class="nav-link Schrift"  href="benedictSeite.php">Home</a>
-            <a class="nav-link activ Schrift" href="Formularabsenden.php">Formular absenden</a>
+            <a class="nav-link activ Schrift"  href="benedictSeite.php">Lehrer Übersicht <span class="sr-only">(current)</span></a>
+            <a class="nav-link  Schrift" href="Formularabsenden.php">Formular absenden</a>
             <a class="nav-link Schrift" href="klasseerfassen.php">Klasse erfassen</a>
             <a class="nav-link Schrift" href="Klassenübersicht.php">Klassenübersicht</a>
 
@@ -60,7 +60,25 @@
 </header>
 <section>
 
-    <div class="Homeseite">
+    <div class="titeldiv" >
+        <h1 class="Uebertitel" > Lehrer Übersicht </h1>
+    </div>
+    <div class="theButtondiv">
+        <a href="neuerLehrer.html"><button type="button"   class="btn btn-primary ">Lehrer erstellen</button></a>
+    </div>
+
+    <div class="textboxdiv" >
+        <form method="post"  action="Dozentspezifisch.php">
+            <div class="input-group textbox"  >
+
+                <input type="text" class="form-control" Name="LehrerName" id="teachersuchen" placeholder="Dozent suchen" aria-label="Search for..."  >
+
+                <span class="input-group-btn" >
+        <button class="btn btn-secondary" type="submit" >Lehrer Suchen</button>
+      </span>
+        </form>
+    </div>
+   <!-- <div class="Homeseite">
         <div class="newclassy"> <a href="neuerLehrer.html" ><button type="button" class="btn btn-primary">neuer Lehrer erstellen</button></a></div>
 
 <form method="post" action="Dozentspezifisch.php">
@@ -72,7 +90,7 @@
       </span>
         </div>
         </form>
-        <div class="Nbuttons">
+        <div class="Nbuttons">-->
 
 
             <!--<table class="table"  style="text-align: center;">
@@ -117,9 +135,9 @@
                 </tbody>
             </table>-->
 
-        </div>
+       <!-- </div>
 
-    </div>
+    </div>-->
 
 
 

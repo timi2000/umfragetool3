@@ -48,7 +48,9 @@ section {
 
 
 }
+#Positivbar{
 
+}
 .form-check-input{
     margin: 0 auto;
     padding: 0;
@@ -81,7 +83,7 @@ section {
 }
 #Positivbar{
     position: absolute;
-    left: 0%;
+    left: 5%;
     width: 30%;
 }
 

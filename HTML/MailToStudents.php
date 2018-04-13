@@ -9,5 +9,6 @@ include 'Sqlite-abfrage.php';
 
 while ($row = $result->fetch_assoc()) {
     $res = $row['s_vn']." ".$row['s_nn']." ".$row['s_email']. " ".$Lehrer." ".$Semester." ".$Klassen;
+    echo $res;
 }
 ?>
