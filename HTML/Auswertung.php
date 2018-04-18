@@ -1,3 +1,8 @@
+<?php
+session_start();
+var_dump($_SESSION);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,20 +29,47 @@
         <div class="row" style="height: 100%;">
 
             <div class="col-sm" style="margin: 0 auto; ">
-               <h3>Name:</h3>
+               <h3>Name:<?php echo " ".htmlspecialchars($_SESSION['VName'])." ".htmlspecialchars($_SESSION['NName']);
+                   ?></h3>
             </div>
             <div class="col-sm" style="margin: 0 auto;">
-              Name des Lehrer:
+                <h3>Semester:<?php echo" ".htmlspecialchars($_SESSION['Semester']) ?>
+                </h3>
             </div>
+            <div class="col-sm" style="margin: 0 auto;">
+                <h3>Name des Lehrer:<?php echo" ".htmlspecialchars($_SESSION['teacherVn']) ?></h3>
+            </div>
+
 
 
         </div>
     </div>
 </header>
 <body>
+<?php
+htmlspecialchars($_SESSION['ID']);
+htmlspecialchars($_SESSION['HAsh']);
+htmlspecialchars($_SESSION['NName']);
+htmlspecialchars($_SESSION['VName']);
+htmlspecialchars($_SESSION['email']);
+htmlspecialchars($_SESSION['Tid']);
+htmlspecialchars($_SESSION['Semester']);
+htmlspecialchars($_SESSION['Klasse']);
+htmlspecialchars($_SESSION['StudentID']);
+htmlspecialchars($_SESSION['teacherVn']);
+htmlspecialchars($_SESSION['teacherNn']);
+?>
 <section>
-    <form name="bmi" action="umfrageAuswerten.php"
-          method="post">
+    ?id=$Hashi
+  <?php
+  $Hashi=htmlspecialchars($_SESSION['HAsh']);
+  /* $link = "http://localhost:8888/auswertung/html/start.php?id=$hashi";
+ // $link = "start.php?id = $hashe";action="umfrageAuswerten.php"
+    $linkganz ="<a href=\"$link"."\">".$link."</a>";*/
+  $link = "umfrageAuswerten.php?id=$Hashi";
+   // echo '<form name="bmi" action="$link" method="post">'
+  ?>
+    <form name="bmi" action="umfrageAuswerten.php" method="post">
     <div class="tabelle" style="margin-top: 50px; margin-bottom: 50px;">
 
 
@@ -494,7 +526,7 @@
         <button type="submit" class="btn btn-primary" id="FormBtn" style="margin-bottom: 5%; position: relative;" >Formular absenden!</button>
     </div>
     </form>
-</section
+</section>
 
 
 

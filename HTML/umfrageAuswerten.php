@@ -6,6 +6,8 @@
  * Time: 14:46
  */
 
+session_start( );
+var_dump($_SESSION);
 $frage1 = $_POST["group1"];
 $frage2 = $_POST["group2"];
 $frage3 = $_POST["group3"];
@@ -25,46 +27,10 @@ $negatives = $_POST["negatives"];
 echo($frage1. " " .$frage2." " .$frage3. " "  .$frage4. " ".$frage5. " " .$frage6. " ".$frage7." ".$frage8." ".$frage9." ".
 $frage10." ". $frage11." ". $frage12. " ". $frage13." ". $frage14. " " .$positves. " " .$negatives);
 echo"<H1>Bewertung wurde versendet</h1>";
-/*$Fragenzusammenfassen = $frage15; $frage1; $frage2; $frage3; $frage4; $frage5; $frage6; $frage7; $frage8; $frage9; $frage10;
-$frage11; $frage12; $frage13; $frage14;*/
-
-/*$sql = "
-  INSERT INTO `Bewertung`
-  ( 
-  `idBewertung` , `FrageNR` , `FrageWert` 
-  
-  ) 
-  VALUES
-  (
-'1','1','1'
-  );
-";*/
-//$db_erg = mysqli_query($db_link, $sql)
-//or die("Anfrage fehlgeschlagen: " . mysqli_error());
-
-/*$con = new PDO ("mysql:host=127.0.0.1;Port:8889;dbname=mydb@localhost",'timwidmer','root');
-//$pdo = new PDO('mysql:host=localhost;dbname=mydb', 'root', 'root');
-$statement = $pdo->prepare("INSERT INTO Bewertung (idBewertung, FrageWert, FrageNR) VALUES (1,1,1)");
-//function mysql_connect ($server = 'ini_get("localhost")', $username = 'ini_get("root")', $password = 'ini_get("root")', $new_link = false, $client_flags = 0) {}
 
 
-$statement->execute(array(1,1,1));
-
-try{
-    // code that may throw an exception
-    $con = new PDO ("mysql:host=127.0.0.1;Port:8889;dbname=mydb@localhost",'timwidmer','root');
-} catch(Exception $e){
-    echo $e->getMessage();
-}
-*/
-//phpinfo();
 
 
-/*$con = mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
-if (mysqli_connect_errno())
-{
-    echo "failed to conect to MySQL: ".mysqli_connect_error();
-}*/
 try{
     $con = new mysqli("127.0.0.1","root","root", "mydb", "3306");
     $sql =$con->prepare( "INSERT INTO Bewertung ( Frage1, Frage2, Frage3, Frage4, Frage5, Frage6, Frage7, Frage8, Frage9, Frage10, Frage11, Frage12, Frage13, Frage14,  pos, neg) 
@@ -72,13 +38,62 @@ try{
    // $kommando = $con->prepare($sql);
     $sql->bind_param("iiiiiiiiiiiiiiss", $frage1, $frage2, $frage3, $frage4, $frage5, $frage6, $frage7, $frage8, $frage9, $frage10, $frage11, $frage12, $frage13, $frage14, $positves, $negatives);
     $sql->execute();
-    echo"Daten Wurden Eingetragen.<br />";
+    $id = $con->insert_id;
+    echo"Daten Wurden in Bewertung Eingetragen.<br />";
     $sql->close();
     $con->close();
+    echo"$id";
 }
     catch (Exception $ex ){
     echo "Fehler:" . $ex->getMessage();
 }
+
+/*try{
+    $con = new mysqli("127.0.0.1","root","root", "mydb", "3306");
+    $sql =( "Select From Bewertung (idBewertung.)
+    Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    // $kommando = $con->prepare($sql);
+    $sql->bind_param("iiiiiiiiiiiiiiss", $frage1, $frage2, $frage3, $frage4, $frage5, $frage6, $frage7, $frage8, $frage9, $frage10, $frage11, $frage12, $frage13, $frage14, $positves, $negatives);
+    $sql->execute();
+    echo"Daten Wurden Eingetragen.<br />";
+    $sql->close();
+    $con->close();
+}
+catch (Exception $ex ){
+    echo "Fehler:" . $ex->getMessage();
+}*/
+///HIEr timii
+/*htmlspecialchars($_SESSION['ID']);
+$2tmlspecialchars($_SESSION['HAsh']);*/
+$snn =htmlspecialchars($_SESSION['NName']);
+$svn =htmlspecialchars($_SESSION['VName']);
+$semail=htmlspecialchars($_SESSION['email']);
+$t_id =htmlspecialchars($_SESSION['Tid']);
+$semester =htmlspecialchars($_SESSION['Semester']);
+echo "hallo Semester"." ".$semester;
+$Klasse =htmlspecialchars($_SESSION['Klasse']);
+$SID =htmlspecialchars($_SESSION['StudentID']);
+/*$teacherVn=htmlspecialchars($_SESSION['teacherVn']);
+$htmlspecialchars($_SESSION['teacherNn']);*/
+try{
+    $con2 = new mysqli("127.0.0.1","root","root", "mydb", "3306");
+    $sql2 =$con2->prepare( "INSERT INTO Course ( Bewertung_idBewertung, Class_idClass, Teacher_idTeacher, Student_idStudent, Student_Class_idClass, Semester)
+    Values (?, ? , ?, ?, ?, ?)");
+    // $kommando = $con->prepare($sql);
+    $sql2->bind_param("iiiiii",$id ,$Klasse , $t_id, $SID, $Klasse, $semester);
+
+    $sql2->execute();
+    echo"Daten Wurden Eingetragen in Kurs .<br />";
+    $sql2->close();
+    $con2->close();
+    $_SESSION = array();
+    session_destroy();
+}
+catch (Exception $ex ){
+    echo "Fehler:" . $ex->getMessage();
+}
+
+
 
 // prepare and bind
 /*$stmt = $con->prepare("INSERT INTO MyGuests (firstname, lastname, email) VALUES (?, ?, ?)");
@@ -140,4 +155,6 @@ $frage11, $frage12, $frage13, $frage14, $frage15);
  $statement->execute(array( 'FrageNr' => '1',' FrageWert' => $frage1, 'Frage1' => $frage1,    'email' => 'info@php-einfach.de', 'vorname' => 'Klaus', 'nachname' => 'Neumann'));
 */
 
+
+//session_destroy();
 ?>

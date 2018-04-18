@@ -50,7 +50,7 @@ section {
 }
 #Positivbar{
     position: relative;
-    right: 10%;
+    right: 3.5%;
 
         }
     
@@ -65,7 +65,7 @@ section {
 }
 #Positiv{
 position: relative;
-    right: 10%;
+    right: 3.5%;
 }
 @media(max-width: 420px)
 {

@@ -1,3 +1,6 @@
+
+
+
 <head>
     <meta charset="UTF-8">
     <title>Klassenerfassen</title>
@@ -21,13 +24,11 @@
  * Date: 11.04.18
  * Time: 11:33
  */
-
 $con = mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
 if (mysqli_connect_errno())
 {
     echo "failed to conect to MySQL: ".mysqli_connect_error();
 }
-
 $Nachname = $_POST['Nachname'];
 $Vorname = $_POST['Vorname'];
 $email = $_POST['email'];
@@ -38,10 +39,8 @@ $NeuVorname = $_POST['Vorname1'];
 $NeuEmail = $_POST['email1'];
 //print_r ($NeuNachname." ".$NeuVorname." ".$NeuEmail);
 if(isset($_POST["Submit"])) {
-
     //print_r ($id);
     $sql = '';
-
     for ($count = 0; $count<count($id); $count++) {
         //print_r($count);$Nachname[$count]
         $theId = ($id[$count]);
@@ -71,8 +70,6 @@ if(isset($_POST["Submit"])) {
             echo 'All Fields are Required';
         }*/
     }
-
-
 if(isset($_POST["Nachname1"])&&
     isset($_POST["Vorname1"])&&
     isset($_POST["email1"])){
@@ -84,7 +81,6 @@ if(isset($_POST["Nachname1"])&&
         $SNname_clean = mysqli_real_escape_string($con, $NeuNachname[$count]);
         $SVname_clean = mysqli_real_escape_string($con, $NeuVorname[$count]);
         $SEmail_clean = mysqli_real_escape_string($con, $NeuEmail[$count]);
-
         if($SNname_clean != '' && $SVname_clean != '' && $SEmail_clean != '' )
         {
             $query .= '
@@ -111,33 +107,25 @@ if(isset($_POST["Nachname1"])&&
 }
 if(isset($_POST["delet"])){
     $sql= "DELETE FROM Student WHERE idStudent= '$StID'";
-
 }
 echo"<form action=\"Klassenübersicht.php\">
                     <div class=\"col-sm\">
                         <button type=\"submit\" class=\"btn btn-primary\">zurück</button>
                     </div>
                 </form>";
-
     /*while ($row = $result->fetch_assoc()) {
         $res = $row['s_vn']." ".$row['s_nn']." ".$row['s_email']. " ".$Lehrer." ".$Semester." ".$Klassen;
-
         $hash = hash('sha512', $res);
-
         $svn = $row['s_vn'];
         $snn = $row['s_nn'];
         $semail = $row['s_email'];
-
         try{
-
             $db = new SQLite3("/Users/timwidmer/Desktop/Security.db3");
-
             $sql = "INSERT INTO Security (HAsh, NName, VName, email, Tid, Semester, Klasse)
     VALUES ('$hash','$snn','$svn','$semail', '$res3', '$Semester','$res2')";
             echo $sql;
             if($db->exec($sql)){
                 echo "Daten eintragen.<br />";
-
             } else {
                 echo "Fehler!";
             }
@@ -147,5 +135,4 @@ echo"<form action=\"Klassenübersicht.php\">
             echo "Fehler: " . $ex->getMessage();
         }
     }*/
-
 ?>

@@ -31,6 +31,12 @@
         }
 
     </script>
+    <script>
+        function deleteverything(){
+
+
+        }
+    </script>
     <script type="text/javascript">
         function displayResult()
         {
@@ -111,26 +117,32 @@ echo '<thead>
             <th scope="col">Vorname</th>
             <th scope="col">E-mail</th>
             <th scope="col"></th>
-             <th scope="col"> number</th>
+      
             
         </tr>
         </thead> <tbody id="tabel3">';
-
+//$rows= $result->num_rows;
 while($row =$result->fetch_assoc()){
     $svn = $row['s_vn'];
     $snn = $row['s_nn'];
     $semail = $row['s_email'];
     $StID = $row['idStudent'];
     $ClassID = $row['Class_idClass'];
-    $rowcount = count($row);
+    //$rows = $result->affected_rows;
+
+
+
+   //$numofrows= print_r($rows);
+    //echo $counting;
+
 
     $res = $row['s_vn']." ".$row['s_nn']." ".$row['s_email']. " ".$row['idStudent'];
 //print out table contents and add id into an array and email into an array
     echo '
 <tr id="' . $row['idStudent'] . '">
-
 <th><input type="hidden" name="ClassID[]"  class="form-control" value='.$ClassID.' readonly> </th>
 <th><input type="hidden" name="id[]"  class="form-control" value='.$StID.' readonly> </th>
+
 <td><input type="text" name="Nachname[]" class="form-control" value="'.$snn.'"> </td>
 <td><input type="text" name="Vorname[]" class="form-control" value="'.$svn.'"> </td>
 <td><input type="email" name="email[]"  class="form-control"  value="'.$semail.'"> </td>
@@ -140,11 +152,12 @@ while($row =$result->fetch_assoc()){
 
 }
 echo'
-    </tbody>
-        </table >
-        <a href="Klassenübersicht.php "><button style="margin-right:2%;"type="button" class="btn btn-primary" >zurück</button></a>
-        <button style="margin-right:2%;" type="button" class="btn btn-secundary " onclick="displayResult()">Neue Reihe hinzufügen </button>
-        <button style="margin-right:2%;" type="submit" name="Submit" value="Submit" class="btn btn-danger "  >Änderung speicher</button>
+             </tbody>
+            </table >
+             <a href="Klassenübersicht.php "><button style="margin-right:2%;"type="button" class="btn btn-primary" >zurück</button></a>
+       <button style="margin-right:2%;" type="button" class="btn btn-secundary " onclick="displayResult()">Neue Reihe hinzufügen </button>
+          <button style="margin-right:2%;" type="submit" name="Submit" value="Submit" class="btn btn-danger "  >Änderung speicher</button>
+       
 </form>
    
 </div>';

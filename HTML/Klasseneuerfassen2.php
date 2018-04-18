@@ -14,7 +14,7 @@
 <body>
 
 <?php
-var_dump($_POST);
+//var_dump($_POST);
 //$con = mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
 $con = new MySQli("127.0.0.1", "root", "root", "mydb", "3306");
 /**
@@ -27,7 +27,7 @@ $SNname = $_POST["Nachname"];
 $SVname = $_POST['Vorname'];
 $SEmail = $_POST["Email"];
 $klasse = $_POST["KlassenNamen"];
-$Semester = 1;
+
 /*$SNAChname = $_POST["Nachnamerein"];*/
 echo $klasse. "   ";
 /*print_r($SNname);
@@ -37,9 +37,9 @@ print_r($SEmail);*/
 
 
 try{
-    $sql = "INSERT INTO Class(c_n, Semester) VALUES (?, ?)";
+    $sql = "INSERT INTO Class(c_n) VALUES (?)";
     $kommando = $con->prepare($sql);
-    $kommando->bind_param("si", $klasse, $Semester);
+    $kommando->bind_param("s", $klasse);
     $kommando->execute();
     //$id = mysqli_insert_id($con);¨
     $id = $con->insert_id;

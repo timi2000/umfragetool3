@@ -51,15 +51,17 @@
             $nn = $lehrerexplodiert[ 0 ];
             $vn = $vn.'%';
             $nn = $nn.'%';
-            $sql = "INSERT INTO Teacher(t_vn, t_nn, t_email) Values (?,?,?)";
-            $kommando = $con->prepare($sql);
+            $LehrerID = "Select idTeacher from Teacher Where t_vn like '$vn' and t_nn like '$nn'";
+           // $sql = "Select idTeacher from Teacher Where t_vn like '$vn' and t_nn like '$nn'";
+           // $sql = "INSERT INTO Teacher(t_vn, t_nn, t_email) Values (?,?,?)";
+           /* $kommando = $con->prepare($sql);
             $kommando->bind_param("sss", $Nachname, $Vorname, $Email);
             $kommando->execute();
             $con->close();
 
             $sql = "Select idTeacher from Teacher Where t_vn like '$vn' and t_nn like '$nn'";
 
-            $LehrerID = "Select idTeacher from Teacher Where t_vn like '$vn' and t_nn like '$nn'";
+            $LehrerID = "Select idTeacher from Teacher Where t_vn like '$vn' and t_nn like '$nn'";*/
             $result3 = $con->query($LehrerID);
             while ($row = $result3->fetch_assoc()) {
                 $res3 = $row['idTeacher'];
