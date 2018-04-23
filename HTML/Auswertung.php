@@ -19,6 +19,14 @@ var_dump($_SESSION);
     <link rel="stylesheet" href="css/main.css">
     <script src="../js/javaScripten.js"></script>
     <script src="scripts.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="../js/javaScripten.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
+
+    <script>
+    </script>
 
 
 </head>
@@ -60,7 +68,7 @@ htmlspecialchars($_SESSION['teacherVn']);
 htmlspecialchars($_SESSION['teacherNn']);
 ?>
 <section>
-    ?id=$Hashi
+
   <?php
   $Hashi=htmlspecialchars($_SESSION['HAsh']);
   /* $link = "http://localhost:8888/auswertung/html/start.php?id=$hashi";

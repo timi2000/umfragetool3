@@ -17,10 +17,11 @@ $Klassen = $_POST["Klassen"];
 $Lehrer = $_POST["Lehrer"];
 $Semester = $_POST["Semester"];
 $subjekt = "online umfrage";
-$message = "hallo Tim ";
+$message = "hallo Tim";
 $Students = "Select St.s_vn, St.s_nn, St.s_email from Student AS St, Class AS CL
 Where  CL.idClass = St.Class_idClass
 and CL.c_n like '$Klassen'";
+
 
 /*$studentmail = "Select s_email from Student, Class Where  idClass = Class_idClass
 and c_n like '$Klassen'";*/
