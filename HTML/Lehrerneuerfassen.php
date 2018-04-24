@@ -51,7 +51,6 @@ try{
 }
 catch(Exception $ex){
     echo"Fehler: ". $ex->getMessage();
-
 }
 
 

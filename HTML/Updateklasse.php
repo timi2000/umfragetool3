@@ -164,10 +164,6 @@ echo'
 
 
 
-
-
-
-
 /*if(isset($_REQUEST['delete'])) {
     $sql_s = " DELETE FROM Student WHERE idStudent='" .r . "' AND vin='" . $_REQUEST['vin'] . "' ";
 }*/

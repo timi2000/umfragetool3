@@ -12,7 +12,7 @@ $linkid = $_GET['id'];
 echo "hallo glaus hallo Tim  " . $linkid."  UUUUU   ";
 try {
     $db = new SQLite3("/Users/timwidmer/Desktop/Security.db3");
-    $sql = "Select ID, HAsh, NName, VName, email, Tid, Semester, Klasse, StudentID, teacherVn, teacherNn From Security WHERE HAsh LIKE '$linkid'";
+    $sql = "Select ID, HAsh, NName, VName, email, Tid, Semester, Klasse, StudentID, teacherVn, teacherNn From Security WHERE HAsh = '$linkid'";
     $ergebnis = $db->query($sql);
     //echo $ergebnis;
     while ($row = $ergebnis->fetchArray()) {
@@ -80,9 +80,25 @@ $_SESSION['StudentID'] = $studentid;
 $_SESSION['teacherVn'] = $teachervn;
 $_SESSION['teacherNn'] = $teachernn;
 
-if ($linkid == $Hashi){
+if ($linkid == $Hashcode){
 echo "jaaj";
-header( "Location:Auswertung.php?id=$Hashi");
+//Security Den Gabnzen daten satz löschen  der $HAshi Löschen
+    try{
+    $db = new SQLite3("/Users/timwidmer/Desktop/Security.db3");
+    $sqldelet = "DELETE  FROM Security where HAsh=(?)";
+    $kommando = $db->prepare($sqldelet);
+    $kommando->bind_param("s", $linkid);
+    var_dump($kommando);
+    //$kommando->execute();
+    $db->close();
+    }catch ( Exception $ex ){
+        echo "Fehler: " . $ex->getMessage();
+    }
+
+   // $sqldelet = "DELETE * FROM Security WHERE HAsh = '$linkid' ";
+header( "Location:Auswertung.php?id=$Hashcode");
+
+
 }
 else {
     echo "Ein fehler ist aufgetreten";

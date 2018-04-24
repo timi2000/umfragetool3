@@ -17,352 +17,6 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-
-            var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                ['Work',     11],
-                ['Eat',      2],
-                ['Commute',  2],
-                ['Watch TV', 2]
-
-            ]);
-
-            var options = {
-                title: 'My Daily Activities'
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('pie2'));
-
-            chart.draw(data, options);
-        }
-    </script>
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-
-            var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                ['Work',     11],
-                ['Eat',      2],
-                ['Commute',  2],
-                ['Watch TV', 2]
-
-            ]);
-
-            var options = {
-                title: 'My Daily Activities'
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('pie3'));
-
-            chart.draw(data, options);
-        }
-    </script>
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-
-            var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                ['Work',     11],
-                ['Eat',      2],
-                ['Commute',  2],
-                ['Watch TV', 2]
-
-            ]);
-
-            var options = {
-                title: 'My Daily Activities'
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('pie4'));
-
-            chart.draw(data, options);
-        }
-    </script>
-
-
-
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-
-            var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                ['Work',     11],
-                ['Eat',      2],
-                ['Commute',  2],
-                ['Watch TV', 2]
-
-            ]);
-
-            var options = {
-                title: 'My Daily Activities'
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('pie5'));
-
-            chart.draw(data, options);
-        }
-    </script>
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-
-            var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                ['Work',     11],
-                ['Eat',      2],
-                ['Commute',  2],
-                ['Watch TV', 2]
-
-            ]);
-
-            var options = {
-                title: 'My Daily Activities'
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('pie6'));
-
-            chart.draw(data, options);
-        }
-    </script>
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-
-            var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                ['Work',     11],
-                ['Eat',      2],
-                ['Commute',  2],
-                ['Watch TV', 2]
-
-            ]);
-
-            var options = {
-                title: 'My Daily Activities'
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('pie7'));
-
-            chart.draw(data, options);
-        }
-    </script>
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-
-            var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                ['Work',     11],
-                ['Eat',      2],
-                ['Commute',  2],
-                ['Watch TV', 2]
-
-            ]);
-
-            var options = {
-                title: 'My Daily Activities'
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('pie8'));
-
-            chart.draw(data, options);
-        }
-    </script>
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-
-            var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                ['Work',     11],
-                ['Eat',      2],
-                ['Commute',  2],
-                ['Watch TV', 2]
-
-            ]);
-
-            var options = {
-                title: 'My Daily Activities'
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('pie9'));
-
-            chart.draw(data, options);
-        }
-    </script>
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-
-            var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                ['Work',     11],
-                ['Eat',      2],
-                ['Commute',  2],
-                ['Watch TV', 2]
-
-            ]);
-
-            var options = {
-                title: 'My Daily Activities'
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('pie10'));
-
-            chart.draw(data, options);
-        }
-    </script>
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-
-            var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                ['Work',     11],
-                ['Eat',      2],
-                ['Commute',  2],
-                ['Watch TV', 2]
-
-            ]);
-
-            var options = {
-                title: 'My Daily Activities'
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('pie11'));
-
-            chart.draw(data, options);
-        }
-    </script>
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-
-            var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                ['Work',     11],
-                ['Eat',      2],
-                ['Commute',  2],
-                ['Watch TV', 2]
-
-            ]);
-
-            var options = {
-                title: 'My Daily Activities'
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('pie12'));
-
-            chart.draw(data, options);
-        }
-    </script>
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-
-            var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                ['Work',     11],
-                ['Eat',      2],
-                ['Commute',  2],
-                ['Watch TV', 2]
-
-            ]);
-
-            var options = {
-                title: 'My Daily Activities'
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('pie13'));
-
-            chart.draw(data, options);
-        }
-    </script>
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-
-            var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                ['Work',     11],
-                ['Eat',      2],
-                ['Commute',  2],
-                ['Watch TV', 2],
-                ['Watwch TV', 2],
-                ['Watch qTV', 2],
-                ['Watchq TV', 2],
-                ['Watchq TV', 2],
-                ['Watchq TV', 2],
-                ['Watchq TV', 2],
-                ['Watchq TV', 2]
-            ]);
-
-            var options = {
-                title: 'My Daily Activities'
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('pie14'));
-
-            chart.draw(data, options);
-        }
-    </script>
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-
-            var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                ['Work',     11],
-                ['Eat',      2],
-                ['Commute',  2],
-                ['Watch TV', 2]
-
-            ]);
-
-            var options = {
-                title: 'My Daily Activities'
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('gesamt'));
-
-            chart.draw(data, options);
-        }
-    </script>
-
 
 </head>
 <body>
@@ -379,57 +33,59 @@
 </header>
 
 <section>
-    <div class="tabelle" style="margin-top: 50px; margin-bottom: 50px;">
-        <a href="benedictSeite.php"><button type="button" class="btn btn-primary" style="margin-bottom: 5%;">zurück</button></a>
-
-        <table class="table table-bordered">
-            <thead >
-            <tr style="width:100%;">
-
-                <th scope="col">NR</th>
-                <th scope="col">Fragen</th>
-                <th scope="col"><img  id="img1" src="../img/Happy2.PNG"></th>
-                <th scope="col"><img id="img2" src="../img/Happy.PNG"></th>
-                <th scope="col"><img  id="img3" src="../img/Sad.PNG"></th>
-                <th scope="col"><img   id="img4" src="../img/Sad2.PNG"> </th>
-                <th></th>
-
-            </tr>
-            </thead>
-            <tbody>
-
     <?php
     $con = mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
     if (mysqli_connect_errno())
     {
         echo "failed to conect to MySQL: ".mysqli_connect_error();
+
     }
 
-    var_dump($_POST);
     $Lehrerid = $_POST['lehrerid'];
     $Semester = $_POST['Semester'];
     $Klassenname = $_POST['klassenname'];
     $KlassenId = $_POST['Klassenid'];
+    $teacherName = "Select t_vn, t_nn From Teacher WHERE idTeacher Like $Lehrerid ";
+    $Kommando= $con->query($teacherName);
+    while ($row = $Kommando->fetch_assoc()) {
+        $T_vname = $row['t_vn'];
+        $T_nname = $row['t_nn'];
+    }
+    echo "<div class=\"titeldiv\"  style='padding-bottom: 3%;'>
+        <h1 class=\"Uebertitel\" >  Lehrer: $T_nname $T_vname <br>Klasse: $Klassenname <br>  Semester: $Semester </h1>
+    </div> ";
+   echo"<div class=\"tabelle\">
+        <a href=\"benedictSeite.php\"><button type=\"button\" class=\"btn btn-primary\" style=\"margin-bottom: 5%;\">zurück</button></a>
 
-    echo $Lehrerid." ".$Semester." ".$Klassenname." ".$KlassenId;
+        <table class=\"table table-bordered \">
+            <thead >
+            <tr style=\"width:100%;\">
+
+                <th scope=\"col\">NR</th>
+                <th scope=\"col\">Fragen</th>
+                <th scope=\"col\"><img  id=\"img1\" src=\"../img/Happy2.PNG\"></th>
+                <th scope=\"col\"><img id=\"img2\" src=\"../img/Happy.PNG\"></th>
+                <th scope=\"col\"><img  id=\"img3\" src=\"../img/Sad.PNG\"></th>
+                <th scope=\"col\"><img   id=\"img4\" src=\"../img/Sad2.PNG\"> </th>
+                <th></th>
+
+            </tr>
+            </thead>
+            <tbody>";
+
+
+
+
+
+
+
     $thesql="Select Bewertung_idBewertung From Course WHERE Class_idClass Like $KlassenId AND Semester Like $Semester AND Teacher_idTeacher LIKE $Lehrerid";
     $resultat= $con->query($thesql);
     while ($row = $resultat->fetch_assoc()) {
         $bewertungsid = $row['Bewertung_idBewertung'];
-        echo "BewertungID  ".$bewertungsid." ";
-
     }
 
-    /*$Sehrgut = 0;
- $Gut = 0;
- $Schlecht = 0;
- $SehrSchlecht = 0;*/
 
-    /* $fragen = [$Sehrgut = 0,
-     $Gut = 0,
-     $Schlecht = 0,
-     $SehrSchlecht = 0, ];*/
-    //$fragenvalues= [$Sehrgut = 0, $Gut = 0, $Schlecht = 0, $SehrSchlecht = 0];
     $bewertidNR = 0;
 
     $SehrgutG = 0;
@@ -540,335 +196,244 @@
         $Frage12 = $row1['Frage12'];
         $Frage13 = $row1['Frage13'];
         $Frage14 = $row1['Frage14'];
-        $pos = $row1['pos'];
-        $neg= $row1['neg'];
+        $pos[] = $row1['pos'];
+        $neg[] = $row1['neg'];
 
         $bewertidNR++;
-        $EineAuswetung = "Bewertungsid ".$IDBewertungs." Frage1 ".$Frage1." Frage2 ".$Frage2." Frage3 ".$Frage3." Frage4 ".$Frage4." Frage5 ".$Frage5." Frage6 ".$Frage6." Frage7 ".$Frage7." Frage8 ".$Frage8." Frage9 ".
-            $Frage9. "Frage10" .$Frage10."Frage11".$Frage11." Frage12 ".$Frage12." Frage13 ".$Frage13." Frage14 ".$Frage14." positives ".$pos." negatives ".$neg;
-        echo " ".$EineAuswetung." ";
-        //$Frge1array = array($Sehrgut,$Gut,$Schlecht,$SehrSchlecht);
-       // $fragenwert = [ $Frage1 =>, $Frage2, $Frage3, $Frage4, $Frage5, $Frage6, $Frage7,$Frage8,$Frage9,$Frage10,$Frage11, $Frage12,$Frage13,$Frage14];
-      //$fragen= [$Frage1 => $fragenvalues, $Frage2, $Frage3, $Frage4, $Frage5, $Frage6, $Frage7, $Frage8, $Frage9, $Frage10,$Frage11 ,$Frage12 ,$Frage13 ,$Frage14];
 
-      /*  switch ($fragen) {
-            case 0:
-                echo "SEhr gut plus ";
-                $F1Sehrgut++;
-                echo $F1Sehrgut;
-                break;
-            case 1:
-                echo " Gut plus";
-                $F1Gut++;
-                echo $F1Gut;
-                break;
-            case 2:
-                echo "Schlecht plus ";
-                $F1Schlecht++;
-                echo $F1Schlecht;
-                break;
-            case 3:
-                echo "Sehr schlecht plus";
-                $F1SehrSchlecht++;
-                echo $F1SehrSchlecht;
-                break;
-        }*/
 
        switch ($Frage1) {
             case 0:
-                echo "SEhr gut plus ";
                 $F1Sehrgut++;
-                echo $F1Sehrgut;
                 break;
             case 1:
-                echo " Gut plus";
                 $F1Gut++;
-                echo $F1Gut;
                 break;
             case 2:
-                echo "Schlecht plus ";
                 $F1Schlecht++;
-                echo $F1Schlecht;
                 break;
             case 3:
-                echo "Sehr schlecht plus";
                 $F1SehrSchlecht++;
-                echo $F1SehrSchlecht;
                 break;
         }
 //Frage 2
+
+        /*$F2Sehrgut = 0;
+        $F2Gut = 0;
+        $F2Schlecht = 0;
+        $F2SehrSchlecht = 0;*/
         switch ($Frage2) {
             case 0:
-                echo "SEhr gut plus ";
-                $F1Sehrgut++;
-                echo $F1Sehrgut;
+                $F2Sehrgut++;
                 break;
             case 1:
-                echo " Gut plus";
-                $F1Gut++;
-                echo $F1Gut;
+                $F2Gut++;
                 break;
             case 2:
-                echo "Schlecht plus ";
-                $F1Schlecht++;
-                echo $F1Schlecht;
+                $F2Schlecht++;
                 break;
             case 3:
-                echo "Sehr schlecht plus";
-                $F1SehrSchlecht++;
-                echo $F1SehrSchlecht;
+                $F2SehrSchlecht++;
                 break;
         }
         //Frage 3
+        /*$F3Sehrgut = 0;
+        $F3Gut = 0;
+        $F3Schlecht = 0;
+        $F3SehrSchlecht = 0;*/
         switch ($Frage3) {
             case 0:
-                echo "SEhr gut plus ";
-                $F1Sehrgut++;
-                echo $F1Sehrgut;
+                $F3Sehrgut++;
                 break;
             case 1:
-                echo " Gut plus";
-                $F1Gut++;
-                echo $F1Gut;
+                $F3Gut++;
                 break;
             case 2:
-                echo "Schlecht plus ";
-                $F1Schlecht++;
-                echo $F1Schlecht;
+                $F3Schlecht++;
                 break;
             case 3:
-                echo "Sehr schlecht plus";
-                $F1SehrSchlecht++;
-                echo $F1SehrSchlecht;
+                $F3SehrSchlecht++;
                 break;
         }
-        //Frage 4
+
         switch ($Frage4) {
             case 0:
-                echo "SEhr gut plus ";
-                $F1Sehrgut++;
-                echo $F1Sehrgut;
+                $F4Sehrgut++;
                 break;
             case 1:
-                echo " Gut plus";
-                $F1Gut++;
-                echo $F1Gut;
+                $F4Gut++;
                 break;
             case 2:
-                echo "Schlecht plus ";
-                $F1Schlecht++;
-                echo $F1Schlecht;
+                $F4Schlecht++;
                 break;
             case 3:
-                echo "Sehr schlecht plus";
-                $F1SehrSchlecht++;
-                echo $F1SehrSchlecht;
+                $F4SehrSchlecht++;
                 break;
         }
-        //Frage 5
+
         switch ($Frage5) {
             case 0:
-                echo "SEhr gut plus ";
-                $F1Sehrgut++;
-                echo $F1Sehrgut;
+                $F5Sehrgut++;
                 break;
             case 1:
-                echo " Gut plus";
-                $F1Gut++;
-                echo $F1Gut;
+                $F5Gut++;
                 break;
             case 2:
-                echo "Schlecht plus ";
-                $F1Schlecht++;
-                echo $F1Schlecht;
+                $F5Schlecht++;
                 break;
             case 3:
-                echo "Sehr schlecht plus";
-                $F1SehrSchlecht++;
-                echo $F1SehrSchlecht;
+                $F5SehrSchlecht++;
                 break;
         }
-        //Frage 6
+
         switch ($Frage6) {
             case 0:
-                echo "SEhr gut plus ";
-                $F1Sehrgut++;
-                echo $F1Sehrgut;
+                $F6Sehrgut++;
                 break;
             case 1:
-                echo " Gut plus";
-                $F1Gut++;
-                echo $F1Gut;
+                $F6Gut++;
                 break;
             case 2:
-                echo "Schlecht plus ";
-                $F1Schlecht++;
-                echo $F1Schlecht;
+                $F6Schlecht++;
                 break;
             case 3:
-                echo "Sehr schlecht plus";
-                $F1SehrSchlecht++;
-                echo $F1SehrSchlecht;
+                $F6SehrSchlecht++;
                 break;
         }
-        //Frage 7
+
         switch ($Frage7) {
             case 0:
-                echo "SEhr gut plus ";
-                $F1Sehrgut++;
-                echo $F1Sehrgut;
+                $F7Sehrgut++;
                 break;
             case 1:
-                echo " Gut plus";
-                $F1Gut++;
-                echo $F1Gut;
+                $F7Gut++;
                 break;
             case 2:
-                echo "Schlecht plus ";
-                $F1Schlecht++;
-                echo $F1Schlecht;
+                $F7Schlecht++;
                 break;
             case 3:
-                echo "Sehr schlecht plus";
-                $F1SehrSchlecht++;
-                echo $F1SehrSchlecht;
+                $F7SehrSchlecht++;
                 break;
         }
-        //Frage 8
+
         switch ($Frage8) {
             case 0:
-                echo "SEhr gut plus ";
-                $F1Sehrgut++;
-                echo $F1Sehrgut;
+                $F8Sehrgut++;
                 break;
             case 1:
-                echo " Gut plus";
-                $F1Gut++;
-                echo $F1Gut;
+                $F8Gut++;
                 break;
             case 2:
-                echo "Schlecht plus ";
-                $F1Schlecht++;
-                echo $F1Schlecht;
+                $F8Schlecht++;
                 break;
             case 3:
-                echo "Sehr schlecht plus";
-                $F1SehrSchlecht++;
-                echo $F1SehrSchlecht;
+                $F8SehrSchlecht++;
                 break;
         }
-        //Frage 9
+
         switch ($Frage9) {
             case 0:
-                echo "SEhr gut plus ";
-                $F1Sehrgut++;
-                echo $F1Sehrgut;
+                $F9Sehrgut++;
                 break;
             case 1:
-                echo " Gut plus";
-                $F1Gut++;
-                echo $F1Gut;
+                $F9Gut++;
                 break;
             case 2:
-                echo "Schlecht plus ";
-                $F1Schlecht++;
-                echo $F1Schlecht;
+                $F9Schlecht++;
                 break;
             case 3:
-                echo "Sehr schlecht plus";
-                $F1SehrSchlecht++;
-                echo $F1SehrSchlecht;
+                $F9SehrSchlecht++;
                 break;
         }
-        //Frage 10
+
         switch ($Frage10) {
             case 0:
-                echo "SEhr gut plus ";
-                $F1Sehrgut++;
-                echo $F1Sehrgut;
+                $F10Sehrgut++;
                 break;
             case 1:
-                echo " Gut plus";
-                $F1Gut++;
-                echo $F1Gut;
+                $F10Gut++;
                 break;
             case 2:
-                echo "Schlecht plus ";
-                $F1Schlecht++;
-                echo $F1Schlecht;
+                $F10Schlecht++;
                 break;
             case 3:
-                echo "Sehr schlecht plus";
-                $F1SehrSchlecht++;
-                echo $F1SehrSchlecht;
+                $F10SehrSchlecht++;
                 break;
         }
-        /*switch ($fragen) {
+
+        switch ($Frage11) {
             case 0:
-                echo "SEhr gut plus ";
-                $SehrgutG++;
-                echo $SehrgutG;
+                $F11Sehrgut++;
                 break;
             case 1:
-                echo " Gut plus";
-                $GutG++;
-                echo $GutG;
+                $F11Gut++;
                 break;
             case 2:
-                echo "Schlecht plus ";
-                $SchlechtG++;
-                echo $SchlechtG;
+                $F11Schlecht++;
                 break;
             case 3:
-                echo "Sehr schlecht plus";
-                $SehrSchlechtG++;
-                echo $SehrSchlechtG;
+                $F11SehrSchlecht++;
                 break;
         }
-*/
 
-
-       /* $bewertidNR++;
-        switch ($Frage1) {
+        switch ($Frage12) {
             case 0:
-                echo "SEhr gut plus ";
-                $F1Sehrgut++;
-                echo $F1Sehrgut;
+                $F12Sehrgut++;
                 break;
             case 1:
-                echo " Gut plus";
-                $F1Gut++;
-                echo $F1Gut;
+                $F12Gut++;
                 break;
             case 2:
-                echo "Schlecht plus ";
-                $F1Schlecht++;
-                echo $F1Schlecht;
+                $F12Schlecht++;
                 break;
             case 3:
-                echo "Sehr schlecht plus";
-                $F1SehrSchlecht++;
-                echo $F1SehrSchlecht;
+                $F12SehrSchlecht++;
                 break;
         }
-*/
 
+        switch ($Frage13) {
+            case 0:
+                $F13Sehrgut++;
+                break;
+            case 1:
+                $F13Gut++;
+                break;
+            case 2:
+                $F13Schlecht++;
+                break;
+            case 3:
+                $F13SehrSchlecht++;
+                break;
+        }
+
+        switch ($Frage14) {
+            case 0:
+                $F14Sehrgut++;
+                break;
+            case 1:
+                $F14Gut++;
+                break;
+            case 2:
+                $F14Schlecht++;
+                break;
+            case 3:
+                $F14SehrSchlecht++;
+                break;
+        }
        }
-
-
 }
-    $Fragenr1= " ///////// DI Auswertung"."sehrgut ".$F1Sehrgut."  Gut". $F1Gut." schlecht".$F1Schlecht." sehrschlecht".$F1SehrSchlecht;
-    echo $Fragenr1;
 
-    echo "Gesamtbögen abgabe". $bewertidNR;
+
+
+// echo "Gesamtbögen abgabe". $bewertidNR;
     echo" <tr>
 
                 <th> Gesamt abgegbene bögen: $bewertidNR</th>
                 <td></td>
-                <td style=\"background-color:rgb(57, 90, 173);\"></td>
-                <td style=\"background-color:rgb(203, 71, 39);\"></td>
-                <td style=\"background-color:rgb(241, 158, 56);\"></td>
-                <td style=\"background-color:rgb(68, 148, 48);\"></td>
+                <td  style=\"background-color:rgb(68, 148, 48);\"></td>
+                <td style=\"background-color:rgb(115, 174, 227);\"></td>
+                <td style=\"background-color:rgb(230, 105, 62);\"></td>
+                <td style=\"background-color:rgb(216, 37, 53);\" ></td>
                 <td></td>
 
             </tr>";
@@ -890,7 +455,10 @@
             ]);
 
             var options = {
-                title: 'Die Auswertung'
+                title: 'Frage1 resultat',
+                 colors:['#449430','#73aee3','#e6693e','#d82535']
+                  //colors:['#449430','#73aee3','#e6693e','#d82535']
+                 // colors:['#449430','#f9af60','#e6693e','#d82535']
             };
 
             var chart = new google.visualization.PieChart(document.getElementById('pie1'));
@@ -904,180 +472,523 @@
                 <td>$F1Gut</td>
                 <td>$F1Schlecht</td>
                 <td>$F1SehrSchlecht</td>
-                <td><div id=\"pie1\" style=\"width: 130px; height: 90px;\"></div></td>
+                <td><div id=\"pie1\" style=\"width: 160px; height: 120px;\"></div></td>
 
             </tr>";
     echo "<tr>
+ <script >
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Auswertung', 'chart '],
+                ['Sehrgut' ,     $F2Sehrgut],
+                ['Gut',      $F2Gut],
+                ['Schlecht ',  $F2Schlecht],
+                ['Sehrschlecht', $F2SehrSchlecht]
+
+
+            ]);
+
+            var options = {
+                title: 'Frage2 resultat',
+                 colors:['#449430','#73aee3','#e6693e','#d82535']
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('pie2'));
+
+            chart.draw(data, options);
+        }
+    </script>
                 <th scope=\"row\">2</th>
                 <td>Steht die Lehrperson positiv zur Bénédict-Schule?</td>
-
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><div id=\"pie2\" style=\"width: 130px; height: 90px;\"></div></td>
+                <td>$F2Sehrgut</td>
+                <td>$F2Gut</td>
+                <td>$F2Schlecht</td>
+                <td>$F2SehrSchlecht</td>
+                <td><div id=\"pie2\" style=\"width: 160px; height: 120px;\"></div></td>
 
             </tr>";
-    echo "<tr>
+    echo "<tr> <script>
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Auswertung', 'chart '],
+                ['Sehrgut' ,     $F3Sehrgut],
+                ['Gut',      $F3Gut],
+                ['Schlecht ',  $F3Schlecht],
+                ['Sehrschlecht', $F3SehrSchlecht]
+
+
+            ]);
+
+            var options = {
+                title: 'Frage3 resultat',
+                colors:['#449430','#73aee3','#e6693e','#d82535']
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('pie3'));
+
+            chart.draw(data, options);
+        }
+    </script>
                 <th scope=\"row\">3</th>
                 <td> Bereitet sich die Lehrperson auf die Lektionen vor?</td>
 
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><div id=\"pie3\" style=\"width: 130px; height: 90px;\"></div></td>
+                 <td>$F3Sehrgut</td>
+                <td>$F3Gut</td>
+                <td>$F3Schlecht</td>
+                <td>$F3SehrSchlecht</td>
+                <td><div id=\"pie3\" style=\"width: 160px; height: 120px;\"></div></td>
             </tr>";
-    echo "<tr>
+    echo "<tr> <script >
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Auswertung', 'chart '],
+                ['Sehrgut' ,     $F4Sehrgut],
+                ['Gut',      $F4Gut],
+                ['Schlecht ',  $F4Schlecht],
+                ['Sehrschlecht', $F4SehrSchlecht]
+
+
+            ]);
+
+            var options = {
+                title: 'Frage4 resultat',
+                colors:['#449430','#73aee3','#e6693e','#d82535']
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('pie4'));
+
+            chart.draw(data, options);
+        }
+    </script>
+
                 <th scope=\"row\">4</th>
                 <td> Informiert die Lehrperson über den Unterrichtsablauf(Ablauf, Lernziele, Zwischenprüfungen, Hausaufgaben)?</td>
 
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><div id=\"pie4\" style=\"width: 130px; height: 90px;\"></div></td>
+                  <td>$F4Sehrgut</td>
+                <td>$F4Gut</td>
+                <td>$F4Schlecht</td>
+                <td>$F4SehrSchlecht</td>
+                <td><div id=\"pie4\" style=\"width: 160px; height: 120px;\"></div></td>
             </tr>
     ";
-    echo " <tr>
+    echo " <tr><script >
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Auswertung', 'chart '],
+                ['Sehrgut' ,     $F5Sehrgut],
+                ['Gut',      $F5Gut],
+                ['Schlecht ',  $F5Schlecht],
+                ['Sehrschlecht', $F5SehrSchlecht]
+
+
+            ]);
+
+            var options = {
+                title: 'Frage5 resultat',
+                colors:['#449430','#73aee3','#e6693e','#d82535']
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('pie5'));
+
+            chart.draw(data, options);
+        }
+    </script>
                 <th scope=\"row\">5</th>
                 <td>Hat die Lehrperson ein Schrittweisses Vorgehen? </td>
 
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><div id=\"pie5\" style=\"width: 130px; height: 90px;\"></div></td>
+                <td>$F5Sehrgut</td>
+                <td>$F5Gut</td>
+                <td>$F5Schlecht</td>
+                <td>$F5SehrSchlecht</td>
+                <td><div id=\"pie5\" style=\"width: 160px; height: 120px;\"></div></td>
             </tr>";
-    echo "<tr>
+    echo "<tr><script >
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Auswertung', 'chart '],
+                ['Sehrgut' ,     $F6Sehrgut],
+                ['Gut',      $F6Gut],
+                ['Schlecht ',  $F6Schlecht],
+                ['Sehrschlecht', $F6SehrSchlecht]
+
+
+            ]);
+
+            var options = {
+                title: 'Frage6 resultat',
+                colors:['#449430','#73aee3','#e6693e','#d82535']
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('pie6'));
+
+            chart.draw(data, options);
+        }
+    </script>
                 <th scope=\"row\">6</th>
                 <td> Visualisiert die Lehrperson abwechslungsreich und spannend? </td>
 
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><div id=\"pie6\" style=\"width: 130px; height: 90px;\"></div></td>
+                 <td>$F6Sehrgut</td>
+                <td>$F6Gut</td>
+                <td>$F6Schlecht</td>
+                <td>$F6SehrSchlecht</td>
+                <td><div id=\"pie6\" style=\"width: 160px; height: 120px;\"></div></td>
             </tr>";
-    echo"<tr>
+    echo"<tr><script >
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Auswertung', 'chart '],
+                ['Sehrgut' ,     $F7Sehrgut],
+                ['Gut',      $F7Gut],
+                ['Schlecht ',  $F7Schlecht],
+                ['Sehrschlecht', $F7SehrSchlecht]
+
+
+            ]);
+
+            var options = {
+                title: 'Frage7 resultat',
+                colors:['#449430','#73aee3','#e6693e','#d82535']
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('pie7'));
+
+            chart.draw(data, options);
+        }
+    </script>
+    
                 <th scope=\"row\">7</th>
                 <td> Unterrichtet die Lehrperson motiviert?</td>
 
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><div id=\"pie7\" style=\"width: 130px; height: 90px;\"></div></td>
+                <td>$F7Sehrgut</td>
+                <td>$F7Gut</td>
+                <td>$F7Schlecht</td>
+                <td>$F7SehrSchlecht</td>
+                <td><div id=\"pie7\" style=\"width: 160px; height: 120px;\"></div></td>
             </tr>";
     echo "   <tr>
+   <script >
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Auswertung', 'chart '],
+                ['Sehrgut' ,     $F8Sehrgut],
+                ['Gut',      $F8Gut],
+                ['Schlecht ',  $F8Schlecht],
+                ['Sehrschlecht', $F8SehrSchlecht]
+
+
+            ]);
+
+            var options = {
+                title: 'Frage8 resultat',
+                colors:['#449430','#73aee3','#e6693e','#d82535']
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('pie8'));
+
+            chart.draw(data, options);
+        }
+    </script>
                 <th scope=\"row\">8</th>
                 <td> Bringt die Lehrperson Praxisbeispiele?</td>
 
-                <td>
-
-
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><div id=\"pie8\" style=\"width: 130px; height: 90px;\"></div></td>
+                 <td>$F8Sehrgut</td>
+                <td>$F8Gut</td>
+                <td>$F8Schlecht</td>
+                <td>$F8SehrSchlecht</td>
+                <td><div id=\"pie8\" style=\"width: 160px; height: 120px;\"></div></td>
             </tr>
     ";
-    echo "<tr>
+    echo "<tr><script >
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Auswertung', 'chart '],
+                ['Sehrgut' ,     $F9Sehrgut],
+                ['Gut',      $F9Gut],
+                ['Schlecht ',  $F9Schlecht],
+                ['Sehrschlecht', $F9SehrSchlecht]
+
+
+            ]);
+
+            var options = {
+                title: 'Frage9 resultat',
+                colors:['#449430','#73aee3','#e6693e','#d82535']
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('pie9'));
+
+            chart.draw(data, options);
+        }
+    </script>
                 <th scope=\"row\" style=\"background-color: transparent;\">9</th>
                 <td> Vermittelt die Lehrperson den Stoff klar und deutlich?</td>
 
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><div id=\"pie9\" style=\"width: 130px; height: 90px;\"></div></td>
+                 <td>$F9Sehrgut</td>
+                <td>$F9Gut</td>
+                <td>$F9Schlecht</td>
+                <td>$F9SehrSchlecht</td>
+                <td><div id=\"pie9\" style=\"width: 160px; height: 120px;\"></div></td>
             </tr>
             ";
-    echo"  <tr>
+    echo"  <tr><script >
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Auswertung', 'chart '],
+                ['Sehrgut' ,     $F10Sehrgut],
+                ['Gut',      $F10Gut],
+                ['Schlecht ',  $F10Schlecht],
+                ['Sehrschlecht', $F10SehrSchlecht]
+
+
+            ]);
+
+            var options = {
+                title: 'Frage10 resultat',
+                colors:['#449430','#73aee3','#e6693e','#d82535']
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('pie10'));
+
+            chart.draw(data, options);
+        }
+    </script>
                 <th scope=\"row\">10</th>
                 <td> Erhalten Sie genügend Selbstlern und Übungsangebote?</td>
 
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><div id=\"pie10\" style=\"width: 130px; height: 90px;\"></div></td>
+                 <td>$F10Sehrgut</td>
+                <td>$F10Gut</td>
+                <td>$F10Schlecht</td>
+                <td>$F10SehrSchlecht</td>
+                <td><div id=\"pie10\" style=\"width: 160px; height: 120px;\"></div></td>
             </tr>";
-    echo"<tr>
+    echo"<tr><script >
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Auswertung', 'chart '],
+                ['Sehrgut' ,     $F11Sehrgut],
+                ['Gut',      $F11Gut],
+                ['Schlecht ',  $F11Schlecht],
+                ['Sehrschlecht', $F11SehrSchlecht]
+
+
+            ]);
+
+            var options = {
+                title: 'Frage11 resultat',
+                colors:['#449430','#73aee3','#e6693e','#d82535']
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('pie11'));
+
+            chart.draw(data, options);
+        }
+    </script>
                 <th scope=\"row\">11</th>
                 <td> Erhalten Sie regelmässig Hausaufgaben?</td>
-
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><div id=\"pie11\" style=\"width: 130px; height: 90px;\"></div></td>
+                 <td>$F11Sehrgut</td>
+                <td>$F11Gut</td>
+                <td>$F11Schlecht</td>
+                <td>$F11SehrSchlecht</td>
+                <td><div id=\"pie11\" style=\"width: 160px; height: 120px;\"></div></td>
             </tr>";
-    echo"<tr>
+    echo"<tr><script >
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Auswertung', 'chart '],
+                ['Sehrgut' ,     $F12Sehrgut],
+                ['Gut',      $F12Gut],
+                ['Schlecht ',  $F12Schlecht],
+                ['Sehrschlecht', $F12SehrSchlecht]
+
+
+            ]);
+
+            var options = {
+                title: 'Frage12 resultat',
+                colors:['#449430','#73aee3','#e6693e','#d82535']
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('pie12'));
+
+            chart.draw(data, options);
+        }
+    </script>
                 <th scope=\"row\">12</th>
                 <td> Können Sie das Gelernte an der Prüfung anwenden?</td>
 
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><div id=\"pie12\" style=\"width: 130px; height: 90px;\"></div></td>
+                <td>$F12Sehrgut</td>
+                <td>$F12Gut</td>
+                <td>$F12Schlecht</td>
+                <td>$F12SehrSchlecht</td>
+                <td><div id=\"pie12\" style=\"width: 160px; height: 120px;\"></div></td>
             </tr>";
         echo"<tr>
+<script >
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Auswertung', 'chart '],
+                ['Sehrgut' ,    $F13Sehrgut],
+                ['Gut',      $F13Gut],
+                ['Schlecht ',  $F13Schlecht],
+                ['Sehrschlecht', $F13SehrSchlecht]
+
+
+            ]);
+
+            var options = {
+                title: 'Frage13 resultat',
+                colors:['#449430','#73aee3','#e6693e','#d82535']
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('pie13'));
+
+            chart.draw(data, options);
+        }
+    </script>
                 <th scope=\"row\">13</th>
                 <td> Wurden Ihre Fachfragen während des Unterrichts beantwortet?</td>
 
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><div id=\"pie13\" style=\"width: 130px; height: 90px;\"></div></td>
+                <td>$F13Sehrgut</td>
+                <td>$F13Gut</td>
+                <td>$F13Schlecht</td>
+                <td>$F13SehrSchlecht</td>
+                <td><div id=\"pie13\" style=\"width: 160px; height: 120px;\"></div></td>
             </tr>";
+
+
             echo"<tr>
+ <script >
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Auswertung', 'chart '],
+                ['Sehrgut' ,    $F14Sehrgut],
+                ['Gut',      $F14Gut],
+                ['Schlecht ',  $F14Schlecht],
+                ['Sehrschlecht', $F14SehrSchlecht]
+
+
+            ]);
+
+            var options = {
+                title: 'Frage14 resultat',
+                colors:['#449430','#73aee3','#e6693e','#d82535']
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('pie14'));
+
+            chart.draw(data, options);
+        }
+    </script>
                 <th scope=\"row\">14</th>
                 <td> Decken die Lehrmittel den Fachinhalt ab?</td>
 
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><div id=\"pie14\" style=\"width: 130px; height: 90px;\"></div></td>
+                 <td>$F14Sehrgut</td>
+                <td>$F14Gut</td>
+                <td>$F14Schlecht</td>
+                <td>$F14SehrSchlecht</td>
+                <td><div id=\"pie14\" style=\"width: 160px; height: 120px;\"></div></td>
             </tr> <tr>
             </tr>
             </tbody>
         </table>";
-            echo "<div class=\"input-group\" style=\" padding: 0; margin-bottom: 5%;\">
-            <div class=\"container\" style=\" Width: 100%;\">
-                <div class=\"row\" style=\" Width: 100%;\">
-                    <div class=\"col-sm\" style=\" Width: 50%; padding:0;\">
-                        <h6>Positives</h6>
 
+            echo"
+        <table class=\"table table-striped\">
+  <thead>
+    <tr >
+     <th scope=\"col\">Positves</th>
+   </tr>
+   </thead>
+  <tbody>";
+            for ($count = 0; $count<count($pos); $count++) {
+        //print_r($count);$Nachname[$count]
+        $commentpositve= ($pos[$count]);
 
-                    </div>";
-            echo" <div class=\"col-sm\">
-                        <h6>Negatives</h6>
-                    </div>
+        echo"<tr><td>$commentpositve</td></tr>";
+    }
 
-                </div>
+    echo"</tbody>
+</table>";
+            echo" <table class=\"table table-striped\">
+  <thead>
+    <tr >
+      <th scope=\"col\">Negatives</th>
+     </tr>
+  </thead>
+  <tbody>";
+for ($count = 0; $count<count($neg); $count++) {
+        //print_r($count);$Nachname[$count]
+        $CommentNegative= ($neg[$count]);
+        echo"<tr><td>$CommentNegative</td></tr>";
+        }
+  echo"
+</tbody>
+</table>";
 
-                <div class=\"row\"  style=\" Width: 100%;\">
-                    <div class=\"col-sm\" style=\" Width: 50%; padding:0;\">
-                          <span class=\"input-group-btn\">
-            <input type=\"text\" class=\"form-control\" placeholder=\"positives\" aria-label=\"Search for...\">
-                               </span>
-                    </div>
+    //Sehrgut
+    $SehrgutG = $F1Sehrgut + $F2Sehrgut + $F3Sehrgut + $F4Sehrgut + $F5Sehrgut + $F6Sehrgut + $F7Sehrgut + $F8Sehrgut+
+    $F9Sehrgut + $F10Sehrgut + $F11Sehrgut + $F12Sehrgut + $F13Sehrgut + $F14Sehrgut;
+    //Gut
+    $GutG = $F1Gut + $F2Gut + $F3Gut + $F4Gut + $F5Gut + $F6Gut + $F7Gut + $F8Gut + $F9Gut + $F10Gut + $F11Gut + $F12Gut
+    + $F13Gut + $F14Gut;
+    //Schlecht
+    $SchlechtG = $F1Schlecht + $F2Schlecht + $F3Schlecht +$F4Schlecht + $F5Schlecht + $F6Schlecht +$F7Schlecht + $F8Schlecht+
+            $F9Schlecht + $F10Schlecht + $F11Schlecht + $F12Schlecht + $F13Schlecht + $F14Schlecht;
 
-                    <div class=\"col-sm\">
-                        <span class=\"input-group-btn\">
-                    <input type=\"text\" class=\"form-control\" placeholder=\"Verbesserungsvorschläge\" aria-label=\"Search for...\">
-                        </span>
-                    </div>
-                </div>
-                  </div>
-
-        </div>
-                ";
+    $SehrSchlechtG = $F1SehrSchlecht + $F2SehrSchlecht + $F3SehrSchlecht + $F4SehrSchlecht + $F5SehrSchlecht + $F6SehrSchlecht+
+                $F7SehrSchlecht + $F8SehrSchlecht + $F9SehrSchlecht + $F10SehrSchlecht + $F11SehrSchlecht + $F12SehrSchlecht + $F13SehrSchlecht + $F14SehrSchlecht;
             echo"
 <script type=\"text/javascript\">
         google.charts.load('current', {'packages':['corechart']});
@@ -1094,7 +1005,8 @@
                 ]);
 
             var options = {
-                title: 'My Daily Activities'
+                title: 'Alle auswertung zusammengefasst',
+                colors:['#449430','#73aee3','#e6693e','#d82535']
             };
 
             var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -1107,8 +1019,8 @@
 
 
 
-        echo"<button type=\"button\" class=\"btn btn-primary\" style=\"margin-bottom: 5%;\">Zurück</button>
-        <button type=\"button\" class=\"btn btn-primary\" style=\"margin-bottom: 5%;\">drucken</button>";
+        echo"<a href=\"benedictSeite.php\"><button type=\"button\" class=\"btn btn-primary\" style=\"margin-bottom: 5%;\">zurück</button></a>
+<button type=\"button\" class=\"btn btn-primary\" style=\"margin-bottom: 5%;\">drucken</button>";
 
     ?>
     </div>

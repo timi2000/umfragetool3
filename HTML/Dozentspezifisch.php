@@ -41,12 +41,22 @@
 </header>
 <section>
     <div class="hokus">
+        <?php
+        $con = mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
+        if (mysqli_connect_errno())
+        {
+        echo "failed to conect to MySQL: ".mysqli_connect_error();
+        }
+        $LehrerName1 = $_POST["LehrerName"];
+        echo " <div class=\"titeldiv\"  style='padding-bottom: 3%;'>
+        <h1 class=\"Uebertitel\"> $LehrerName1 </h1>
+    </div>";
+        ?>
 
         <table class="table table-striped"  id="tabel4" >
             <thead>
             <tr>
                 <th scope="col">#</th>
-
                 <th scope="col">KlassenName</th>
                 <th scope="col">Semester</th>
                 <th scope="col"></th>
@@ -74,35 +84,24 @@
             while ($row1 = $result->fetch_assoc()) {
                 $res = $row1['idTeacher'];
             }
+//var rowCount = $('#myTable tr').length;
 
-            echo $LehrerName." ".$res." "."<br />";
-
-
-
-//<td><a href="bla.html">Linktext</a></td>
-
-//td a { display:block; width:100%; }
-            /*  $BewertungsID = "Select Bewertung_idBewertung From Course WHERE Teacher_idTeacher LIKE '$res'";
-            $result1 = $con->query($BewertungsID);
-            while ($row1 = $result1->fetch_assoc()) {
-                $res1 = $row1['Bewertung_idBewertung'];
-                echo "BewertungsID"." ".$res1;
-            }
-            $ClassID = "Select Class_idClass From Course WHERE Teacher_idTeacher LIKE '$res' ";
-            $result2 = $con->query($ClassID);
-            while ($row2 = $result2->fetch_assoc()) {
-                $res2 = $row2['Class_idClass'];
-                echo "Klassenid"." ".$res2;
-            }*/
-           /* $Kurs= "Select * From Course WHERE Teacher_idTeacher LIKE '$res'";
-            $result4 = $con->query($Kurs);
-            while ($row = $result4->fetch_assoc()) {
-                $res4 = " KursId->  ".$row['idCourse']." Bewertungid-> ".$row['Bewertung_idBewertung']." KlassenId-> ".$row['Class_idClass']."  LEhrerid-> ".$row['Teacher_idTeacher'].
-                " Studentenid->".$row['Student_idStudent']." StudentenKlassenid->".$row['Student_Class_idClass']." Semester-> ".$row['Semester'];
-                echo $res4."<br />";
+           /* $(function() {
+                var colCount = 0;
+                $('tr:nth-child(1) td').each(function () {
+                    if ($(this).attr('colspan')) {
+                        colCount += +$(this).attr('colspan');
+                    } else {
+                        colCount++;
+                    }
+                });
+            });
+*/
 
 
-            }*/
+
+
+
             $kurs1 ="Select Class_idClass From Course WHERE Teacher_idTeacher LIKE '$res'";
             $result5= $con->query($kurs1);
             while ($row5 = $result5->fetch_assoc()) {
@@ -110,42 +109,16 @@
                 // echo "Klass so so ".$res5;
             }
 
-           $klassenName = "Select c_n From Class WHERE idClass LIKE '$res5'";
-            $result6= $con->query($klassenName);
-            while ($row6 = $result6->fetch_assoc()) {
-                //$res6 = "  ".$row['c_n'];
-                //echo $res6;
-                $res6 =$row6['c_n']."<br />";
 
-               /* $print=' <tr>
-                <th scope="row"><a href="BilanzLehrer.php"><button type="button" class="btn btn-primary" value="'.$row6['c_n'].'">'.$row6['c_n'].'</button></a></th>
-                <td>hoi Tim </td>
-                <td>12.3.2017</td>
-                </tr>';
-                echo  $print;*/
-
-            }
-          //  echo "Klassenname"." ".$res6." "."klassenid".$res5;
-
-          /*  $Kurs= "Select Class_idClass, Semester,  From Course  WHERE Teacher_idTeacher LIKE '$res' GROUP BY Semester ";
-            $result4 = $con->query($Kurs);
-            while ($row = $result4->fetch_assoc()) {
-                $classid = $row['Class_idClass'];
-                $klasssename = $row['c_n'];
-                //$Studentid = $row['Student_idStudent'];
-                $Semester = $row['Semester'];
-              echo "klassenid ".$classid."klassenname ".$klasssename."Semester ".$Semester."<br />";
-              }
-*/
-                $Kursliste= "Select Course.Class_idClass, Course.Semester, Class.c_n From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE '$res'GROUP BY Semester";
+try {
+                $Kursliste = "Select Course.Class_idClass, Course.Semester, Class.c_n From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE '$res'GROUP BY Semester";
                 $whatttt = $con->query($Kursliste);
                 while ($zeile = $whatttt->fetch_assoc()) {
-                $idfromClass = $zeile['Class_idClass'];
-                $Semester1 = $zeile['Semester'];
-                $klassenName = $zeile['c_n'];
-
-                /*echo "klassenid " . $idfromClass." klassenname " . $klassenName . " Semester " . $Semester1 . "<br />";*/
-                echo "<form method=\"post\" action=\"BilanzLehrer.php\">
+                    $idfromClass = $zeile['Class_idClass'];
+                    $Semester1 = $zeile['Semester'];
+                    $klassenName = $zeile['c_n'];
+                    /*echo "klassenid " . $idfromClass." klassenname " . $klassenName . " Semester " . $Semester1 . "<br />";*/
+                    echo "<form method=\"post\" action=\"BilanzLehrer.php\">
                 <tr>
                 <th><input type=\"hidden\" name=\"lehrerid\"  class=\"form-control\"  value='$res' readonly> </th>
                 <td><input type=\"hidden\" name=\"klassenname\"  class=\"form - control\"  value='$klassenName' readonly>$klassenName</td>
@@ -153,6 +126,10 @@
                 <td scope='row'><button type='submit' class='btn btn-primary'>Zur Auswertung</button></td>
                 </tr>
                      </form>";
+                }
+            }catch(Exception $e) {
+            echo 'Ein Fehler ist aufgetreten: ',  $e->getMessage(), "\n";
+
             }
           /*  SELECT kommentare.*, users.vorname, users.nachname FROM kommentare
 LEFT JOIN users ON kommentare.userid = users.id

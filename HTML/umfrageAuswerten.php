@@ -7,6 +7,11 @@
  */
 
 session_start( );
+if (!isset($_SESSION['email'])){
+    session_destroy();
+    var_dump($_SESSION);
+    die();
+}
 var_dump($_SESSION);
 $frage1 = $_POST["group1"];
 $frage2 = $_POST["group2"];
@@ -73,8 +78,9 @@ $semester =htmlspecialchars($_SESSION['Semester']);
 echo "hallo Semester"." ".$semester;
 $Klasse =htmlspecialchars($_SESSION['Klasse']);
 $SID =htmlspecialchars($_SESSION['StudentID']);
-/*$teacherVn=htmlspecialchars($_SESSION['teacherVn']);
+/*$teacherVn=htmlspecialchars($_SES SION['teacherVn']);
 $htmlspecialchars($_SESSION['teacherNn']);*/
+
 try{
     $con2 = new mysqli("127.0.0.1","root","root", "mydb", "3306");
     $sql2 =$con2->prepare( "INSERT INTO Course ( Bewertung_idBewertung, Class_idClass, Teacher_idTeacher, Student_idStudent, Student_Class_idClass, Semester)
@@ -91,7 +97,9 @@ try{
 }
 catch (Exception $ex ){
     echo "Fehler:" . $ex->getMessage();
+    session_destroy();
 }
+
 
 
 
@@ -157,4 +165,30 @@ $frage11, $frage12, $frage13, $frage14, $frage15);
 
 
 //session_destroy();
+//TRANSAKTION
+/*
+try {
+    $dbh = new PDO('odbc:SAMPLE', 'db2inst1', 'ibmdb2',
+        array(PDO::ATTR_PERSISTENT => true));
+    echo "Connected\n";
+} catch (Exception $e) {
+    die("Unable to connect: " . $e->getMessage());
+}
+
+try {
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $dbh->beginTransaction();
+    $dbh->exec("insert into staff (id, first, last) values (23, 'Joe', 'Bloggs')");
+    $dbh->exec("insert into salarychange (id, amount, changedate)
+      values (23, 50000, NOW())");
+    $dbh->commit();
+
+} catch (Exception $e) {
+    $dbh->rollBack();
+    echo "Failed: " . $e->getMessage();
+}
+*/
+// Delet Row from Tabel Security where
+
 ?>

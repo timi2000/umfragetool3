@@ -14,7 +14,6 @@ if (mysqli_connect_errno())
 
 $sql1 = "SELECT c_n FROM Class";
 $result1 = $con->query($sql1);
-// echo '<div class="dropdown-menu"><select name="Klassen"> ';
 
 
 while($row = $result1->fetch_assoc()) {
@@ -24,8 +23,5 @@ while($row = $result1->fetch_assoc()) {
 }
 
 
-//$con->close();
-
-/* echo '</select></div>'*/;
 $con->close();
 ?>
