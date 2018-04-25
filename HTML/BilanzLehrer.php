@@ -31,7 +31,6 @@
         </nav>
     </div>
 </header>
-
 <section>
     <?php
     $con = mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
@@ -198,7 +197,6 @@
         $Frage14 = $row1['Frage14'];
         $pos[] = $row1['pos'];
         $neg[] = $row1['neg'];
-
         $bewertidNR++;
 
 

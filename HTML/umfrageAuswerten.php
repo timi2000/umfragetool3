@@ -12,6 +12,31 @@ if (!isset($_SESSION['email'])){
     var_dump($_SESSION);
     die();
 }
+
+$hash= htmlspecialchars($_SESSION['HAsh']);
+$snn =htmlspecialchars($_SESSION['NName']);
+$svn =htmlspecialchars($_SESSION['VName']);
+$semail=htmlspecialchars($_SESSION['email']);
+$t_id =htmlspecialchars($_SESSION['Tid']);
+$semester =htmlspecialchars($_SESSION['Semester']);
+echo "hallo Semester"." ".$semester;
+$Klasse =htmlspecialchars($_SESSION['Klasse']);
+$SID =htmlspecialchars($_SESSION['StudentID']);
+try{
+    $db = new SQLite3("/Users/timwidmer/Desktop/Security.db3");
+    $id = $db->escapeString($linkid);
+    $sqldelet = "DELETE FROM Security WHERE HAsh ='$hash'";
+    if ($db->exec($sqldelet)){
+        echo "Hat Geklappt";
+    }
+    else {
+        echo "Fuck";
+    }
+    $db->close();
+}catch ( Exception $ex ){
+    echo "Fehler: " . $ex->getMessage();
+}
+
 var_dump($_SESSION);
 $frage1 = $_POST["group1"];
 $frage2 = $_POST["group2"];
@@ -53,33 +78,7 @@ try{
     echo "Fehler:" . $ex->getMessage();
 }
 
-/*try{
-    $con = new mysqli("127.0.0.1","root","root", "mydb", "3306");
-    $sql =( "Select From Bewertung (idBewertung.)
-    Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    // $kommando = $con->prepare($sql);
-    $sql->bind_param("iiiiiiiiiiiiiiss", $frage1, $frage2, $frage3, $frage4, $frage5, $frage6, $frage7, $frage8, $frage9, $frage10, $frage11, $frage12, $frage13, $frage14, $positves, $negatives);
-    $sql->execute();
-    echo"Daten Wurden Eingetragen.<br />";
-    $sql->close();
-    $con->close();
-}
-catch (Exception $ex ){
-    echo "Fehler:" . $ex->getMessage();
-}*/
-///HIEr timii
-/*htmlspecialchars($_SESSION['ID']);
-$2tmlspecialchars($_SESSION['HAsh']);*/
-$snn =htmlspecialchars($_SESSION['NName']);
-$svn =htmlspecialchars($_SESSION['VName']);
-$semail=htmlspecialchars($_SESSION['email']);
-$t_id =htmlspecialchars($_SESSION['Tid']);
-$semester =htmlspecialchars($_SESSION['Semester']);
-echo "hallo Semester"." ".$semester;
-$Klasse =htmlspecialchars($_SESSION['Klasse']);
-$SID =htmlspecialchars($_SESSION['StudentID']);
-/*$teacherVn=htmlspecialchars($_SES SION['teacherVn']);
-$htmlspecialchars($_SESSION['teacherNn']);*/
+
 
 try{
     $con2 = new mysqli("127.0.0.1","root","root", "mydb", "3306");

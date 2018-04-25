@@ -83,20 +83,23 @@ $_SESSION['teacherNn'] = $teachernn;
 if ($linkid == $Hashcode){
 echo "jaaj";
 //Security Den Gabnzen daten satz löschen  der $HAshi Löschen
-    try{
+   /*try{
     $db = new SQLite3("/Users/timwidmer/Desktop/Security.db3");
-    $sqldelet = "DELETE  FROM Security where HAsh=(?)";
-    $kommando = $db->prepare($sqldelet);
-    $kommando->bind_param("s", $linkid);
-    var_dump($kommando);
-    //$kommando->execute();
-    $db->close();
-    }catch ( Exception $ex ){
-        echo "Fehler: " . $ex->getMessage();
+    $id = $db->escapeString($linkid);
+    $sqldelet = "DELETE FROM Security WHERE HAsh ='$id'";
+    if ($db->exec($sqldelet)){
+        header( "Location:Auswertung.php?id=$Hashcode");
     }
+    else {
+        echo "Fuck";
+    }
+    $db->close();
+}catch ( Exception $ex ){
+    echo "Fehler: " . $ex->getMessage();
+}
+*/
+    header( "Location:Auswertung.php?id=$Hashcode");
 
-   // $sqldelet = "DELETE * FROM Security WHERE HAsh = '$linkid' ";
-header( "Location:Auswertung.php?id=$Hashcode");
 
 
 }
