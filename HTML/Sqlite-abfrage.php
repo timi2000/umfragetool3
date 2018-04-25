@@ -13,7 +13,8 @@ if (mysqli_connect_errno())
 }
 
 $Klassen = $_POST["Klassen"];
-
+$timestamp = date("d.m.Y.h.i.s.u");
+echo $timestamp."  ";
 $Lehrer = $_POST["Lehrer"];
 $lehrerexplodiert  = explode(" ", $Lehrer);
 $vn = $lehrerexplodiert[ 1 ];
@@ -85,14 +86,14 @@ $result = $con->query($Students);
 
 //$result2 = $con->query($studentmail );
 while ($row = $result->fetch_assoc()) {
-    $res = $row['s_vn']." ".$row['s_nn']." ".$row['s_email']." ". $row['idStudent']." ".$Lehrer." ".$Semester." ".$Klassen;
-
+    $res = $row['s_vn']." ".$row['s_nn']." ".$row['s_email']." ". $row['idStudent']." ".$Lehrer." ".$Semester." ".$Klassen." ".$timestamp;
+echo $res;
     $hash = hash('sha256', $res);
     $sid = $row['idStudent'];
     $svn = $row['s_vn'];
     $snn = $row['s_nn'];
     $semail = $row['s_email'];
-echo $sid." "."halloSid";
+
     try{
 
         $db = new SQLite3("/Users/timwidmer/Desktop/Security.db3");

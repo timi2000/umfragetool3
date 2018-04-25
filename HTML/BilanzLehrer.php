@@ -465,7 +465,7 @@
         }
     </script>
                 <th scope=\"row\">1</th>
-                <td>Kennt die Lehrperson Die Organisation und Abläufe der Schule?</td>
+                <td>Setzt die Lehrperson das Reglement konsequent um?</td>
                 <td>$F1Sehrgut</td>
                 <td>$F1Gut</td>
                 <td>$F1Schlecht</td>
@@ -536,7 +536,7 @@
         }
     </script>
                 <th scope=\"row\">3</th>
-                <td> Bereitet sich die Lehrperson auf die Lektionen vor?</td>
+                <td>Bereitet sich die Lehrperson auf die Lektionen vor?</td>
 
                  <td>$F3Sehrgut</td>
                 <td>$F3Gut</td>
@@ -643,7 +643,7 @@
         }
     </script>
                 <th scope=\"row\">6</th>
-                <td> Visualisiert die Lehrperson abwechslungsreich und spannend? </td>
+                <td> Visualisiert die Lehrperson abwechslungsreich und spannend?</td>
 
                  <td>$F6Sehrgut</td>
                 <td>$F6Gut</td>
@@ -679,7 +679,7 @@
     </script>
     
                 <th scope=\"row\">7</th>
-                <td> Unterrichtet die Lehrperson motiviert?</td>
+                <td>Unterrichtet die Lehrperson motiviert?</td>
 
                 <td>$F7Sehrgut</td>
                 <td>$F7Gut</td>
@@ -715,7 +715,7 @@
         }
     </script>
                 <th scope=\"row\">8</th>
-                <td> Bringt die Lehrperson Praxisbeispiele?</td>
+                <td>Bringt die Lehrperson Praxisbeispiele?</td>
 
                  <td>$F8Sehrgut</td>
                 <td>$F8Gut</td>
@@ -751,7 +751,7 @@
         }
     </script>
                 <th scope=\"row\" style=\"background-color: transparent;\">9</th>
-                <td> Vermittelt die Lehrperson den Stoff klar und deutlich?</td>
+                <td>Vermittelt die Lehrperson den Stoff klar und deutlich?</td>
 
                  <td>$F9Sehrgut</td>
                 <td>$F9Gut</td>
@@ -787,7 +787,7 @@
         }
     </script>
                 <th scope=\"row\">10</th>
-                <td> Erhalten Sie genügend Selbstlern und Übungsangebote?</td>
+                <td>Erhalten Sie genügend Selbstlern und Übungsangebote?</td>
 
                  <td>$F10Sehrgut</td>
                 <td>$F10Gut</td>
@@ -822,7 +822,7 @@
         }
     </script>
                 <th scope=\"row\">11</th>
-                <td> Erhalten Sie regelmässig Hausaufgaben?</td>
+                <td>Erhalten Sie regelmässig Hausaufgaben?</td>
                  <td>$F11Sehrgut</td>
                 <td>$F11Gut</td>
                 <td>$F11Schlecht</td>
@@ -856,7 +856,8 @@
         }
     </script>
                 <th scope=\"row\">12</th>
-                <td> Können Sie das Gelernte an der Prüfung anwenden?</td>
+                <td> Können Sie das Gelernte an der Prüfung anwenden?
+</td>
 
                 <td>$F12Sehrgut</td>
                 <td>$F12Gut</td>
@@ -892,7 +893,7 @@
         }
     </script>
                 <th scope=\"row\">13</th>
-                <td> Wurden Ihre Fachfragen während des Unterrichts beantwortet?</td>
+                <td> Geht die Lehrperson auf Ihre Fragen ein?</td>
 
                 <td>$F13Sehrgut</td>
                 <td>$F13Gut</td>
@@ -930,7 +931,7 @@
         }
     </script>
                 <th scope=\"row\">14</th>
-                <td> Decken die Lehrmittel den Fachinhalt ab?</td>
+                <td>Kann die Lehrperson Ihre Fragen beantworten?</td>
 
                  <td>$F14Sehrgut</td>
                 <td>$F14Gut</td>

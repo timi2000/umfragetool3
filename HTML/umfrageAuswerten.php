@@ -9,7 +9,7 @@
 session_start( );
 if (!isset($_SESSION['email'])){
     session_destroy();
-    var_dump($_SESSION);
+    //var_dump($_SESSION);
     die();
 }
 
@@ -19,13 +19,13 @@ $svn =htmlspecialchars($_SESSION['VName']);
 $semail=htmlspecialchars($_SESSION['email']);
 $t_id =htmlspecialchars($_SESSION['Tid']);
 $semester =htmlspecialchars($_SESSION['Semester']);
-echo "hallo Semester"." ".$semester;
+
 $Klasse =htmlspecialchars($_SESSION['Klasse']);
 $SID =htmlspecialchars($_SESSION['StudentID']);
 try{
     $db = new SQLite3("/Users/timwidmer/Desktop/Security.db3");
-    $id = $db->escapeString($linkid);
-    $sqldelet = "DELETE FROM Security WHERE HAsh ='$hash'";
+    $id = $db->escapeString($hash);
+    $sqldelet = "DELETE FROM Security WHERE HAsh ='$id'";
     if ($db->exec($sqldelet)){
         echo "Hat Geklappt";
     }
@@ -37,7 +37,7 @@ try{
     echo "Fehler: " . $ex->getMessage();
 }
 
-var_dump($_SESSION);
+//var_dump($_SESSION);
 $frage1 = $_POST["group1"];
 $frage2 = $_POST["group2"];
 $frage3 = $_POST["group3"];
@@ -54,8 +54,8 @@ $frage13 = $_POST["group13"];
 $frage14 = $_POST["group14"];
 $positves =  $_POST["positves"];
 $negatives = $_POST["negatives"];
-echo($frage1. " " .$frage2." " .$frage3. " "  .$frage4. " ".$frage5. " " .$frage6. " ".$frage7." ".$frage8." ".$frage9." ".
-$frage10." ". $frage11." ". $frage12. " ". $frage13." ". $frage14. " " .$positves. " " .$negatives);
+/*echo($frage1. " " .$frage2." " .$frage3. " "  .$frage4. " ".$frage5. " " .$frage6. " ".$frage7." ".$frage8." ".$frage9." ".
+$frage10." ". $frage11." ". $frage12. " ". $frage13." ". $frage14. " " .$positves. " " .$negatives);*/
 echo"<H1>Bewertung wurde versendet</h1>";
 
 
@@ -72,7 +72,7 @@ try{
     echo"Daten Wurden in Bewertung Eingetragen.<br />";
     $sql->close();
     $con->close();
-    echo"$id";
+    //echo"$id";
 }
     catch (Exception $ex ){
     echo "Fehler:" . $ex->getMessage();
