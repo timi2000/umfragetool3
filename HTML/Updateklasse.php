@@ -18,7 +18,7 @@
     <script>
     function deleteStudent(id) {
     $.post("delete.php" , {sid:id} , function(data){
-    $("#" + id).fadeOut('slow' , function(){$(this).remove();if(data)alert(data);});
+    $("#" + id).fadeOut(200 , function(){$(this).remove();if(data)alert(data);});
     });
 
     }
@@ -31,17 +31,11 @@
         }
 
     </script>
-    <script>
-        function deleteverything(){
 
-
-        }
-    </script>
     <script type="text/javascript">
         function displayResult()
         {
             var  table=document.getElementById("tabel3");
-            //var n = countrows.toString();
             var row = table.insertRow(-1);
             var countrows = document.getElementById('tabel3').rows.length;
             var cell1=row.insertCell(0);
@@ -87,19 +81,16 @@ if (mysqli_connect_errno())
 }
 $Klassen = $_POST["KlassenName"];
 $klassenid = "Select idClass from Class  Where c_n like '$Klassen'";
-
 $result2 = $con->query($klassenid);
-
 while ($row = $result2->fetch_assoc()) {
     $res2 = $row['idClass'];
 
 }
-
 $Students = "Select St.s_vn, St.s_nn, St.s_email, St.idStudent, St.Class_idClass from Student AS St, Class AS CL
 Where  CL.idClass = St.Class_idClass
 and CL.c_n like '$Klassen'";
-
 $result= $con->query($Students);
+
 $prints ="<html>
                <h1  style=\"text-align: center; margin: 0 auto; padding-top:3%; padding-bottom: 2%; \"> $Klassen</h1>
              </html>";
@@ -128,13 +119,6 @@ while($row =$result->fetch_assoc()){
     $semail = $row['s_email'];
     $StID = $row['idStudent'];
     $ClassID = $row['Class_idClass'];
-    //$rows = $result->affected_rows;
-
-
-
-   //$numofrows= print_r($rows);
-    //echo $counting;
-
 
     $res = $row['s_vn']." ".$row['s_nn']." ".$row['s_email']. " ".$row['idStudent'];
 //print out table contents and add id into an array and email into an array
@@ -162,63 +146,6 @@ echo'
    
 </div>';
 
-
-
-/*if(isset($_REQUEST['delete'])) {
-    $sql_s = " DELETE FROM Student WHERE idStudent='" .r . "' AND vin='" . $_REQUEST['vin'] . "' ";
-}*/
-/*if($_POST["Submit"])*/
-
-/*
-//start a table
-echo '<form name="form1" method="post" action="">
-<table width="292" border="0" cellspacing="1" cellpadding="0">';
-
-//start header of table
-echo '<tr>
-<th>&nbsp;</th>
-<th>Name</th>
-<th>Email</th>
-</tr>';
-
-//loop through all results
-while($row =$ergebnis->fetch_object()){
-
-//print out table contents and add id into an array and email into an array
-    echo '<tr>
-<td><input type="hidden" name="id[]" value='.$row->idStudent.' readonly></td>
-<td>'.$row->name.'</td>
-<td><input name="email[]" type="text" id="price" value="'.$row->email.'"></td>
-</tr>';
-}
-
-//submit button
-echo'<tr>
-<td colspan="3" align="center"><input type="submit" name="Submit" value="Submit"></td>
-</tr>
-</table>
-</form>';
-
-
-// if form has been submitted, process it
-if($_POST["Submit"])
-{
-    // get data from form
-    $name = $_POST['name'];
-    // loop through all array items
-    foreach($_POST['id'] as $value)
-    {
-        // minus value by 1 since arrays start at 0
-        $item = $value-1;
-        //update table
-        $sql1 = mysqli_query("UPDATE table SET email='$email[$item]' WHERE id='$value'") or die(mysqli_error());
-    }
-
-// redirect user
-    $_SESSION['success'] = 'Updated';
-    header("location:index.php");
-}
-*/
 $con->close();
 
 ?>

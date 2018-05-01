@@ -32,21 +32,21 @@ if (mysqli_connect_errno())
 {
     echo "failed to conect to MySQL: ".mysqli_connect_error();
 }
-$Nachname = $_POST["TeacherNName"];
-$Vorname = $_POST["TeacherVName"];
-$Email = $_POST["TeacherEmail"];
+$Nachname = htmlentities($_POST["TeacherNName"]);
+$Vorname = htmlentities($_POST["TeacherVName"]);
+$Email = htmlentities($_POST["TeacherEmail"]);
 echo($Nachname. " ".$Vorname." ". $Email);
 
 try{
     //$con = mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
     $sql = "INSERT INTO Teacher(t_vn, t_nn, t_email) Values (?,?,?)";
     $kommando = $con->prepare($sql);
-    $kommando->bind_param("sss", $Nachname, $Vorname, $Email);
+    $kommando->bind_param("sss", $Vorname, $Nachname, $Email);
     $kommando->execute();
     $con->close();
     echo "Daten wurden erfolgreich eingetragen";
     echo'<h1>Lehrer Wurde Erfasst</h1>
-  <a href="neuerLehrer.html"><button style="margin-right:2%;"type="button" class="btn btn-primary" >zurück</button></a>';
+    <a href="neuerLehrer.html"><button style="margin-right:2%;"type="button" class="btn btn-primary" >zurück</button></a>';
 
 }
 catch(Exception $ex){
@@ -54,19 +54,7 @@ catch(Exception $ex){
 }
 
 
-/*mysqli_query($con,"SELECT t_vn,t_nn,t_email FROM Teacher");
-mysqli_query($con,"INSERT INTO Teacher (t_vn, t_nn, t_email ) 
-Values ('$Vorname', '$Nachname', '$Email')");
-//$lastid =  mysqli_insert_id($con);
-mysqli_close($con);
-echo'<h1>Lehrer Wurde Erfasst</h1>
-  <a href="neuerLehrer.html"><button style="margin-right:2%;"type="button" class="btn btn-primary" >zurück</button></a>';*/
-/**
- * Created by PhpStorm.
- * User: timwidmer
- * Date: 26.03.18
- * Time: 09:42
- */
+
 ?>
 <body>
 

@@ -7,15 +7,15 @@
  */
 
 session_start( );
-if (!isset($_SESSION['email'])){
-    session_destroy();
+//if (!isset($_SESSION['email'])){
+   //session_destroy();
     //var_dump($_SESSION);
-    die();
-}
+    //die();
+//}
 
 $hash= htmlspecialchars($_SESSION['HAsh']);
-$snn =htmlspecialchars($_SESSION['NName']);
-$svn =htmlspecialchars($_SESSION['VName']);
+$snn = htmlspecialchars($_SESSION['NName']);
+$svn = htmlspecialchars($_SESSION['VName']);
 $semail=htmlspecialchars($_SESSION['email']);
 $t_id =htmlspecialchars($_SESSION['Tid']);
 $semester =htmlspecialchars($_SESSION['Semester']);
@@ -25,19 +25,20 @@ $SID =htmlspecialchars($_SESSION['StudentID']);
 try{
     $db = new SQLite3("/Users/timwidmer/Desktop/Security.db3");
     $id = $db->escapeString($hash);
-    $sqldelet = "DELETE FROM Security WHERE HAsh ='$id'";
+    $sqldelet = "DELETE FROM Security WHERE HAsh='$id'";
+
     if ($db->exec($sqldelet)){
         echo "Hat Geklappt";
     }
     else {
-        echo "Fuck";
+        echo "Nicht geklappt";
     }
     $db->close();
+    var_dump($_SESSION);
 }catch ( Exception $ex ){
     echo "Fehler: " . $ex->getMessage();
 }
 
-//var_dump($_SESSION);
 $frage1 = $_POST["group1"];
 $frage2 = $_POST["group2"];
 $frage3 = $_POST["group3"];
@@ -65,14 +66,13 @@ try{
     $con = new mysqli("127.0.0.1","root","root", "mydb", "3306");
     $sql =$con->prepare( "INSERT INTO Bewertung ( Frage1, Frage2, Frage3, Frage4, Frage5, Frage6, Frage7, Frage8, Frage9, Frage10, Frage11, Frage12, Frage13, Frage14,  pos, neg) 
     Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-   // $kommando = $con->prepare($sql);
     $sql->bind_param("iiiiiiiiiiiiiiss", $frage1, $frage2, $frage3, $frage4, $frage5, $frage6, $frage7, $frage8, $frage9, $frage10, $frage11, $frage12, $frage13, $frage14, $positves, $negatives);
     $sql->execute();
     $id = $con->insert_id;
     echo"Daten Wurden in Bewertung Eingetragen.<br />";
     $sql->close();
     $con->close();
-    //echo"$id";
+
 }
     catch (Exception $ex ){
     echo "Fehler:" . $ex->getMessage();
@@ -84,7 +84,7 @@ try{
     $con2 = new mysqli("127.0.0.1","root","root", "mydb", "3306");
     $sql2 =$con2->prepare( "INSERT INTO Course ( Bewertung_idBewertung, Class_idClass, Teacher_idTeacher, Student_idStudent, Student_Class_idClass, Semester)
     Values (?, ? , ?, ?, ?, ?)");
-    // $kommando = $con->prepare($sql);
+
     $sql2->bind_param("iiiiii",$id ,$Klasse , $t_id, $SID, $Klasse, $semester);
 
     $sql2->execute();
@@ -92,77 +92,12 @@ try{
     $sql2->close();
     $con2->close();
     $_SESSION = array();
-    session_destroy();
+
 }
 catch (Exception $ex ){
     echo "Fehler:" . $ex->getMessage();
     session_destroy();
 }
-
-
-
-
-// prepare and bind
-/*$stmt = $con->prepare("INSERT INTO MyGuests (firstname, lastname, email) VALUES (?, ?, ?)");
-$stmt->bind_param("sss", $firstname, $lastname, $email);
-//mysqli_query($con,"SELECT Frage1, Frage2, Frage3, Frage4, Frage5, Frage6, Frage7, Frage8, Frage9, Frage10, Frage11, Frage12, Frage13, Frage14, Frage15 ,pos, neg FROM Bewertung");
-
-
-/*mysqli_query($con,"INSERT INTO Bewertung ( Frage1, Frage2, Frage3, Frage4, Frage5, Frage6, Frage7, Frage8, Frage9, Frage10, Frage11, Frage12, Frage13, Frage14,  pos, neg)
-Values ($frage1, $frage2, $frage3, $frage4, $frage5, $frage6, $frage7, $frage8, $frage9, $frage10, $frage11, $frage12, $frage13, $frage14,'$positves', '$negatives')");
-//$lastid =  mysqli_insert_id($con);*/
-
-
-
-
-/*mysqli_query($con,"SELECT Frage1, Frage2 from Bewertung");
-mysqli_query($con, "INSERT INTO Bewertung (Frage1, Frage2) Values ($frage1, $frage2)");
-
-*/
-
-/*if (mysqli_query($con)) {
-    $last_id = mysqli_insert_id($con);
-    echo "New record created successfully. Last inserted ID is: " . $last_id;
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($con);
-}*/
-
-
-/*$sql = "INSERT INTO Bewertung (Frage1, Frage2, Frage3, Frage4, Frage5,Frage6, Frage7, Frage8, Frage9, Frage10, Frage11, Frage12, Frage13, Frage14, Frage15)
-VALUES ( $frage1, $frage2, $frage3, $frage4, $frage5, $frage6, $frage7, $frage8,$frage9, $frage10, $frage11, $frage12, $frage13, $frage14, $frage15)";
-$sqlResult = @mysqli_query($sql);
-*/
-/*$sql = "INSERT INTO Bewertung (Frage1, Frage2, Frage3)
-VALUES ($frage1, $frage2, $frage3)";
-
-$result = @mysqli_query($sql);
-if (!$result) {
-    $message  = 'Ungültige Abfrage: ' . mysqli_error() . "\n";
-    $message .= 'Gesamte Abfrage: ' . $sql;
-    die($message);
-}*/
-// Kommentar in Datenbanktabelle 'comments' schreiben:
-/*$sql = "insert into Bewertung";
-$sql .= "(idBewertung, frageNR, FrageWert) values (";s
-$sql .= $articleid.", ";
-$sql .= $_POST['frage'].", ";
-$sql .= $_POST['mail'].", ";
-$sql .= $_POST['text'].", ";
-$sql .= $timestamp.")";
-$sqlResult = @mysql_query($sql, $dbh);
-if(!$sqlResult) // Datensatz konnte nicht gespeichert werden:
-    $errorMessage .= '<div class="error">Kommentar
-            konnte nicht gespeichert werden</div>';
-*/
-/*$statement = $con->prepare("INSERT INTO Bewertung (FrageNR, FrageWert, Frage1, Frage2, Frage3, Frage4, Frage5, Frage6, Frage7, Frage8, Frage9, Frage10, Frage11, Frage12, Frage13, Frage14, Frage15)
-VALUES ('1', '1', $frage1, $frage2, $frage3, $frage4, $frage5, $frage6, $frage7, $frage8, $frage9, $frage10,
-$frage11, $frage12, $frage13, $frage14, $frage15);
-
-
- $statement->execute(array( 'FrageNr' => '1',' FrageWert' => $frage1, 'Frage1' => $frage1,    'email' => 'info@php-einfach.de', 'vorname' => 'Klaus', 'nachname' => 'Neumann'));
-*/
-
-
 //session_destroy();
 //TRANSAKTION
 /*
@@ -188,6 +123,6 @@ try {
     echo "Failed: " . $e->getMessage();
 }
 */
-// Delet Row from Tabel Security where
+
 
 ?>

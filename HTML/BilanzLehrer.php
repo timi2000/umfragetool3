@@ -214,8 +214,7 @@
                 $F1SehrSchlecht++;
                 break;
         }
-//Frage 2
-
+         //Frage 2
         /*$F2Sehrgut = 0;
         $F2Gut = 0;
         $F2Schlecht = 0;

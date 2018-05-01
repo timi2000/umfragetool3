@@ -79,7 +79,7 @@
     <h1 class="Uebertitel" > Klassen Übersicht </h1>
 </div>
     <div class="theButtondiv">
-       <!-- <a href="klasseerfassen.php"><button type="button" class="btn btn-primary ">Neue klasse erstellen</button></a>-->
+
     </div>
 
     <div class="textboxdiv">

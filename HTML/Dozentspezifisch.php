@@ -10,21 +10,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/normalize.css">
-    <script>
-        function ZurNeuenSeite(r ) {
-           /* var i = r.parentNode.parentNode.rowIndex ;
-            document.getElementById("tabel4").deleteRow(i);*/
-         /*   alert("Hello! I am an alert box!!");
-            window.location="BilanzLehrer.php"*/
-        }
-
-    </script>
-    <script>
-        $(document).ready(function(){
-            /* Hier der jQuery-Code */
-           // alert('Hallo Welt');
-        });
-    </script>
 
 </head>
 <body>
@@ -84,34 +69,17 @@
             while ($row1 = $result->fetch_assoc()) {
                 $res = $row1['idTeacher'];
             }
-//var rowCount = $('#myTable tr').length;
-
-           /* $(function() {
-                var colCount = 0;
-                $('tr:nth-child(1) td').each(function () {
-                    if ($(this).attr('colspan')) {
-                        colCount += +$(this).attr('colspan');
-                    } else {
-                        colCount++;
-                    }
-                });
-            });
-*/
-
-
-
-
 
             $kurs1 ="Select Class_idClass From Course WHERE Teacher_idTeacher LIKE '$res'";
             $result5= $con->query($kurs1);
             while ($row5 = $result5->fetch_assoc()) {
                 $res5 = $row5['Class_idClass'];
-                // echo "Klass so so ".$res5;
+
             }
 
 
 try {
-                $Kursliste = "Select Course.Class_idClass, Course.Semester, Class.c_n From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE '$res'GROUP BY Semester";
+                $Kursliste = "Select Course.Class_idClass, Course.Semester, Class.c_n From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE '$res'GROUP BY Semester , Class_idClass";
                 $whatttt = $con->query($Kursliste);
                 while ($zeile = $whatttt->fetch_assoc()) {
                     $idfromClass = $zeile['Class_idClass'];
@@ -131,70 +99,12 @@ try {
             echo 'Ein Fehler ist aufgetreten: ',  $e->getMessage(), "\n";
 
             }
-          /*  SELECT kommentare.*, users.vorname, users.nachname FROM kommentare
-LEFT JOIN users ON kommentare.userid = users.id
-WHERE beitragid = 1*/
-
-
-            //<td><a href="bla.html">Linktext</a></td>
-
-            //td a { display:block; width:100%; }
-
-           // $kurs = "Select idCourse from Course WHERE Bewertung_Teacher_idTeacheridBewertung LIKE '$res1' AND ";
-
-
-            // $sql = "Select idTeacher from Teacher Where t_vn like '$vn' and t_nn like '$nn'";
-            // $sql = "INSERT INTO Teacher(t_vn, t_nn, t_email) Values (?,?,?)";
-            /* $kommando = $con->prepare($sql);
-             $kommando->bind_param("sss", $Nachname, $Vorname, $Email);
-             $kommando->execute();
-             $con->close();
-
-            $sql = "Select idTeacher from Teacher Where t_vn like '$vn' and t_nn like '$nn'";
-
-            $LehrerID = "Select idTeacher from Teacher Where t_vn like '$vn' and t_nn like '$nn'";*/
 
 
 
-
-
-
-
-
-
-/*
-            $sql1 = "SELECT t_vn, t_nn FROM Teacher";
-            $result1 = $con->query($sql1);
-            echo '<tbody id="cool">';
-
-
-            while($row = $result1->fetch_assoc()) {
-
-                $print = ' <tr><td> <a href="Dozentspezifisch.php"><button type="button" class="btn btn-primary" style="margin-bottom: 5%;"> ' .$row['t_vn'] . " " . $row['t_nn']. ' </button></a></td> </tr>';
-                echo ("$print");
-            }
-            $con->close();
-
-            echo '</tbody>';
-            */
-           // $select = bewertung
 
 
             ?>
-
-            <!--<tr>
-                <th scope="row"><a href="BilanzLehrer.php" ><button type="button" class="btn btn-primary">Anschauen</button></a></th>
-                <td>a14</td>
-                <td>12.3.2017</td>
-
-            </tr>
-            <tr>
-                <th scope="row"><a href="BilanzLehrer.php" ><button type="button" class="btn btn-primary">Anschauen</button></a></th>
-                <td>a17</td>
-                <td>12.3.2017</td>
-
-            </tr>-->
-
             </tbody>
         </table>
 

@@ -6,7 +6,7 @@ html {
 body{
     height: 100%;
     width: 100%;
-    background-color: tomato;
+
 }
 
 header{
@@ -19,6 +19,20 @@ section {
     height: 80%;
     width: 100%;
 }
+.tabelle{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 1%;
+}
+/*.smiley{
+    width: 60px;
+    height: 30px;
+}
+.smiley2{
+    width: 30px;
+    height: 30px;
+}*/
 #img1{
     width: 60px; 
     height: 30px;
@@ -37,17 +51,235 @@ section {
     width: 60px; 
     height: 30px;
 }
+@media(max-width: 674px)
+{
+
+    html {
+        padding: 0;
+        height: 100%;
+        width: 100%;
+      font-size: 78%;
+    }
+
+    body{
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        font-size: 78%;
+
+    }
+
+    header{
+        font-size: small;
+        background-color: white;
+        height: 14%;
+        width: 100%;
+
+    }
+    .hdiv{
+    padding-top: 2%;
+        width:90%;
+        text-align: center;
+    }
 
 
+    .tabelle{
+        font-size: small;
+        width: 100%;
+      margin: 0;
+    }
 
-.tabelle{
-    width: 80%;
-    height: 100%;
-    margin: 0 auto;
-    margin-top: 5px;
+
+    #img1{
+        width: 30px;
+        height: 15px;
+    }
+    #img2{
+        width: 15px;
+        height: 15px;
+    }
+
+    #img3{
+        width:15px;
+        height: 15px;
+    }
+
+    #img4{
+        width: 30px;
+        height: 15px;
+    }
+    #h31{
+        font-size: small;
+    }
+    #h32{
+        font-size: small;
+    }
+    #h33{
+        font-size: small;
+    }
+    .comments{
+      width: 90%;
+        margin: 0 auto;
+    }
 
 
 }
+@media(max-width: 375px){
+    html {
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        font-size: 70%;
+    }
+
+    body{
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        font-size: 70%;
+
+    }
+
+    header{
+
+        background-color: white;
+        height: 14%;
+        width: 100%;
+
+    }
+    .hdiv{
+        padding-top: 2%;
+        width:90%;
+        text-align: center;
+    }
+
+
+    .tabelle{
+        font-size: xx-small;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+
+    #img1{
+        width: 30px;
+        height: 15px;
+    }
+    #img2{
+        width: 15px;
+        height: 15px;
+    }
+
+    #img3{
+        width:15px;
+        height: 15px;
+    }
+
+    #img4{
+        width: 30px;
+        height: 15px;
+    }
+    #h31{
+        font-size: x-small;
+    }
+    #h32{
+        font-size: x-small;
+    }
+    #h33{
+        font-size: x-small;
+    }
+    .comments{
+        width: 90%;
+        margin: 0 auto;
+
+    }
+    #Positivbar{
+        padding-bottom: 3%;
+    }
+
+}
+@media(max-width: 320px) {
+    html {
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        font-size: 35%;
+    }
+
+    body{
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        font-size: 35%;
+
+
+    }
+
+    header{
+
+        background-color: white;
+        height: 14%;
+        width: 100%;
+
+    }
+    .hdiv{
+        padding-top: 2%;
+        width:90%;
+        text-align: center;
+    }
+
+
+    .tabelle{
+        font-size: xx-small;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+td{
+    padding:0;
+    margin: 0;
+}
+
+    #img1{
+        width: 16px;
+        height: 8.5px;
+
+    }
+    #img2{
+        width: 8.5px;
+        height: 8.5px;
+    }
+
+    #img3{
+        width:8.5px;
+        height: 8.5px;
+    }
+
+    #img4{
+        width: 16px;
+        height: 8.5px;
+    }
+    #h31{
+        font-size: xx-small;
+    }
+    #h32{
+        font-size: xx-small;
+    }
+    #h33{
+        font-size: xx-small;
+    }
+    .comments{
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+
+/*
+
+
+
 #Positivbar{
     position: relative;
     right: 3.5%;
@@ -139,4 +371,4 @@ position: relative;
 
 
 
-}
+}*/

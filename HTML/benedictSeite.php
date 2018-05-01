@@ -78,69 +78,6 @@
       </span>
         </form>
     </div>
-   <!-- <div class="Homeseite">
-        <div class="newclassy"> <a href="neuerLehrer.html" ><button type="button" class="btn btn-primary">neuer Lehrer erstellen</button></a></div>
-
-<form method="post" action="Dozentspezifisch.php">
-        <div class="input-group">
-
-            <input type="text" class="form-control"  Name="LehrerName" id="teachersuchen" placeholder="Dozent suchen" aria-label="Search for..." style="width: 50%;">
-            <span class="input-group-btn">
-        <button class="btn btn-secondary" type="submit">Suchen</button>
-      </span>
-        </div>
-        </form>
-        <div class="Nbuttons">-->
-
-
-            <!--<table class="table"  style="text-align: center;">
-                <thead>
-                <tr>
-
-                    <th>name</th>
-                </tr>
-                </thead>
-                <tbody id="cool">
-                <?php
-                /**
-                 * Created by PhpStorm.
-                 * User: timwidmer
-                 * Date: 13.03.18
-                 * Time: 16:21
-                 */
-/*
-                $con = mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
-                if (mysqli_connect_errno())
-                {
-                    echo "failed to conect to MySQL: ".mysqli_connect_error();
-                }
-
-                $sql1 = "SELECT t_vn, t_nn FROM Teacher";
-                $result1 = $con->query($sql1);
-                echo '<tbody id="cool">';
-
-
-                while($row = $result1->fetch_assoc()) {
-
-                    $print = ' <tr><td> <a href="Dozentspezifisch.php"><button type="button" class="btn btn-primary" style="margin-bottom: 5%;"> ' .$row['t_vn'] . " " . $row['t_nn']. ' </button></a></td> </tr>';
-                    echo ("$print");
-                }
-                $con->close();
-
-                echo '</tbody>';
-                */?>
-                <tr><td><button type="button" class="btn btn-primary" style="margin-bottom: 5%;"><a href="Dozentspezifisch.php">Marco Glaus</a> </button></td></tr>
-
-
-                </tbody>
-            </table>-->
-
-       <!-- </div>
-
-    </div>-->
-
-
-
 </section>
 <footer>
 

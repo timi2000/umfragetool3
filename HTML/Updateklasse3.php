@@ -29,46 +29,35 @@ if (mysqli_connect_errno())
 {
     echo "failed to conect to MySQL: ".mysqli_connect_error();
 }
-$Nachname = $_POST['Nachname'];
-$Vorname = $_POST['Vorname'];
-$email = $_POST['email'];
-$id = $_POST['id'];
-$Classid = $_POST['ClassID'];
-$NeuNachname = $_POST['Nachname1'];
-$NeuVorname = $_POST['Vorname1'];
-$NeuEmail = $_POST['email1'];
-//print_r ($NeuNachname." ".$NeuVorname." ".$NeuEmail);
+
+$Nachname = ($_POST['Nachname']);
+$Vorname = ($_POST['Vorname']);
+$email = ($_POST['email']);
+$id = ($_POST['id']);
+$Classid = ($_POST['ClassID']);
+$NeuNachname = ($_POST['Nachname1']);
+$NeuVorname = ($_POST['Vorname1']);
+$NeuEmail = ($_POST['email1']);
+
 if(isset($_POST["Submit"])) {
-    //print_r ($id);
+
     $sql = '';
     for ($count = 0; $count<count($id); $count++) {
         //print_r($count);$Nachname[$count]
         $theId = ($id[$count]);
-        print_r ($theId."   ");
-        print_r ($Nachname[$count]."   ");
-        $Nachname_clean = mysqli_real_escape_string($con, $Nachname[$count]);
-        $Vorname_clean = mysqli_real_escape_string($con, $Vorname[$count]);
-        $email_clean = mysqli_real_escape_string($con, $email[$count]);
-        $Classid_clean = mysqli_real_escape_string($con, $Classid[$count]);
-        print_r($Nachname_clean." ");
-        print_r($Vorname_clean." ");
-        print_r($email_clean." ");
-        print_r($Classid_clean." ");
+
+        $Nachname_clean = htmlentities(mysqli_real_escape_string($con, $Nachname[$count]));
+        $Vorname_clean = htmlentities(mysqli_real_escape_string($con, $Vorname[$count]));
+        $email_clean = htmlentities(mysqli_real_escape_string($con, $email[$count]));
+        $Classid_clean = htmlentities(mysqli_real_escape_string($con, $Classid[$count]));
+
         if ($Nachname_clean != '' && $Vorname_clean != '' && $email_clean != '') {
                  $sql = "UPDATE Student SET s_vn = '$Vorname_clean', s_nn ='$Nachname_clean', s_email='$email_clean', Class_idClass = '$Classid_clean'WHERE idStudent = '$theId'";
             $execution = $con->query($sql);
         }
         print_r($sql);
        }
-        /*if ($sql != '') {
-            if ($execution = $con->query($sql)) {
-                echo 'Item Data Inserted';
-            } else {
-                echo 'Error';
-            }
-        } else {
-            echo 'All Fields are Required';
-        }*/
+
     }
 if(isset($_POST["Nachname1"])&&
     isset($_POST["Vorname1"])&&
@@ -76,8 +65,7 @@ if(isset($_POST["Nachname1"])&&
     $query = '';
     for($count = 0; $count<count($NeuNachname); $count++)
     {
-        /*print_r($NeuNachname);
-        print_r($SNname_clean);*/
+
         $SNname_clean = mysqli_real_escape_string($con, $NeuNachname[$count]);
         $SVname_clean = mysqli_real_escape_string($con, $NeuVorname[$count]);
         $SEmail_clean = mysqli_real_escape_string($con, $NeuEmail[$count]);
@@ -105,34 +93,13 @@ if(isset($_POST["Nachname1"])&&
         echo 'All Fields are Required';
     }
 }
-if(isset($_POST["delet"])){
+/*if(isset($_POST["delet"])){
     $sql= "DELETE FROM Student WHERE idStudent= '$StID'";
-}
+}*/
 echo"<form action=\"Klassenübersicht.php\">
                     <div class=\"col-sm\">
                         <button type=\"submit\" class=\"btn btn-primary\">zurück</button>
                     </div>
                 </form>";
-    /*while ($row = $result->fetch_assoc()) {
-        $res = $row['s_vn']." ".$row['s_nn']." ".$row['s_email']. " ".$Lehrer." ".$Semester." ".$Klassen;
-        $hash = hash('sha512', $res);
-        $svn = $row['s_vn'];
-        $snn = $row['s_nn'];
-        $semail = $row['s_email'];
-        try{
-            $db = new SQLite3("/Users/timwidmer/Desktop/Security.db3");
-            $sql = "INSERT INTO Security (HAsh, NName, VName, email, Tid, Semester, Klasse)
-    VALUES ('$hash','$snn','$svn','$semail', '$res3', '$Semester','$res2')";
-            echo $sql;
-            if($db->exec($sql)){
-                echo "Daten eintragen.<br />";
-            } else {
-                echo "Fehler!";
-            }
-            echo $sql;
-            $db->close();
-        }catch ( Exception $ex ){
-            echo "Fehler: " . $ex->getMessage();
-        }
-    }*/
+
 ?>

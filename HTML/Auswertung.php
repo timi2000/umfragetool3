@@ -1,6 +1,6 @@
 <?php
 session_start();
-var_dump($_SESSION);
+//var_dump($_SESSION);
 
 
 ?>
@@ -8,7 +8,7 @@ var_dump($_SESSION);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>Auswertung</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/AuswertungCss.css">
 
@@ -33,24 +33,19 @@ var_dump($_SESSION);
 </head>
 
 <header>
-
-    <div class="container" style="width: 100%; height: 100%; margin: 0 auto; ">
-        <div class="row" style="height: 100%;">
-
-            <div class="col-sm" style="margin: 0 auto; ">
-               <h3>Name:<?php echo " ".htmlspecialchars($_SESSION['VName'])." ".htmlspecialchars($_SESSION['NName']);
+    <div class="container  hdiv">
+        <div class="row">
+            <div class="col-sm" style="margin: 0 auto; padding:0;">
+               <h3 id="h31">Name:<?php echo " ".htmlspecialchars($_SESSION['VName'])." ".htmlspecialchars($_SESSION['NName']);
                    ?></h3>
             </div>
-            <div class="col-sm" style="margin: 0 auto;">
-                <h3>Semester:<?php echo" ".htmlspecialchars($_SESSION['Semester']) ?>
+            <div class="col-sm" style="margin: 0 auto; padding:0;">
+                <h3 id="h32">Semester:<?php echo" ".htmlspecialchars($_SESSION['Semester']) ?>
                 </h3>
             </div>
-            <div class="col-sm" style="margin: 0 auto;">
-                <h3>Name des Lehrer:<?php echo" ".htmlspecialchars($_SESSION['teacherVn']) ?></h3>
+            <div class="col-sm" style="margin: 0 auto; padding:0;">
+                <h3 id="h33">Name des Lehrer:<?php echo" ".htmlspecialchars($_SESSION['teacherVn']) ?></h3>
             </div>
-
-
-
         </div>
     </div>
 </header>
@@ -72,26 +67,23 @@ htmlspecialchars($_SESSION['teacherNn']);
 
   <?php
   $Hashi=htmlspecialchars($_SESSION['HAsh']);
-  /* $link = "http://localhost:8888/auswertung/html/start.php?id=$hashi";
- // $link = "start.php?id = $hashe";action="umfrageAuswerten.php"
-    $linkganz ="<a href=\"$link"."\">".$link."</a>";*/
   $link = "umfrageAuswerten.php?id=$Hashi";
-   // echo '<form name="bmi" action="$link" method="post">'
+
   ?>
+    <div class="tabelle" >
     <form name="bmi" action="umfrageAuswerten.php" method="post">
-    <div class="tabelle" style="margin-top: 50px; margin-bottom: 50px;">
 
 
+<div class="fragen">
         <table class="table table-bordered">
             <thead >
-            <tr style="width:100%;">
-
+            <tr>
                 <th scope="col">NR</th>
                 <th scope="col">Fragen</th>
-                <th scope="col"><img  id="img1" src="../img/Happy2.PNG"></th>
-                <th scope="col"> <img id="img2" src="../img/Happy.PNG"></th>
-                <th scope="col"><img  id="img3" src="../img/Sad.PNG"></th>
-                <th scope="col"> <img   id="img4" src="../img/Sad2.PNG"> </th>
+                <th scope="col"><img id="img1"  src="../img/Happy2.PNG"></th>
+                <th scope="col"><img id="img2"   src="../img/Happy.PNG"></th>
+                <th scope="col"><img  id="img3"  src="../img/Sad.PNG"></th>
+                <th scope="col"><img  id="img4"  src="../img/Sad2.PNG"> </th>
 
             </tr>
             </thead>
@@ -502,42 +494,36 @@ htmlspecialchars($_SESSION['teacherNn']);
             </tr>
             </tbody>
         </table>
-        <div class="input-group">
-            <div class="container">
-                <div class="row">
+    </div>
+       <!-- <div class="input-group">-->
+            <!--<div class="container">-->
+                <!--<div class="row">
                     <div class="col-sm">
-                        <h6 id="Positiv">Positives</h6>
-
-
-                    </div><div class="col-sm">
-                    <h6 id="Negativ">Negatives</h6>
-                </div>
-
-                </div>
-
-                <div class="row" >
-                    <div class="col-sm">
-                          <span class="input-group-btn">
-                    <input name="positves" type="text" class="form-control" placeholder="Positives" id="Positivbar"  aria-label="Search for...">
-
-                               </span>
+                    </div> <!--<div class="col-sm">
+                    </div>-->
+                <!--</div>-->
+        <div class="comments">
+                <div class="row ">
+                    <div class="col-sm" id="Positivbar">
+                        <h6 id="Positiv" style="color:green">Positives</h6>
+                          <span class="input-group-btn" >
+                    <input name="positves" type="text" class="form-control" placeholder="Positives"   aria-label="Search for...">
+                          </span>
                     </div>
-
                     <div class="col-sm">
+                        <h6 id="Negativ" style="color:red;">Negatives</h6>
                         <span class="input-group-btn">
                     <input name="negatives" type="text" class="form-control" placeholder="Negatives" id="Negativbar" aria-label="Search for...">
                         </span>
                     </div>
                 </div>
-            </div>
-        </div>
+           <!-- </div>-->
+        <!--</div>-->
         <p id="p1"> Nach drücken des absende Knopfes nicht mehr bearbeitbar!</p>
         <button type="submit" class="btn btn-primary" id="FormBtn" style="margin-bottom: 5%; position: relative;" >Formular absenden!</button>
     </div>
     </form>
+    </div>
 </section>
-
-
-
 </body>
 </html>

@@ -85,8 +85,8 @@ echo "jaaj";
 //Security Den Gabnzen daten satz löschen  der $HAshi Löschen
    /*try{
     $db = new SQLite3("/Users/timwidmer/Desktop/Security.db3");
-    $id = $db->escapeString($linkid);
-    $sqldelet = "DELETE FROM Security WHERE HAsh ='$id'";
+   // $id = $db->escapeString($linkid);
+    $sqldelet = "DELETE FROM Security ";
     if ($db->exec($sqldelet)){
         header( "Location:Auswertung.php?id=$Hashcode");
     }
