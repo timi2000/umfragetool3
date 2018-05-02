@@ -7,21 +7,23 @@
  */
 
 session_start( );
+var_dump($_SESSION);
 //if (!isset($_SESSION['email'])){
    //session_destroy();
     //var_dump($_SESSION);
     //die();
 //}
-
 $hash= htmlspecialchars($_SESSION['HAsh']);
 $snn = htmlspecialchars($_SESSION['NName']);
 $svn = htmlspecialchars($_SESSION['VName']);
 $semail=htmlspecialchars($_SESSION['email']);
 $t_id =htmlspecialchars($_SESSION['Tid']);
 $semester =htmlspecialchars($_SESSION['Semester']);
-
 $Klasse =htmlspecialchars($_SESSION['Klasse']);
-$SID =htmlspecialchars($_SESSION['StudentID']);
+$SID = htmlspecialchars($_SESSION['StudentID']);
+$S_date = htmlspecialchars($_SESSION['S_Date']);
+
+
 try{
     $db = new SQLite3("/Users/timwidmer/Desktop/Security.db3");
     $id = $db->escapeString($hash);
@@ -34,7 +36,7 @@ try{
         echo "Nicht geklappt";
     }
     $db->close();
-    var_dump($_SESSION);
+   //  var_dump($_SESSION);
 }catch ( Exception $ex ){
     echo "Fehler: " . $ex->getMessage();
 }
@@ -82,16 +84,17 @@ try{
 
 try{
     $con2 = new mysqli("127.0.0.1","root","root", "mydb", "3306");
-    $sql2 =$con2->prepare( "INSERT INTO Course ( Bewertung_idBewertung, Class_idClass, Teacher_idTeacher, Student_idStudent, Student_Class_idClass, Semester)
-    Values (?, ? , ?, ?, ?, ?)");
+    $sql2 =$con2->prepare( "INSERT INTO Course ( Bewertung_idBewertung, Class_idClass, Teacher_idTeacher, Student_idStudent, Student_Class_idClass, Semester, c_Date)
+    Values (?, ? , ?, ?, ?, ?, ?)");
 
-    $sql2->bind_param("iiiiii",$id ,$Klasse , $t_id, $SID, $Klasse, $semester);
+    $sql2->bind_param("iiiiiis",$id ,$Klasse , $t_id, $SID, $Klasse, $semester, $S_date);
 
     $sql2->execute();
     echo"Daten Wurden Eingetragen in Kurs .<br />";
     $sql2->close();
     $con2->close();
     $_SESSION = array();
+    session_destroy();
 
 }
 catch (Exception $ex ){

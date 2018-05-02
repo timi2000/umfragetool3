@@ -68,34 +68,38 @@
       <Position>11</Position>
       <DataType>TEXT|0</DataType>
     </column>
-    <key id="20" parent="6">
+    <column id="20" parent="6" name="S_Date">
+      <Position>12</Position>
+      <DataType>DATETIME|0</DataType>
+    </column>
+    <key id="21" parent="6">
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="21" parent="7" name="type">
+    <column id="22" parent="7" name="type">
       <Position>1</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="22" parent="7" name="name">
+    <column id="23" parent="7" name="name">
       <Position>2</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="23" parent="7" name="tbl_name">
+    <column id="24" parent="7" name="tbl_name">
       <Position>3</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="24" parent="7" name="rootpage">
+    <column id="25" parent="7" name="rootpage">
       <Position>4</Position>
       <DataType>integer|0</DataType>
     </column>
-    <column id="25" parent="7" name="sql">
+    <column id="26" parent="7" name="sql">
       <Position>5</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="26" parent="8" name="name">
+    <column id="27" parent="8" name="name">
       <Position>1</Position>
     </column>
-    <column id="27" parent="8" name="seq">
+    <column id="28" parent="8" name="seq">
       <Position>2</Position>
     </column>
   </database-model>

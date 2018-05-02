@@ -1084,20 +1084,25 @@
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="266" parent="235" name="fk_Course_Bewertung1_idx">
+    <column id="266" parent="235" name="c_Date">
+      <Position>8</Position>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="267" parent="235" name="fk_Course_Bewertung1_idx">
       <ColNames>Bewertung_idBewertung</ColNames>
     </index>
-    <index id="267" parent="235" name="fk_Course_Class1_idx">
+    <index id="268" parent="235" name="fk_Course_Class1_idx">
       <ColNames>Class_idClass</ColNames>
     </index>
-    <index id="268" parent="235" name="fk_Course_Teacher1_idx">
+    <index id="269" parent="235" name="fk_Course_Teacher1_idx">
       <ColNames>Teacher_idTeacher</ColNames>
     </index>
-    <index id="269" parent="235" name="fk_Course_Student1_idx">
+    <index id="270" parent="235" name="fk_Course_Student1_idx">
       <ColNames>Student_idStudent
 Student_Class_idClass</ColNames>
     </index>
-    <key id="270" parent="235" name="PRIMARY">
+    <key id="271" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idCourse
 Bewertung_idBewertung
@@ -1107,25 +1112,25 @@ Student_idStudent
 Student_Class_idClass</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="271" parent="235" name="fk_Course_Bewertung1">
+    <foreign-key id="272" parent="235" name="fk_Course_Bewertung1">
       <ColNames>Bewertung_idBewertung</ColNames>
       <RefSchemaName>mydb</RefSchemaName>
       <RefTableName>Bewertung</RefTableName>
       <RefColNames>idBewertung</RefColNames>
     </foreign-key>
-    <foreign-key id="272" parent="235" name="fk_Course_Class1">
+    <foreign-key id="273" parent="235" name="fk_Course_Class1">
       <ColNames>Class_idClass</ColNames>
       <RefSchemaName>mydb</RefSchemaName>
       <RefTableName>Class</RefTableName>
       <RefColNames>idClass</RefColNames>
     </foreign-key>
-    <foreign-key id="273" parent="235" name="fk_Course_Teacher1">
+    <foreign-key id="274" parent="235" name="fk_Course_Teacher1">
       <ColNames>Teacher_idTeacher</ColNames>
       <RefSchemaName>mydb</RefSchemaName>
       <RefTableName>Teacher</RefTableName>
       <RefColNames>idTeacher</RefColNames>
     </foreign-key>
-    <foreign-key id="274" parent="235" name="fk_Course_Student1">
+    <foreign-key id="275" parent="235" name="fk_Course_Student1">
       <ColNames>Student_idStudent
 Student_Class_idClass</ColNames>
       <RefSchemaName>mydb</RefSchemaName>
@@ -1133,72 +1138,72 @@ Student_Class_idClass</ColNames>
       <RefColNames>idStudent
 Class_idClass</RefColNames>
     </foreign-key>
-    <column id="275" parent="236" name="idStudent">
+    <column id="276" parent="236" name="idStudent">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="276" parent="236" name="s_vn">
+    <column id="277" parent="236" name="s_vn">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="277" parent="236" name="s_nn">
+    <column id="278" parent="236" name="s_nn">
       <Position>3</Position>
       <DataType>varchar(45)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="278" parent="236" name="s_email">
+    <column id="279" parent="236" name="s_email">
       <Position>4</Position>
       <DataType>varchar(45)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="279" parent="236" name="Class_idClass">
+    <column id="280" parent="236" name="Class_idClass">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="280" parent="236" name="fk_Student_Class1_idx">
+    <index id="281" parent="236" name="fk_Student_Class1_idx">
       <ColNames>Class_idClass</ColNames>
     </index>
-    <key id="281" parent="236" name="PRIMARY">
+    <key id="282" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idStudent
 Class_idClass</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="282" parent="236" name="fk_Student_Class1">
+    <foreign-key id="283" parent="236" name="fk_Student_Class1">
       <ColNames>Class_idClass</ColNames>
       <RefSchemaName>mydb</RefSchemaName>
       <RefTableName>Class</RefTableName>
       <RefColNames>idClass</RefColNames>
     </foreign-key>
-    <column id="283" parent="237" name="idTeacher">
+    <column id="284" parent="237" name="idTeacher">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="284" parent="237" name="t_vn">
+    <column id="285" parent="237" name="t_vn">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="285" parent="237" name="t_nn">
+    <column id="286" parent="237" name="t_nn">
       <Position>3</Position>
       <DataType>varchar(45)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="286" parent="237" name="t_email">
+    <column id="287" parent="237" name="t_email">
       <Position>4</Position>
       <DataType>varchar(45)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="287" parent="237" name="PRIMARY">
+    <key id="288" parent="237" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idTeacher</ColNames>
       <Primary>1</Primary>

@@ -12,7 +12,7 @@ $linkid = $_GET['id'];
 echo "hallo glaus hallo Tim  " . $linkid."  UUUUU   ";
 try {
     $db = new SQLite3("/Users/timwidmer/Desktop/Security.db3");
-    $sql = "Select ID, HAsh, NName, VName, email, Tid, Semester, Klasse, StudentID, teacherVn, teacherNn From Security WHERE HAsh = '$linkid'";
+    $sql = "Select ID, HAsh, NName, VName, email, Tid, Semester, Klasse, StudentID, teacherVn, teacherNn, S_Date From Security WHERE HAsh = '$linkid'";
     $ergebnis = $db->query($sql);
     //echo $ergebnis;
     while ($row = $ergebnis->fetchArray()) {
@@ -33,6 +33,7 @@ try {
     $studentid = $row['StudentID'];
     $teachervn= $row['teacherVn'];
     $teachernn = $row['teacherNn'];
+    $S_date =  $row['S_Date'];
     }
     $db->close();
 } catch(Exception $ex){
@@ -79,6 +80,7 @@ $_SESSION['Klasse'] = $idderklassen;
 $_SESSION['StudentID'] = $studentid;
 $_SESSION['teacherVn'] = $teachervn;
 $_SESSION['teacherNn'] = $teachernn;
+$_SESSION['S_Date']= $S_date;
 
 if ($linkid == $Hashcode){
 echo "jaaj";

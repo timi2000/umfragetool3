@@ -44,6 +44,7 @@
                 <th scope="col">#</th>
                 <th scope="col">KlassenName</th>
                 <th scope="col">Semester</th>
+                <th scope="col">Datum</th>
                 <th scope="col"></th>
             </tr>
             </thead>
@@ -79,18 +80,20 @@
 
 
 try {
-                $Kursliste = "Select Course.Class_idClass, Course.Semester, Class.c_n From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE '$res'GROUP BY Semester , Class_idClass";
+                $Kursliste = "Select Course.Class_idClass, Course.Semester, Course.c_Date, Class.c_n  From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE '$res'GROUP BY Semester , Class_idClass, c_Date";
                 $whatttt = $con->query($Kursliste);
                 while ($zeile = $whatttt->fetch_assoc()) {
                     $idfromClass = $zeile['Class_idClass'];
                     $Semester1 = $zeile['Semester'];
                     $klassenName = $zeile['c_n'];
+                    $datum = $zeile['c_Date'];
                     /*echo "klassenid " . $idfromClass." klassenname " . $klassenName . " Semester " . $Semester1 . "<br />";*/
                     echo "<form method=\"post\" action=\"BilanzLehrer.php\">
                 <tr>
                 <th><input type=\"hidden\" name=\"lehrerid\"  class=\"form-control\"  value='$res' readonly> </th>
-                <td><input type=\"hidden\" name=\"klassenname\"  class=\"form - control\"  value='$klassenName' readonly>$klassenName</td>
-                <td><input type=\"hidden\" name=\"Semester\"  class=\"form - control\"  value='$Semester1' readonly><input type=\"hidden\" name=\"Klassenid\"  class=\"form - control\"  value='$idfromClass' readonly>$Semester1</td>
+                <td><input type=\"hidden\" name=\"klassenname\"  class=\"form-control\"  value='$klassenName' readonly>$klassenName</td>
+                <td><input type=\"hidden\" name=\"Semester\"  class=\"form-control\"  value='$Semester1' readonly><input type=\"hidden\" name=\"Klassenid\"  class=\"form-control\"  value='$idfromClass' readonly>$Semester1</td>
+                <td><input type=\"hidden\" name=\"Datum\"  class=\"form-control\"  value='$datum' readonly><input type=\"hidden\" name=\"semester\"  class=\"form-control\"  value='$datum' readonly>$datum</td>
                 <td scope='row'><button type='submit' class='btn btn-primary'>Zur Auswertung</button></td>
                 </tr>
                      </form>";

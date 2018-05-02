@@ -13,10 +13,9 @@ if (mysqli_connect_errno())
 }
 
 $Klassen = $_POST["Klassen"];
-$timestamp = time();
-$time= date("Y/m/d");
-echo $time;
-echo $timestamp."  ";
+ $timestamp = time();
+
+$time = Date("Y-m-d H:i:s");
 $Lehrer = $_POST["Lehrer"];
 $lehrerexplodiert  = explode(" ", $Lehrer);
 $vn = $lehrerexplodiert[ 1 ];
@@ -33,8 +32,6 @@ $result2 = $con->query($klassenid);
 while ($row = $result2->fetch_assoc()) {
     $res2 = $row['idClass'];
 }
-
-
 
 $vn = $vn.'%';
 $nn = $nn.'%';
@@ -67,13 +64,12 @@ echo $res;
     $svn = $row['s_vn'];
     $snn = $row['s_nn'];
     $semail = $row['s_email'];
-
-    try{
+     try{
 
         $db = new SQLite3("/Users/timwidmer/Desktop/Security.db3");
 
-    $sql = "INSERT INTO Security (HAsh, NName, VName, email, Tid, Semester, Klasse, StudentID, teacherVn, teacherNn)
-VALUES ('$hash','$snn','$svn','$semail', '$res3', '$Semester','$res2','$sid','$res5','$res4')";
+    $sql = "INSERT INTO Security (HAsh, NName, VName, email, Tid, Semester, Klasse, StudentID, teacherVn, teacherNn, S_Date)
+VALUES ('$hash','$snn','$svn','$semail', '$res3', '$Semester','$res2','$sid','$res5','$res4','$time')";
 
     if($db->exec($sql)){
          echo "Daten eintragen.<br />";
@@ -113,7 +109,6 @@ $subject = "Lehrer umfrage für $Lehrer ";
 echo "//////LinkHier////////".$linkganz.'<br />'."\n";
 
 $message = "Sehr geehrter Herr blabla bitte füllen sie diesen Link aus ";
-
 
 $mail =mail($email,
     $subject,

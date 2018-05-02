@@ -495,13 +495,6 @@ htmlspecialchars($_SESSION['teacherNn']);
             </tbody>
         </table>
     </div>
-       <!-- <div class="input-group">-->
-            <!--<div class="container">-->
-                <!--<div class="row">
-                    <div class="col-sm">
-                    </div> <!--<div class="col-sm">
-                    </div>-->
-                <!--</div>-->
         <div class="comments">
                 <div class="row ">
                     <div class="col-sm" id="Positivbar">
@@ -517,8 +510,6 @@ htmlspecialchars($_SESSION['teacherNn']);
                         </span>
                     </div>
                 </div>
-           <!-- </div>-->
-        <!--</div>-->
         <p id="p1"> Nach drücken des absende Knopfes nicht mehr bearbeitbar!</p>
         <button type="submit" class="btn btn-primary" id="FormBtn" style="margin-bottom: 5%; position: relative;" >Formular absenden!</button>
     </div>
