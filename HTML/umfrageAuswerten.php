@@ -13,15 +13,15 @@ var_dump($_SESSION);
     //var_dump($_SESSION);
     //die();
 //}
-$hash= htmlspecialchars($_SESSION['HAsh']);
-$snn = htmlspecialchars($_SESSION['NName']);
-$svn = htmlspecialchars($_SESSION['VName']);
-$semail=htmlspecialchars($_SESSION['email']);
-$t_id =htmlspecialchars($_SESSION['Tid']);
-$semester =htmlspecialchars($_SESSION['Semester']);
-$Klasse =htmlspecialchars($_SESSION['Klasse']);
-$SID = htmlspecialchars($_SESSION['StudentID']);
-$S_date = htmlspecialchars($_SESSION['S_Date']);
+$hash= htmlentities(htmlspecialchars($_SESSION['HAsh']));
+$snn = htmlentities(htmlspecialchars($_SESSION['NName']));
+$svn = htmlentities(htmlspecialchars($_SESSION['VName']));
+$semail= htmlentities(htmlspecialchars($_SESSION['email']));
+$t_id = htmlentities(htmlspecialchars($_SESSION['Tid']));
+$semester = htmlentities(htmlspecialchars($_SESSION['Semester']));
+$Klasse = htmlentities(htmlspecialchars($_SESSION['Klasse']));
+$SID = htmlentities(htmlspecialchars($_SESSION['StudentID']));
+$S_date = htmlentities(htmlspecialchars($_SESSION['S_Date']));
 
 
 try{
@@ -86,9 +86,7 @@ try{
     $con2 = new mysqli("127.0.0.1","root","root", "mydb", "3306");
     $sql2 =$con2->prepare( "INSERT INTO Course ( Bewertung_idBewertung, Class_idClass, Teacher_idTeacher, Student_idStudent, Student_Class_idClass, Semester, c_Date)
     Values (?, ? , ?, ?, ?, ?, ?)");
-
     $sql2->bind_param("iiiiiis",$id ,$Klasse , $t_id, $SID, $Klasse, $semester, $S_date);
-
     $sql2->execute();
     echo"Daten Wurden Eingetragen in Kurs .<br />";
     $sql2->close();

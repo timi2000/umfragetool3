@@ -75,11 +75,10 @@
             $result5= $con->query($kurs1);
             while ($row5 = $result5->fetch_assoc()) {
                 $res5 = $row5['Class_idClass'];
-
             }
 
 
-try {
+            try {
                 $Kursliste = "Select Course.Class_idClass, Course.Semester, Course.c_Date, Class.c_n  From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE '$res'GROUP BY Semester , Class_idClass, c_Date";
                 $whatttt = $con->query($Kursliste);
                 while ($zeile = $whatttt->fetch_assoc()) {

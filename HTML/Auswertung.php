@@ -51,22 +51,22 @@ session_start();
 </header>
 <body>
 <?php
-htmlspecialchars($_SESSION['ID']);
-htmlspecialchars($_SESSION['HAsh']);
-htmlspecialchars($_SESSION['NName']);
-htmlspecialchars($_SESSION['VName']);
-htmlspecialchars($_SESSION['email']);
-htmlspecialchars($_SESSION['Tid']);
-htmlspecialchars($_SESSION['Semester']);
-htmlspecialchars($_SESSION['Klasse']);
-htmlspecialchars($_SESSION['StudentID']);
-htmlspecialchars($_SESSION['teacherVn']);
-htmlspecialchars($_SESSION['teacherNn']);
+htmlentities(htmlspecialchars($_SESSION['ID']));
+htmlentities(htmlspecialchars($_SESSION['HAsh']));
+htmlentities(htmlspecialchars($_SESSION['NName']));
+htmlentities(htmlspecialchars($_SESSION['VName']));
+htmlentities(htmlspecialchars($_SESSION['email']));
+htmlentities(htmlspecialchars($_SESSION['Tid']));
+htmlentities(htmlspecialchars($_SESSION['Semester']));
+htmlentities(htmlspecialchars($_SESSION['Klasse']));
+htmlentities(htmlspecialchars($_SESSION['StudentID']));
+htmlentities(htmlspecialchars($_SESSION['teacherVn']));
+htmlentities(htmlspecialchars($_SESSION['teacherNn']));
 ?>
 <section>
 
   <?php
-  $Hashi=htmlspecialchars($_SESSION['HAsh']);
+  $Hashi=htmlentities(htmlspecialchars($_SESSION['HAsh']));
   $link = "umfrageAuswerten.php?id=$Hashi";
 
   ?>

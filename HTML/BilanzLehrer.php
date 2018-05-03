@@ -40,10 +40,12 @@
 
     }
 
-    $Lehrerid = $_POST['lehrerid'];
-    $Semester = $_POST['Semester'];
-    $Klassenname = $_POST['klassenname'];
-    $KlassenId = $_POST['Klassenid'];
+    $Lehrerid = htmlentities(htmlspecialchars($_POST['lehrerid']));
+    $Semester = htmlentities(htmlspecialchars($_POST['Semester']));
+    $timedate = htmlentities(htmlspecialchars($_POST['Datum']));
+    $Klassenname = htmlentities(htmlspecialchars($_POST['klassenname']));
+    $KlassenId = htmlentities(htmlspecialchars($_POST['Klassenid']));
+    echo $Lehrerid." ".$Semester. " ".$timedate." ".$Klassenname." ".$KlassenId;
     $teacherName = "Select t_vn, t_nn From Teacher WHERE idTeacher Like $Lehrerid ";
     $Kommando= $con->query($teacherName);
     while ($row = $Kommando->fetch_assoc()) {
@@ -51,8 +53,8 @@
         $T_nname = $row['t_nn'];
     }
     echo "<div class=\"titeldiv\"  style='padding-bottom: 3%;'>
-        <h1 class=\"Uebertitel\" >  Lehrer: $T_nname $T_vname <br>Klasse: $Klassenname <br>  Semester: $Semester </h1>
-    </div> ";
+        <h1 class=\"Uebertitel\" >  Lehrer: $T_nname $T_vname <br>Klasse: $Klassenname <br>  Semester: $Semester <br>  Datum:  $timedate </h1>
+    </div>";
    echo"<div class=\"tabelle\">
         <a href=\"benedictSeite.php\"><button type=\"button\" class=\"btn btn-primary\" style=\"margin-bottom: 5%;\">zurück</button></a>
 
@@ -77,8 +79,8 @@
 
 
 
-
-    $thesql="Select Bewertung_idBewertung From Course WHERE Class_idClass Like $KlassenId AND Semester Like $Semester AND Teacher_idTeacher LIKE $Lehrerid";
+    //$thesql="Select Bewertung_idBewertung From Course WHERE Class_idClass Like $KlassenId AND Semester Like $Semester   AND Teacher_idTeacher LIKE $Lehrerid";
+    $thesql="Select Bewertung_idBewertung From Course WHERE Class_idClass Like $KlassenId AND c_Date Like '$timedate' AND Teacher_idTeacher LIKE $Lehrerid";
     $resultat= $con->query($thesql);
     while ($row = $resultat->fetch_assoc()) {
         $bewertungsid = $row['Bewertung_idBewertung'];
@@ -176,8 +178,9 @@
 
     for($count = 0; $count<count($bewertungsid); $count++){
     //$Kursliste= "Select Course.Class_idClass, Course.Semester, Class.c_n From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE '$res'GROUP BY Semester";
-    $umfragewert= "Select Course.Bewertung_idBewertung, Bewertung.* from Course LEFT JOIN Bewertung ON Course.Bewertung_idBewertung = Bewertung.idBewertung WHERE Course.Class_idClass Like $KlassenId AND Course.Semester Like $Semester AND Course.Teacher_idTeacher LIKE $Lehrerid";
-    $kommando= $con->query($umfragewert);
+    //$umfragewert= "Select Course.Bewertung_idBewertung, Bewertung.* from Course LEFT JOIN Bewertung ON Course.Bewertung_idBewertung = Bewertung.idBewertung WHERE Course.Class_idClass Like $KlassenId AND Course.Semester Like $Semester AND Course.Teacher_idTeacher LIKE $Lehrerid";
+        $umfragewert= "Select Course.Bewertung_idBewertung, Bewertung.* from Course LEFT JOIN Bewertung ON Course.Bewertung_idBewertung = Bewertung.idBewertung WHERE Course.Class_idClass Like $KlassenId AND Course.c_Date Like '$timedate'  AND Course.Teacher_idTeacher LIKE $Lehrerid";
+        $kommando= $con->query($umfragewert);
     while ($row1 = $kommando->fetch_assoc()) {
         $IDBewertungs = $row1['Bewertung_idBewertung'];
         $IDBewertung = $row1['idBewertung'];
