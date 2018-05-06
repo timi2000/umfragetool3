@@ -67,7 +67,7 @@
         <a href="neuerLehrer.html"><button type="button"   class="btn btn-primary ">Lehrer erstellen</button></a>
     </div>
 
-    <div class="textboxdiv" >
+    <div class="textboxdiv">
         <form method="post"  action="Dozentspezifisch.php">
             <div class="input-group textbox"  >
 

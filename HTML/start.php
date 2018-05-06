@@ -100,7 +100,7 @@ echo "jaaj";
     echo "Fehler: " . $ex->getMessage();
 }
 */
-    header( "Location:../auswertung/Auswertung.php?id=$Hashcode");
+    header( "Location:Auswertung.php?id=$Hashcode");
 
 
 
