@@ -4,7 +4,7 @@ session_start();
 
 
 ?>
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -517,4 +517,4 @@ htmlentities(htmlspecialchars($_SESSION['teacherNn']));*/
     </div>
 </section>
 </body>
-</html>
+</html>-->

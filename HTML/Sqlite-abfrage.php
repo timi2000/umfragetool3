@@ -110,8 +110,8 @@ $email = ($row['email']);
 
 $subject = "Lehrer umfrage für $Lehrer ";
 
-        $link = "http://localhost:8888/auswertung/HTML/start.php?id=$hashi";
-
+        //$link = "http://localhost:8888/auswertung/HTML/start.php?id=$hashi";
+        $link = "http://localhost:8888/auswertung/public/start.php?id=$hashi";
         $linkganz ="<a href=\"$link"."\">".$link."</a>";
 
 

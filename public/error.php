@@ -17,15 +17,15 @@
 <body>
 
 <section>
-<?php
-/**
- * Created by PhpStorm.
- * User: timwidmer
- * Date: 18.04.18
- * Time: 08:31
- */
+    <?php
+    /**
+     * Created by PhpStorm.
+     * User: timwidmer
+     * Date: 18.04.18
+     * Time: 08:31
+     */
 
-echo '<div style=" width:80%; margin:0 auto; padding-top: 10%;  text-align: center; "><h1>Ihre Seite konnte nicht gefunden werden.</h1></div>';
-?>
+    echo '<div style=" width:80%; margin:0 auto; padding-top: 10%;  text-align: center; "><h1>Ihre Seite konnte nicht gefunden werden.</h1></div>';
+    ?>
 </section>
 </body>
