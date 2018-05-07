@@ -41,19 +41,20 @@
     }
 
     $Lehrerid = htmlentities(htmlspecialchars($_POST['lehrerid']));
-    $Semester = htmlentities(htmlspecialchars($_POST['Semester']));
+   // $Semester = htmlentities(htmlspecialchars($_POST['Semester']));
     $timedate = htmlentities(htmlspecialchars($_POST['Datum']));
     $Klassenname = htmlentities(htmlspecialchars($_POST['klassenname']));
     $KlassenId = htmlentities(htmlspecialchars($_POST['Klassenid']));
-    echo $Lehrerid." ".$Semester. " ".$timedate." ".$Klassenname." ".$KlassenId;
+    //echo $Lehrerid." ".$Semester. " ".$timedate." ".$Klassenname." ".$KlassenId;
     $teacherName = "Select t_vn, t_nn From Teacher WHERE idTeacher Like $Lehrerid ";
     $Kommando= $con->query($teacherName);
     while ($row = $Kommando->fetch_assoc()) {
         $T_vname = $row['t_vn'];
         $T_nname = $row['t_nn'];
     }
+    //Semester: $Semester <br>
     echo "<div class=\"titeldiv\"  style='padding-bottom: 3%;'>
-        <h1 class=\"Uebertitel\" >  Lehrer: $T_nname $T_vname <br>Klasse: $Klassenname <br>  Semester: $Semester <br>  Datum:  $timedate </h1>
+        <h1 class=\"Uebertitel\" >  Lehrer:  $T_nname $T_vname <br> Klasse: $Klassenname <br>Datum:  $timedate </h1>
     </div>";
    echo"<div class=\"tabelle\">
         <a href=\"benedictSeite.php\"><button type=\"button\" class=\"btn btn-primary\" style=\"margin-bottom: 5%;\">zurück</button></a>
@@ -1021,7 +1022,7 @@ for ($count = 0; $count<count($neg); $count++) {
 
 
         echo"<a href=\"benedictSeite.php\"><button type=\"button\" class=\"btn btn-primary\" style=\"margin-bottom: 5%;\">zurück</button></a>
-<button type=\"button\" class=\"btn btn-primary\" style=\"margin-bottom: 5%;\">drucken</button>";
+<!--<button type=\"button\" class=\"btn btn-primary\" style=\"margin-bottom: 5%;\">drucken</button>-->";
 
     ?>
     </div>

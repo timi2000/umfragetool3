@@ -104,15 +104,12 @@
 
 
     </div>
-    <div class="input-group coolisach">
+    <!--hier steht der semester input-->
+    <!--<div class="input-group coolisach">
         <h4 style="padding-right: 10px">Semester Auswählen </h4>
         <input type="text" class="form-control" name="Semester" aria-label="Text input with dropdown button" >
-        <div class="input-group-append">
 
-
-
-        </div>
-    </div>
+    </div>-->
     <button type="submit" class="btn btn-primary">Formular absenden</button>
 
 </div>

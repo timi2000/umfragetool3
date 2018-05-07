@@ -44,14 +44,14 @@ session_start();
                 </h3>
             </div>
             <div class="col-sm" style="margin: 0 auto; padding:0;">
-                <h3 id="h33">Name des Lehrer:<?php echo" ".htmlspecialchars($_SESSION['teacherVn']) ?></h3>
+                <h3 id="h33">Name des Lehrer:<?php echo" ".htmlspecialchars($_SESSION['teacherVn'])." ".htmlentities(htmlspecialchars($_SESSION['teacherNn']));?></h3>
             </div>
         </div>
     </div>
 </header>
 <body>
 <?php
-htmlentities(htmlspecialchars($_SESSION['ID']));
+/*htmlentities(htmlspecialchars($_SESSION['ID']));
 htmlentities(htmlspecialchars($_SESSION['HAsh']));
 htmlentities(htmlspecialchars($_SESSION['NName']));
 htmlentities(htmlspecialchars($_SESSION['VName']));
@@ -61,7 +61,7 @@ htmlentities(htmlspecialchars($_SESSION['Semester']));
 htmlentities(htmlspecialchars($_SESSION['Klasse']));
 htmlentities(htmlspecialchars($_SESSION['StudentID']));
 htmlentities(htmlspecialchars($_SESSION['teacherVn']));
-htmlentities(htmlspecialchars($_SESSION['teacherNn']));
+htmlentities(htmlspecialchars($_SESSION['teacherNn']));*/
 ?>
 <section>
 
