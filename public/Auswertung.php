@@ -40,7 +40,7 @@ session_start();
                     ?></h3>
             </div>
             <!--<div class="col-sm" style="margin: 0 auto; padding:0;">
-                <h3 id="h32">Semester:<?php /*echo" ".htmlspecialchars($_SESSION['Semester'])*/ ?>
+                <h3 id="h32">Semester: /*echo" ".htmlspecialchars($_SESSION['Semester'])*/ ?>
                 </h3>
             </div>-->
             <div class="col-sm" style="margin: 0 auto; padding:0;">

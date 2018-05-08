@@ -114,7 +114,7 @@ try{
     Values (?, ? , ?, ?, ?, ?, ?)");
     $sql2->bind_param("iiiiiis",$id ,$Klasse , $t_id, $SID, $Klasse, $semester, $S_date);
     $sql2->execute();
-    echo"<H1 style=\"text-align: center; margin:0 auto;\">Bewertung wurde versendet</h1>";
+    echo"<H1 style=\"text-align: center; margin:0 auto; padding-top: 4%;\">Bewertung wurde versendet</h1>";
     //echo"Daten Wurden Eingetragen in Kurs .<br />";
     $sql2->close();
     $con2->close();

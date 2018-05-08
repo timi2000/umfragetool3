@@ -4,7 +4,7 @@ if (mysqli_connect_errno())
 {
     echo "failed to conect to MySQL: ".mysqli_connect_error();
 }
-// Autocomplete Klassennamen 
+// Autocomplete von Klassennamen
 $request = mysqli_real_escape_string($con, $_POST["query"]);
 $query = "SELECT c_n FROM Class WHERE c_n LIKE '%".$request."%'";
 

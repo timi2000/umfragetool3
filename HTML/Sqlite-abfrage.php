@@ -134,7 +134,18 @@ $mail =mail($email,
         }
 
 $con->close();
+//Löschen der datenbank sätze nach einer gewissen zeit
+/*
+try{
+    $db = new SQLite3("/Users/timwidmer/Desktop/Security.db3");
+    // $id = $db->escapeString($linkid);
+    $sqldelet = "DELETE FROM Security WHERE  DELETE FROM Security";
 
+
+    $db->close();
+}catch ( Exception $ex ){
+    echo "Fehler: " . $ex->getMessage();
+}*/
 
 
 echo"<form action=\"Formularabsenden.php\">
