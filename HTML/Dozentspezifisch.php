@@ -81,19 +81,17 @@
 
             try {
                // $Kursliste = "Select Course.Class_idClass, Course.Semester, Course.c_Date, Class.c_n  From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE '$res'GROUP BY Semester , Class_idClass, c_Date";
-                $Kursliste = "Select Course.Class_idClass, Course.c_Date, Class.c_n  From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE '$res'GROUP BY Class_idClass, c_Date Order by idCourse DESC ";
+                $Kursliste = "Select Course.Class_idClass, Course.c_Date, Class.c_n From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE '$res'GROUP BY Class_idClass, c_Date Order by idCourse DESC ";
                 $whatttt = $con->query($Kursliste);
                 while ($zeile = $whatttt->fetch_assoc()) {
                     $count = 0;
 
                     $idfromClass = $zeile['Class_idClass'];
-                    //$Semester1 = $zeile['Semester'];
+
                     $klassenName = $zeile['c_n'];
                     $datum = $zeile['c_Date'];
-                  /*  $time = strtotime($datum);
-                    $newformat = date('Y-m-d H:i:s',$time);*/
-
-                    //echo $newformat;
+                    //NICht löschen dieser code ist für grundausblidung
+                    //$Semester1 = $zeile['Semester'];
                    /* echo "<form method=\"post\" action=\"BilanzLehrer.php\">
                 <tr>
                 <th><input type=\"hidden\" name=\"lehrerid\"  class=\"form-control\"  value='$res' readonly> </th>

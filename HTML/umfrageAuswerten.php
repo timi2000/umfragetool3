@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,7 +22,7 @@
 
     <script src="scripts.js"></script>
 </head>
-<body>
+<body>-->
 <?php
 /**
  * Created by PhpStorm.
@@ -30,7 +30,7 @@
  * Date: 01.03.18
  * Time: 14:46
  */
-
+/*
 session_start( );
 var_dump($_SESSION);
 //if (!isset($_SESSION['email'])){
@@ -89,6 +89,7 @@ $frage10." ". $frage11." ". $frage12. " ". $frage13." ". $frage14. " " .$positve
 
 
 // Dateneintragen in Tabelle Bewertung
+/*
 try{
     $con = new mysqli("127.0.0.1","root","root", "mydb", "3306");
     $sql =$con->prepare( "INSERT INTO Bewertung ( Frage1, Frage2, Frage3, Frage4, Frage5, Frage6, Frage7, Frage8, Frage9, Frage10, Frage11, Frage12, Frage13, Frage14,  pos, neg) 
@@ -154,5 +155,5 @@ try {
 */
 
 
-?></body>
-</html>
+?><!--</body>
+</html>-->

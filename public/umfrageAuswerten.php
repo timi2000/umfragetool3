@@ -32,7 +32,7 @@
  */
 
 session_start( );
-var_dump($_SESSION);
+//var_dump($_SESSION);
 //if (!isset($_SESSION['email'])){
 //session_destroy();
 //var_dump($_SESSION);
@@ -55,7 +55,7 @@ try{
     $sqldelet = "DELETE FROM Security WHERE HAsh='$id'";
 
     if ($db->exec($sqldelet)){
-        echo "Hat Geklappt";
+      //echo "Hat Geklappt";
     }
     else {
         echo "Nicht geklappt";
@@ -96,7 +96,7 @@ try{
     $sql->bind_param("iiiiiiiiiiiiiiss", $frage1, $frage2, $frage3, $frage4, $frage5, $frage6, $frage7, $frage8, $frage9, $frage10, $frage11, $frage12, $frage13, $frage14, $positves, $negatives);
     $sql->execute();
     $id = $con->insert_id;
-    echo"Daten Wurden in Bewertung Eingetragen.<br />";
+    //echo"Daten Wurden in Bewertung Eingetragen.<br />";
     $sql->close();
     $con->close();
 
@@ -115,7 +115,7 @@ try{
     $sql2->bind_param("iiiiiis",$id ,$Klasse , $t_id, $SID, $Klasse, $semester, $S_date);
     $sql2->execute();
     echo"<H1 style=\"text-align: center; margin:0 auto;\">Bewertung wurde versendet</h1>";
-    echo"Daten Wurden Eingetragen in Kurs .<br />";
+    //echo"Daten Wurden Eingetragen in Kurs .<br />";
     $sql2->close();
     $con2->close();
     $_SESSION = array();

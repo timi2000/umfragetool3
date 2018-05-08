@@ -39,10 +39,10 @@ session_start();
                 <h3 id="h31">Name:<?php echo " ".htmlspecialchars($_SESSION['VName'])." ".htmlspecialchars($_SESSION['NName']);
                     ?></h3>
             </div>
-            <div class="col-sm" style="margin: 0 auto; padding:0;">
-                <h3 id="h32">Semester:<?php echo" ".htmlspecialchars($_SESSION['Semester']) ?>
+            <!--<div class="col-sm" style="margin: 0 auto; padding:0;">
+                <h3 id="h32">Semester:<?php /*echo" ".htmlspecialchars($_SESSION['Semester'])*/ ?>
                 </h3>
-            </div>
+            </div>-->
             <div class="col-sm" style="margin: 0 auto; padding:0;">
                 <h3 id="h33">Name des Lehrer:<?php echo" ".htmlspecialchars($_SESSION['teacherVn'])." ".htmlentities(htmlspecialchars($_SESSION['teacherNn']));?></h3>
             </div>
@@ -66,8 +66,8 @@ htmlentities(htmlspecialchars($_SESSION['teacherNn']));*/
 <section>
 
     <?php
-    $Hashi=htmlentities(htmlspecialchars($_SESSION['HAsh']));
-    $link = "umfrageAuswerten.php?id=$Hashi";
+    /*$Hashi=htmlentities(htmlspecialchars($_SESSION['HAsh']));
+    $link = "umfrageAuswerten.php?id=$Hashi";*/
 
     ?>
     <div class="tabelle" >

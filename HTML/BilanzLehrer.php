@@ -33,28 +33,47 @@
 </header>
 <section>
     <?php
-    $con = mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
+    $con =  mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
     if (mysqli_connect_errno())
     {
         echo "failed to conect to MySQL: ".mysqli_connect_error();
 
     }
-
+// Titel Text
     $Lehrerid = htmlentities(htmlspecialchars($_POST['lehrerid']));
    // $Semester = htmlentities(htmlspecialchars($_POST['Semester']));
     $timedate = htmlentities(htmlspecialchars($_POST['Datum']));
     $Klassenname = htmlentities(htmlspecialchars($_POST['klassenname']));
     $KlassenId = htmlentities(htmlspecialchars($_POST['Klassenid']));
     //echo $Lehrerid." ".$Semester. " ".$timedate." ".$Klassenname." ".$KlassenId;
+
+    //Holt den Namen des Lehreres über Lehrer id
     $teacherName = "Select t_vn, t_nn From Teacher WHERE idTeacher Like $Lehrerid ";
     $Kommando= $con->query($teacherName);
     while ($row = $Kommando->fetch_assoc()) {
         $T_vname = $row['t_vn'];
         $T_nname = $row['t_nn'];
     }
+
+  //KAnn Zählen der abgebenen bögen
+   /* $sql = ("Select Student_idStudent, COUNT(*) AS anzahl from Course WHERE Class_idClass = $KlassenId AND c_Date = '$timedate' AND Teacher_idTeacher = $Lehrerid");
+    $kommando2= $con->query($sql);
+    while ($row2 = $kommando2->fetch_assoc()) {
+
+           $anzahl = $row2['anzahl'];
+    }
+*/
+    $sql = ("Select Course.Bewertung_idBewertung, Bewertung.* from Course LEFT JOIN Bewertung ON Course.Bewertung_idBewertung = Bewertung.idBewertung WHERE Course.Class_idClass Like $KlassenId AND Course.c_Date Like '$timedate'  AND Course.Teacher_idTeacher LIKE $Lehrerid");
+   $sql = ("Select Course.Student_Class_idClass, Student.idStudent, COUNT(*) AS anzahl from Course LEFT JOIN Student ON Course.Student_Class_idClass = Student.Class_idClass WHERE Course.Class_idClass Like $KlassenId AND Course.c_Date Like '$timedate'  AND Course.Teacher_idTeacher LIKE $Lehrerid");
+    $kommando2= $con->query($sql);
+    while ($row2 = $kommando2->fetch_assoc()) {
+
+        $anzahl = $row2['anzahl'];
+    }
+
     //Semester: $Semester <br>
     echo "<div class=\"titeldiv\"  style='padding-bottom: 3%;'>
-        <h1 class=\"Uebertitel\" >  Lehrer:  $T_nname $T_vname <br> Klasse: $Klassenname <br>Datum:  $timedate </h1>
+        <h1 class=\"Uebertitel\" >  Lehrer:  $T_nname $T_vname <br> Klasse: $Klassenname <br>Datum:  $timedate</h1>
     </div>";
    echo"<div class=\"tabelle\">
         <a href=\"benedictSeite.php\"><button type=\"button\" class=\"btn btn-primary\" style=\"margin-bottom: 5%;\">zurück</button></a>
@@ -87,7 +106,7 @@
         $bewertungsid = $row['Bewertung_idBewertung'];
     }
 
-
+// Fragen werte
     $bewertidNR = 0;
 
     $SehrgutG = 0;
@@ -176,7 +195,7 @@
     $F14Schlecht = 0;
     $F14SehrSchlecht = 0;
 
-
+   //Abfrage Für fragen Werte
     for($count = 0; $count<count($bewertungsid); $count++){
     //$Kursliste= "Select Course.Class_idClass, Course.Semester, Class.c_n From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE '$res'GROUP BY Semester";
     //$umfragewert= "Select Course.Bewertung_idBewertung, Bewertung.* from Course LEFT JOIN Bewertung ON Course.Bewertung_idBewertung = Bewertung.idBewertung WHERE Course.Class_idClass Like $KlassenId AND Course.Semester Like $Semester AND Course.Teacher_idTeacher LIKE $Lehrerid";
@@ -429,8 +448,8 @@
 // echo "Gesamtbögen abgabe". $bewertidNR;
     echo" <tr>
 
-                <th> Gesamt abgegbene bögen: $bewertidNR</th>
-                <td></td>
+                <th> Anzahl abgegebener Bögen: <p style=\" color:red; margin: 0; padding: 0;\">$bewertidNR </p> </th>
+                <th> Anzahl verschickter Bögen: <p style=\" color:red\">$anzahl<p></p></th>
                 <td  style=\"background-color:rgb(68, 148, 48);\"></td>
                 <td style=\"background-color:rgb(115, 174, 227);\"></td>
                 <td style=\"background-color:rgb(230, 105, 62);\"></td>
@@ -1025,7 +1044,7 @@ for ($count = 0; $count<count($neg); $count++) {
 <!--<button type=\"button\" class=\"btn btn-primary\" style=\"margin-bottom: 5%;\">drucken</button>-->";
 
     ?>
-    </div>
+
 </section>
 
 
