@@ -30,14 +30,14 @@ if (mysqli_connect_errno())
     echo "failed to conect to MySQL: ".mysqli_connect_error();
 }
 
-$Nachname = ($_POST['Nachname']);
-$Vorname = ($_POST['Vorname']);
-$email = ($_POST['email']);
-$id = ($_POST['id']);
-$Classid = ($_POST['ClassID']);
-$NeuNachname = ($_POST['Nachname1']);
-$NeuVorname = ($_POST['Vorname1']);
-$NeuEmail = ($_POST['email1']);
+$Nachname =$_POST['Nachname'];
+$Vorname = $_POST['Vorname'];
+$email = $_POST['email'];
+$id = $_POST['id'];
+$Classid = $_POST['ClassID'];
+$NeuNachname = $_POST['Nachname1'];
+$NeuVorname = $_POST['Vorname1'];
+$NeuEmail = $_POST['email1'];
 
 if(isset($_POST["Submit"])) {
 
@@ -55,7 +55,7 @@ if(isset($_POST["Submit"])) {
                  $sql = "UPDATE Student SET s_vn = '$Vorname_clean', s_nn ='$Nachname_clean', s_email='$email_clean', Class_idClass = '$Classid_clean'WHERE idStudent = '$theId'";
             $execution = $con->query($sql);
         }
-        print_r($sql);
+        //print_r($sql);
        }
 
     }
@@ -66,9 +66,9 @@ if(isset($_POST["Nachname1"])&&
     for($count = 0; $count<count($NeuNachname); $count++)
     {
 
-        $SNname_clean = mysqli_real_escape_string($con, $NeuNachname[$count]);
-        $SVname_clean = mysqli_real_escape_string($con, $NeuVorname[$count]);
-        $SEmail_clean = mysqli_real_escape_string($con, $NeuEmail[$count]);
+        $SNname_clean = htmlentities(mysqli_real_escape_string($con, $NeuNachname[$count]));
+        $SVname_clean = htmlentities(mysqli_real_escape_string($con, $NeuVorname[$count]));
+        $SEmail_clean = htmlentities(mysqli_real_escape_string($con, $NeuEmail[$count]));
         if($SNname_clean != '' && $SVname_clean != '' && $SEmail_clean != '' )
         {
             $query .= '
@@ -88,10 +88,10 @@ if(isset($_POST["Nachname1"])&&
             echo 'Error';
         }
     }
-    else
+    /*else
     {
         echo 'All Fields are Required';
-    }
+    }*/
 }
 /*if(isset($_POST["delet"])){
     $sql= "DELETE FROM Student WHERE idStudent= '$StID'";

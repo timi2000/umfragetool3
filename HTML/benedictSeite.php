@@ -50,7 +50,7 @@
 
     <div class="HeaderBenedictSeite">
         <nav class="nav">
-            <a class="nav-link activ Schrift"  href="benedictSeite.php">Lehrer Übersicht <span class="sr-only">(current)</span></a>
+            <a class="nav-link activ Schrift"  href="benedictSeite.php">Lehrer Übersicht<span class="sr-only">(current)</span></a>
             <a class="nav-link  Schrift" href="Formularabsenden.php">Formular absenden</a>
             <a class="nav-link Schrift" href="klasseerfassen.php">Klasse erfassen</a>
             <a class="nav-link Schrift" href="Klassenübersicht.php">Klassenübersicht</a>

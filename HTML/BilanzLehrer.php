@@ -48,13 +48,45 @@
     //echo $Lehrerid." ".$Semester. " ".$timedate." ".$Klassenname." ".$KlassenId;
 
     //Holt den Namen des Lehreres über Lehrer id
-    $teacherName = "Select t_vn, t_nn From Teacher WHERE idTeacher Like $Lehrerid ";
+
+    $teacherName = "Select t_vn, t_nn From Teacher WHERE idTeacher Like ? ";
+    $kommando1 = $con->prepare($teacherName);
+    $kommando1->bind_param("i", $Lehrerid);
+    $kommando1->execute();
+    $kresult= $kommando1->get_result();
+    while ($row = $kresult->fetch_assoc()) {
+        $T_vname = $row['t_vn'];
+        $T_nname = $row['t_nn'];
+    }
+
+    /* $result = $kommando->get_result();
+     while($row = $result->fetch_assoc())
+     {
+         $data[] = $row["c_n"];
+
+
+     }
+     echo json_encode($data);
+ */
+
+
+   /* $teacherName = "Select t_vn, t_nn From Teacher WHERE idTeacher Like ? ";
     $Kommando= $con->query($teacherName);
     while ($row = $Kommando->fetch_assoc()) {
         $T_vname = $row['t_vn'];
         $T_nname = $row['t_nn'];
     }
 
+
+/*
+    $con->close();
+    $teacherName = "Select t_vn, t_nn From Teacher WHERE idTeacher Like $Lehrerid ";
+    $Kommando= $con->query($teacherName);
+    while ($row = $Kommando->fetch_assoc()) {
+        $T_vname = $row['t_vn'];
+        $T_nname = $row['t_nn'];
+    }
+*/
   //KAnn Zählen der abgebenen bögen
    /* $sql = ("Select Student_idStudent, COUNT(*) AS anzahl from Course WHERE Class_idClass = $KlassenId AND c_Date = '$timedate' AND Teacher_idTeacher = $Lehrerid");
     $kommando2= $con->query($sql);
@@ -63,14 +95,25 @@
            $anzahl = $row2['anzahl'];
     }
 */
-    $sql = ("Select Course.Bewertung_idBewertung, Bewertung.* from Course LEFT JOIN Bewertung ON Course.Bewertung_idBewertung = Bewertung.idBewertung WHERE Course.Class_idClass Like $KlassenId AND Course.c_Date Like '$timedate'  AND Course.Teacher_idTeacher LIKE $Lehrerid");
-   $sql = ("Select Course.Student_Class_idClass, Student.idStudent, COUNT(*) AS anzahl from Course LEFT JOIN Student ON Course.Student_Class_idClass = Student.Class_idClass WHERE Course.Class_idClass Like $KlassenId AND Course.c_Date Like '$timedate'  AND Course.Teacher_idTeacher LIKE $Lehrerid");
+    //$sql = ("Select Course.Bewertung_idBewertung, Bewertung.* from Course LEFT JOIN Bewertung ON Course.Bewertung_idBewertung = Bewertung.idBewertung WHERE Course.Class_idClass Like $KlassenId AND Course.c_Date Like '$timedate'  AND Course.Teacher_idTeacher LIKE $Lehrerid");
+   //$sql = ("Select  Student.idStudent, ROW_COUNT()AS anzahl from Course LEFT JOIN Student ON Course.Student_Class_idClass = Student.Class_idClass WHERE Course.Class_idClass Like $KlassenId AND Course.c_Date Like '$timedate'  AND Course.Teacher_idTeacher LIKE $Lehrerid");
+
+    $sql = "Select idStudent, COUNT(*) AS anzahl from Student WHERE  Class_idClass = ?";
+    $kommando2 = $con->prepare($sql);
+    $kommando2->bind_param("i", $KlassenId);
+    $kommando2->execute();
+    $sresult= $kommando2->get_result();
+    while ($row2 = $sresult->fetch_assoc()) {
+        $anzahl = $row2['anzahl'];
+    }
+
+    /*$sql = ("Select idStudent, COUNT(*) AS anzahl from Student WHERE  Class_idClass = $KlassenId");
     $kommando2= $con->query($sql);
     while ($row2 = $kommando2->fetch_assoc()) {
 
         $anzahl = $row2['anzahl'];
     }
-
+*/
     //Semester: $Semester <br>
     echo "<div class=\"titeldiv\"  style='padding-bottom: 3%;'>
         <h1 class=\"Uebertitel\" >  Lehrer:  $T_nname $T_vname <br> Klasse: $Klassenname <br>Datum:  $timedate</h1>
@@ -98,13 +141,21 @@
 
 
 
-
+     // für grund Gildung
     //$thesql="Select Bewertung_idBewertung From Course WHERE Class_idClass Like $KlassenId AND Semester Like $Semester   AND Teacher_idTeacher LIKE $Lehrerid";
-    $thesql="Select Bewertung_idBewertung From Course WHERE Class_idClass Like $KlassenId AND c_Date Like '$timedate' AND Teacher_idTeacher LIKE $Lehrerid";
-    $resultat= $con->query($thesql);
+    $thesql = "Select Bewertung_idBewertung From Course WHERE Class_idClass Like ? AND c_Date Like ? AND Teacher_idTeacher LIKE ?";
+    $kommando3 = $con->prepare($thesql);
+    $kommando3->bind_param("isi", $KlassenId, $timedate, $Lehrerid);
+    $kommando3->execute();
+    $resultat= $kommando3->get_result();
     while ($row = $resultat->fetch_assoc()) {
         $bewertungsid = $row['Bewertung_idBewertung'];
     }
+    /*$thesql="Select Bewertung_idBewertung From Course WHERE Class_idClass Like $KlassenId AND c_Date Like '$timedate' AND Teacher_idTeacher LIKE $Lehrerid";
+    $resultat= $con->query($thesql);
+    while ($row = $resultat->fetch_assoc()) {
+        $bewertungsid = $row['Bewertung_idBewertung'];
+    }*/
 
 // Fragen werte
     $bewertidNR = 0;
@@ -199,28 +250,37 @@
     for($count = 0; $count<count($bewertungsid); $count++){
     //$Kursliste= "Select Course.Class_idClass, Course.Semester, Class.c_n From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE '$res'GROUP BY Semester";
     //$umfragewert= "Select Course.Bewertung_idBewertung, Bewertung.* from Course LEFT JOIN Bewertung ON Course.Bewertung_idBewertung = Bewertung.idBewertung WHERE Course.Class_idClass Like $KlassenId AND Course.Semester Like $Semester AND Course.Teacher_idTeacher LIKE $Lehrerid";
-        $umfragewert= "Select Course.Bewertung_idBewertung, Bewertung.* from Course LEFT JOIN Bewertung ON Course.Bewertung_idBewertung = Bewertung.idBewertung WHERE Course.Class_idClass Like $KlassenId AND Course.c_Date Like '$timedate'  AND Course.Teacher_idTeacher LIKE $Lehrerid";
-        $kommando= $con->query($umfragewert);
-    while ($row1 = $kommando->fetch_assoc()) {
-        $IDBewertungs = $row1['Bewertung_idBewertung'];
-        $IDBewertung = $row1['idBewertung'];
-        $Frage1 = $row1['Frage1'];
-        $Frage2 = $row1['Frage2'];
-        $Frage3 = $row1['Frage3'];
-        $Frage4 = $row1['Frage4'];
-        $Frage5 = $row1['Frage5'];
-        $Frage6 = $row1['Frage6'];
-        $Frage7 = $row1['Frage7'];
-        $Frage8 = $row1['Frage8'];
-        $Frage9 = $row1['Frage9'];
-        $Frage10 = $row1['Frage10'];
-        $Frage11 = $row1['Frage11'];
-        $Frage12 = $row1['Frage12'];
-        $Frage13 = $row1['Frage13'];
-        $Frage14 = $row1['Frage14'];
-        $pos[] = $row1['pos'];
-        $neg[] = $row1['neg'];
-        $bewertidNR++;
+        $umfragewert = "Select Course.Bewertung_idBewertung, Bewertung.* from Course LEFT JOIN Bewertung ON Course.Bewertung_idBewertung = Bewertung.idBewertung WHERE Course.Class_idClass Like ? AND Course.c_Date Like ?  AND Course.Teacher_idTeacher LIKE ?";
+        $kommando4 = $con->prepare($umfragewert);
+        $kommando4->bind_param("isi", $KlassenId, $timedate, $Lehrerid);
+        $kommando4->execute();
+        $uresultat= $kommando4->get_result();
+        while ($row1 = $uresultat->fetch_assoc()) {
+            $bewertungsid = $row1['Bewertung_idBewertung'];
+            $IDBewertungs = $row1['Bewertung_idBewertung'];
+            $IDBewertung = $row1['idBewertung'];
+            $Frage1 = $row1['Frage1'];
+            $Frage2 = $row1['Frage2'];
+            $Frage3 = $row1['Frage3'];
+            $Frage4 = $row1['Frage4'];
+            $Frage5 = $row1['Frage5'];
+            $Frage6 = $row1['Frage6'];
+            $Frage7 = $row1['Frage7'];
+            $Frage8 = $row1['Frage8'];
+            $Frage9 = $row1['Frage9'];
+            $Frage10 = $row1['Frage10'];
+            $Frage11 = $row1['Frage11'];
+            $Frage12 = $row1['Frage12'];
+            $Frage13 = $row1['Frage13'];
+            $Frage14 = $row1['Frage14'];
+            $pos[] = $row1['pos'];
+            $neg[] = $row1['neg'];
+            $bewertidNR++;
+
+       // $umfragewert= "Select Course.Bewertung_idBewertung, Bewertung.* from Course LEFT JOIN Bewertung ON Course.Bewertung_idBewertung = Bewertung.idBewertung WHERE Course.Class_idClass Like $KlassenId AND Course.c_Date Like '$timedate'  AND Course.Teacher_idTeacher LIKE $Lehrerid";
+       // $kommando= $con->query($umfragewert);
+   // while ($row1 = $kommando->fetch_assoc()) {
+
 
 
        switch ($Frage1) {
@@ -449,7 +509,7 @@
     echo" <tr>
 
                 <th> Anzahl abgegebener Bögen: <p style=\" color:red; margin: 0; padding: 0;\">$bewertidNR </p> </th>
-                <th> Anzahl verschickter Bögen: <p style=\" color:red\">$anzahl<p></p></th>
+                <th> Anzahl Schüler in der Klasse: <p style=\" color:red\">$anzahl<p></p></th>
                 <td  style=\"background-color:rgb(68, 148, 48);\"></td>
                 <td style=\"background-color:rgb(115, 174, 227);\"></td>
                 <td style=\"background-color:rgb(230, 105, 62);\"></td>

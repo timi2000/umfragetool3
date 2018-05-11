@@ -22,44 +22,90 @@ $vn = $lehrerexplodiert[ 1 ];
 $nn = $lehrerexplodiert[ 0 ];
 //$Semester = $_POST["Semester"];
 $subjekt = "online umfrage";
+
 $Students = "Select St.s_vn, St.s_nn, St.s_email, St.idStudent from Student AS St, Class AS CL
 Where  CL.idClass = St.Class_idClass
-and CL.c_n like '$Klassen'";
+and CL.c_n like ?";
+$kommando1 = $con->prepare($Students);
+$kommando1->bind_param("s", $Klassen);
+$kommando1->execute();
+$Sresult= $kommando1->get_result();
 
+
+/*$Students = "Select St.s_vn, St.s_nn, St.s_email, St.idStudent from Student AS St, Class AS CL
+Where  CL.idClass = St.Class_idClass
+and CL.c_n like '$Klassen'";
+*/
 // Auslesen vom teacher Klassenid
-$klassenid = "Select idClass from Class  Where c_n like '$Klassen'";
+$klassenid = "Select idClass from Class Where c_n like ?";
+$kommando2 = $con->prepare($klassenid);
+$kommando2->bind_param("s",$Klassen);
+$kommando2->execute();
+$kresult= $kommando2->get_result();
+while ($row = $kresult->fetch_assoc()) {
+    $res2 = $row['idClass'];
+}
+/*$klassenid = "Select idClass from Class Where c_n like '$Klassen'";
 $result2 = $con->query($klassenid);
 while ($row = $result2->fetch_assoc()) {
     $res2 = $row['idClass'];
-}
+}*/
 
 $vn = $vn.'%';
 $nn = $nn.'%';
-$LehrerID = "Select idTeacher from Teacher Where t_vn like '$vn' and t_nn like '$nn'";
+
+//id teacher
+$LehrerID = "Select idTeacher from Teacher Where t_vn like ? and t_nn like ?";
+$kommando3 = $con->prepare($LehrerID);
+$kommando3->bind_param("ss",$vn, $nn);
+$kommando3->execute();
+$LIresult= $kommando3->get_result();
+while ($row3 = $LIresult->fetch_assoc()) {
+    $res3 = $row3['idTeacher'];
+}
+/*$LehrerID = "Select idTeacher from Teacher Where t_vn like '$vn' and t_nn like '$nn'";
 $result3 = $con->query($LehrerID);
 while ($row = $result3->fetch_assoc()) {
     $res3 = $row['idTeacher'];
 
-}
+}*/
 // Auslesen vom teacher nachname
+$Lehrernname= "Select t_nn from Teacher Where idTeacher like ?";
+$kommando4= $con->prepare($Lehrernname);
+$kommando4->bind_param("i",$res3);
+$kommando4->execute();
+$Lehrernnameresult= $kommando4->get_result();
+while ($row4 = $Lehrernnameresult->fetch_assoc()) {
+    $res4= $row4['t_nn'];
+}
+/*
 $Lehrernname = "Select t_nn from Teacher Where idTeacher like '$res3'";
 $result4 = $con->query($Lehrernname);
 while ($row = $result4->fetch_assoc()) {
     $res4= $row['t_nn'];
 
-}
+}*/
 // Auslesen vom teacher Vorname
-$Lehrervname = "Select t_vn from Teacher Where idTeacher like '$res3'";
+$Lehrervname= "Select t_vn from Teacher Where idTeacher like ?";
+$kommando4= $con->prepare($Lehrervname);
+$kommando4->bind_param("i",$res3);
+$kommando4->execute();
+$Lehrervnameresult= $kommando4->get_result();
+while ($row = $Lehrervnameresult->fetch_assoc()) {
+    $res5 = $row['t_vn'];
+
+}
+/*$Lehrervname = "Select t_vn from Teacher Where idTeacher like '$res3'";
 $result5= $con->query($Lehrervname);
 while ($row = $result5->fetch_assoc()) {
     $res5 = $row['t_vn'];
 
-}
+}*/
 
 $result = $con->query($Students);
 // Eintrag in Security DB
 
-while ($row = $result->fetch_assoc()) {
+while ($row = $Sresult->fetch_assoc()) {
    // $res = $row['s_vn']." ".$row['s_nn']." ".$row['s_email']." ". $row['idStudent']." ".$Lehrer." ".$Semester." ".$Klassen." ".$timestamp;
     $res = $row['s_vn']." ".$row['s_nn']." ".$row['s_email']." ". $row['idStudent']." ".$Lehrer." ".$Klassen." ".$timestamp;
     echo $res;

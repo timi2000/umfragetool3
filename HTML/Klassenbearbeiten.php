@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -77,7 +77,7 @@
 
   <!--<form method="post" action="Updateklasse.php">-->
         <?php
-
+/*
         $Klassen = $_POST["KlassenName"];
 echo "<input type=\"text\" name=\"NamenDerKlasse\" class=\"form control\" value=\"$Klassen\">";
         $prints =" <html> 
@@ -108,7 +108,7 @@ echo "<input type=\"text\" name=\"NamenDerKlasse\" class=\"form control\" value=
          * Time: 12:08
          */
 
-
+/*
         $con = mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
         if (mysqli_connect_errno())
         {

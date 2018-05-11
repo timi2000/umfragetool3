@@ -1,4 +1,4 @@
-<?php
+<?php/*
 $con = mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
 if (mysqli_connect_errno())
 {
@@ -26,6 +26,6 @@ if(mysqli_num_rows($result) > 0)
     echo json_encode($data);
     echo "</table>";
 }
-
+*/
 
 ?>

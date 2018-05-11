@@ -18,7 +18,7 @@
     <script>
     function deleteStudent(id) {
     $.post("delete.php" , {sid:id} , function(data){
-    $("#" + id).fadeOut(200 , function(){$(this).remove();if(data)alert(data);});
+    $("#" + id).fadeOut(100 , function(){$(this).remove();if(data)alert(data);});
     });
 
     }
@@ -80,17 +80,34 @@ if (mysqli_connect_errno())
     echo "failed to conect to MySQL: ".mysqli_connect_error();
 }
 $Klassen = $_POST["KlassenName"];
-$klassenid = "Select idClass from Class  Where c_n like '$Klassen'";
+
+/*$klassenid = "Select idClass from Class Where c_n like ?";
+$kommando2 = $con->prepare($klassenid);
+$kommando2->bind_param("s",$Klassen);
+$kommando2->execute();
+$result2= $kommando2->get_result();
+while ($row = $result2->fetch_assoc()) {
+    $res2 = $row['idClass'];
+}*/
+/*$klassenid = "Select idClass from Class  Where c_n like '$Klassen'";
 $result2 = $con->query($klassenid);
 while ($row = $result2->fetch_assoc()) {
     $res2 = $row['idClass'];
 
-}
+}*/
 $Students = "Select St.s_vn, St.s_nn, St.s_email, St.idStudent, St.Class_idClass from Student AS St, Class AS CL
+Where  CL.idClass = St.Class_idClass
+and CL.c_n like ?";
+$kommando1 = $con->prepare($Students);
+$kommando1->bind_param("s", $Klassen);
+$kommando1->execute();
+$result= $kommando1->get_result();
+
+/*$Students = "Select St.s_vn, St.s_nn, St.s_email, St.idStudent, St.Class_idClass from Student AS St, Class AS CL
 Where  CL.idClass = St.Class_idClass
 and CL.c_n like '$Klassen'";
 $result= $con->query($Students);
-
+*/
 $prints ="<html>
                <h1  style=\"text-align: center; margin: 0 auto; padding-top:3%; padding-bottom: 2%; \"> $Klassen</h1>
              </html>";

@@ -66,24 +66,50 @@
             $vn = $vn.'%';
             $nn = $nn.'%';
 
-            $LehrerID = "Select idTeacher from Teacher Where t_vn like '$vn' and t_nn LIKE '$nn'";
+
+            $LehrerID = "Select idTeacher from Teacher Where t_vn like ? and t_nn LIKE ?";
+            $kommando1 = $con->prepare($LehrerID);
+            $kommando1->bind_param("ss", $vn, $nn);
+            $kommando1->execute();
+            $Lresult= $kommando1->get_result();
+            while ($row1 = $Lresult->fetch_assoc()) {
+                $res = $row1['idTeacher'];
+            }
+
+           /* $LehrerID = "Select idTeacher from Teacher Where t_vn like '$vn' and t_nn LIKE '$nn'";
             $result = $con->query($LehrerID);
             while ($row1 = $result->fetch_assoc()) {
                 $res = $row1['idTeacher'];
             }
-
+*/
+            $kurs1 = "Select Class_idClass From Course WHERE Teacher_idTeacher LIKE ?";
+            $kommando2 = $con->prepare($kurs1);
+            $kommando2->bind_param("i",$res);
+            $kommando2->execute();
+            $kresult= $kommando2->get_result();
+            while ($row5 = $kresult->fetch_assoc()) {
+                $res5 = $row5['Class_idClass'];
+            }
+            /*
             $kurs1 ="Select Class_idClass From Course WHERE Teacher_idTeacher LIKE '$res'";
             $result5= $con->query($kurs1);
             while ($row5 = $result5->fetch_assoc()) {
                 $res5 = $row5['Class_idClass'];
-            }
+            }*/
 
 
             try {
                // $Kursliste = "Select Course.Class_idClass, Course.Semester, Course.c_Date, Class.c_n  From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE '$res'GROUP BY Semester , Class_idClass, c_Date";
-                $Kursliste = "Select Course.Class_idClass, Course.c_Date, Class.c_n From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE '$res'GROUP BY Class_idClass, c_Date Order by idCourse DESC ";
-                $whatttt = $con->query($Kursliste);
-                while ($zeile = $whatttt->fetch_assoc()) {
+                $Kursliste = "Select Course.Class_idClass, Course.c_Date, Class.c_n From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE ? GROUP BY Class_idClass, c_Date Order by idCourse DESC ";
+                $kommando3 = $con->prepare($Kursliste);
+                $kommando3->bind_param("i",$res);
+                $kommando3->execute();
+                $kursresult= $kommando3->get_result();
+
+
+                /*$Kursliste = "Select Course.Class_idClass, Course.c_Date, Class.c_n From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE '$res'GROUP BY Class_idClass, c_Date Order by idCourse DESC ";
+                $whatttt = $con->query($Kursliste);*/
+                while ($zeile = $kursresult->fetch_assoc()) {
                     $count = 0;
 
                     $idfromClass = $zeile['Class_idClass'];

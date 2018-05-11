@@ -35,7 +35,7 @@ session_start( );
 //var_dump($_SESSION);
 //if (!isset($_SESSION['email'])){
 //session_destroy();
-//var_dump($_SESSION);
+var_dump($_SESSION);
 //die();
 //}
 $hash= htmlentities(htmlspecialchars($_SESSION['HAsh']));
