@@ -16,12 +16,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
 
     <script>
-    function deleteStudent(id) {
-    $.post("delete.php" , {sid:id} , function(data){
-    $("#" + id).fadeOut(200 , function(){$(this).remove();if(data)alert(data);});
-    });
+        function deleteStudent(id) {
+            $.post("delete.php" , {sid:id} , function(data){
+                $("#" + id).fadeOut(100 , function(){$(this).remove();if(data)alert(data);});
+            });
 
-    }
+        }
     </script>
 
     <script>
@@ -66,41 +66,60 @@
     </div>
 </header>
 <section>
-<?php
-/**
- * Created by PhpStorm.
- * User: timwidmer
- * Date: 09.04.18
- * Time: 17:16
- */
+    <?php
+    /**
+     * Created by PhpStorm.
+     * User: timwidmer
+     * Date: 09.04.18
+     * Time: 17:16
+     */
 
-$con = mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
-if (mysqli_connect_errno())
-{
-    echo "failed to conect to MySQL: ".mysqli_connect_error();
-}
-$Klassen = $_POST["KlassenName"];
-$klassenid = "Select idClass from Class  Where c_n like '$Klassen'";
-$result2 = $con->query($klassenid);
-while ($row = $result2->fetch_assoc()) {
-    $res2 = $row['idClass'];
+    $con = mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
+    if (mysqli_connect_errno())
+    {
+        echo "failed to conect to MySQL: ".mysqli_connect_error();
+    }
+    $Klassen = $_POST["KlassenName"];
 
-}
-$Students = "Select St.s_vn, St.s_nn, St.s_email, St.idStudent, St.Class_idClass from Student AS St, Class AS CL
+    $klassenid = "Select idClass from Class Where c_n like ?";
+    $kommando2 = $con->prepare($klassenid);
+    $kommando2->bind_param("s",$Klassen);
+    $kommando2->execute();
+    $result2= $kommando2->get_result();
+    while ($row = $result2->fetch_assoc()) {
+        $res2 = $row['idClass'];
+    }
+    /*$klassenid = "Select idClass from Class  Where c_n like '$Klassen'";
+    $result2 = $con->query($klassenid);
+    while ($row = $result2->fetch_assoc()) {
+        $res2 = $row['idClass'];
+    }*/
+    $Students = "Select St.s_vn, St.s_nn, St.s_email, St.idStudent, St.Class_idClass from Student AS St, Class AS CL
 Where  CL.idClass = St.Class_idClass
-and CL.c_n like '$Klassen'";
-$result= $con->query($Students);
+and CL.c_n like ?";
+    $kommando1 = $con->prepare($Students);
+    $kommando1->bind_param("s", $Klassen);
+    $kommando1->execute();
+    $result= $kommando1->get_result();
 
-$prints ="<html>
-               <h1  style=\"text-align: center; margin: 0 auto; padding-top:3%; padding-bottom: 2%; \"> $Klassen</h1>
+    /*$Students = "Select St.s_vn, St.s_nn, St.s_email, St.idStudent, St.Class_idClass from Student AS St, Class AS CL
+    Where  CL.idClass = St.Class_idClass
+    and CL.c_n like '$Klassen'";
+    $result= $con->query($Students);
+    */
+    $prints ="<html>
+               <h1  style=\"text-align: center; margin: 0 auto; padding-top:3%; padding-bottom: 2%; \">$Klassen<!--<button style=\"margin-right:2%;\" type=\"submit\" name=\"Submit\" value=\"Submit\" class=\"btn btn-danger \"> name der klasse ändern </button>--></h1>
              </html>";
-echo "$prints";
 
-echo '<form name="form1" method="post" action="Updateklasse3.php">
+    echo "$prints";
+
+    echo '<form name="form1" method="post" action="Updateklasse3.php">
 <div Style="margin: 0 auto; width: 90%; padding-top: 2%; padding-bottom: 3%;" >
 <table class="table table-striped">';
 
-echo '<thead>
+    echo '<p>Klassennamen ändern</p><input style="text-align:center" type="hidden" name="Klassideinzeln" class="form-control" value='.$res2.'>
+<input style="text-align:center" type="text" name="Klassenname" class="form-control" value='.$Klassen.'>
+<thead>
         <tr>
             <th scope="col">#</th>
             <th scope="col"></th>
@@ -112,17 +131,17 @@ echo '<thead>
             
         </tr>
         </thead> <tbody id="tabel3">';
-//$rows= $result->num_rows;
-while($row =$result->fetch_assoc()){
-    $svn = $row['s_vn'];
-    $snn = $row['s_nn'];
-    $semail = $row['s_email'];
-    $StID = $row['idStudent'];
-    $ClassID = $row['Class_idClass'];
+    //$rows= $result->num_rows;
+    while($row =$result->fetch_assoc()){
+        $svn = $row['s_vn'];
+        $snn = $row['s_nn'];
+        $semail = $row['s_email'];
+        $StID = $row['idStudent'];
+        $ClassID = $row['Class_idClass'];
 
-    $res = $row['s_vn']." ".$row['s_nn']." ".$row['s_email']. " ".$row['idStudent'];
+        $res = $row['s_vn']." ".$row['s_nn']." ".$row['s_email']. " ".$row['idStudent'];
 //print out table contents and add id into an array and email into an array
-    echo '
+        echo '
 <tr id="' . $row['idStudent'] . '">
 <th><input type="hidden" name="ClassID[]"  class="form-control" value='.$ClassID.' readonly> </th>
 <th><input type="hidden" name="id[]"  class="form-control" value='.$StID.' readonly> </th>
@@ -134,8 +153,8 @@ while($row =$result->fetch_assoc()){
 </tr> ';
 
 
-}
-echo'
+    }
+    echo'
              </tbody>
             </table >
              <a href="Klassenübersicht.php "><button style="margin-right:2%;"type="button" class="btn btn-primary" >zurück</button></a>
@@ -146,9 +165,9 @@ echo'
    
 </div>';
 
-$con->close();
+    $con->close();
 
-?>
+    ?>
 </section>
 </body>
 </html>

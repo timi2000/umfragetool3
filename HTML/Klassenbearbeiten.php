@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -76,11 +76,11 @@
 
 
   <!--<form method="post" action="Updateklasse.php">-->
-        <?php
-
+<?php
+/*
         $Klassen = $_POST["KlassenName"];
 echo "<input type=\"text\" name=\"NamenDerKlasse\" class=\"form control\" value=\"$Klassen\">";
-        $prints =" <html> 
+        $prints =" <html>
                <h1  style=\"text-align: center; margin: 0 auto; padding-top:3%; padding-bottom: 2%; \"> $Klassen</h1>
              </html>";
         echo"$prints"; ?>
@@ -108,7 +108,7 @@ echo "<input type=\"text\" name=\"NamenDerKlasse\" class=\"form control\" value=
          * Time: 12:08
          */
 
-
+/*
         $con = mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
         if (mysqli_connect_errno())
         {
@@ -189,3 +189,4 @@ and CL.c_n like '$Klassen'";
 </section>
 </body>
 </html>
+

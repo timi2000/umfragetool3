@@ -33,29 +33,92 @@
 </header>
 <section>
     <?php
-    $con = mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
+    $con =  mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
     if (mysqli_connect_errno())
     {
         echo "failed to conect to MySQL: ".mysqli_connect_error();
 
     }
-
+    // Titel Text
     $Lehrerid = htmlentities(htmlspecialchars($_POST['lehrerid']));
-    $Semester = htmlentities(htmlspecialchars($_POST['Semester']));
+    // $Semester = htmlentities(htmlspecialchars($_POST['Semester']));
     $timedate = htmlentities(htmlspecialchars($_POST['Datum']));
     $Klassenname = htmlentities(htmlspecialchars($_POST['klassenname']));
     $KlassenId = htmlentities(htmlspecialchars($_POST['Klassenid']));
-    echo $Lehrerid." ".$Semester. " ".$timedate." ".$Klassenname." ".$KlassenId;
-    $teacherName = "Select t_vn, t_nn From Teacher WHERE idTeacher Like $Lehrerid ";
-    $Kommando= $con->query($teacherName);
-    while ($row = $Kommando->fetch_assoc()) {
+    //echo $Lehrerid." ".$Semester. " ".$timedate." ".$Klassenname." ".$KlassenId;
+
+    //Holt den Namen des Lehreres über Lehrer id
+
+    $teacherName = "Select t_vn, t_nn From Teacher WHERE idTeacher Like ? ";
+    $kommando1 = $con->prepare($teacherName);
+    $kommando1->bind_param("i", $Lehrerid);
+    $kommando1->execute();
+    $kresult= $kommando1->get_result();
+    while ($row = $kresult->fetch_assoc()) {
         $T_vname = $row['t_vn'];
         $T_nname = $row['t_nn'];
     }
+
+    /* $result = $kommando->get_result();
+     while($row = $result->fetch_assoc())
+     {
+         $data[] = $row["c_n"];
+
+
+     }
+     echo json_encode($data);
+ */
+
+
+    /* $teacherName = "Select t_vn, t_nn From Teacher WHERE idTeacher Like ? ";
+     $Kommando= $con->query($teacherName);
+     while ($row = $Kommando->fetch_assoc()) {
+         $T_vname = $row['t_vn'];
+         $T_nname = $row['t_nn'];
+     }
+
+
+ /*
+     $con->close();
+     $teacherName = "Select t_vn, t_nn From Teacher WHERE idTeacher Like $Lehrerid ";
+     $Kommando= $con->query($teacherName);
+     while ($row = $Kommando->fetch_assoc()) {
+         $T_vname = $row['t_vn'];
+         $T_nname = $row['t_nn'];
+     }
+ */
+    //KAnn Zählen der abgebenen bögen
+    /* $sql = ("Select Student_idStudent, COUNT(*) AS anzahl from Course WHERE Class_idClass = $KlassenId AND c_Date = '$timedate' AND Teacher_idTeacher = $Lehrerid");
+     $kommando2= $con->query($sql);
+     while ($row2 = $kommando2->fetch_assoc()) {
+
+            $anzahl = $row2['anzahl'];
+     }
+ */
+    //$sql = ("Select Course.Bewertung_idBewertung, Bewertung.* from Course LEFT JOIN Bewertung ON Course.Bewertung_idBewertung = Bewertung.idBewertung WHERE Course.Class_idClass Like $KlassenId AND Course.c_Date Like '$timedate'  AND Course.Teacher_idTeacher LIKE $Lehrerid");
+    //$sql = ("Select  Student.idStudent, ROW_COUNT()AS anzahl from Course LEFT JOIN Student ON Course.Student_Class_idClass = Student.Class_idClass WHERE Course.Class_idClass Like $KlassenId AND Course.c_Date Like '$timedate'  AND Course.Teacher_idTeacher LIKE $Lehrerid");
+
+    $sql = "Select idStudent, COUNT(*) AS anzahl from Student WHERE  Class_idClass = ?";
+    $kommando2 = $con->prepare($sql);
+    $kommando2->bind_param("i", $KlassenId);
+    $kommando2->execute();
+    $sresult= $kommando2->get_result();
+    while ($row2 = $sresult->fetch_assoc()) {
+        $anzahl = $row2['anzahl'];
+    }
+
+    /*$sql = ("Select idStudent, COUNT(*) AS anzahl from Student WHERE  Class_idClass = $KlassenId");
+    $kommando2= $con->query($sql);
+    while ($row2 = $kommando2->fetch_assoc()) {
+
+        $anzahl = $row2['anzahl'];
+    }
+*/
+    //Semester: $Semester <br>
     echo "<div class=\"titeldiv\"  style='padding-bottom: 3%;'>
-        <h1 class=\"Uebertitel\" >  Lehrer: $T_nname $T_vname <br>Klasse: $Klassenname <br>  Semester: $Semester <br>  Datum:  $timedate </h1>
+        <h1 class=\"Uebertitel\" >  Lehrer:  $T_nname $T_vname <br> Klasse: $Klassenname <br>Datum:  $timedate</h1>
     </div>";
-   echo"<div class=\"tabelle\">
+    echo"<div class=\"tabelle\">
         <a href=\"benedictSeite.php\"><button type=\"button\" class=\"btn btn-primary\" style=\"margin-bottom: 5%;\">zurück</button></a>
 
         <table class=\"table table-bordered \">
@@ -78,15 +141,23 @@
 
 
 
-
+    // für grund Gildung
     //$thesql="Select Bewertung_idBewertung From Course WHERE Class_idClass Like $KlassenId AND Semester Like $Semester   AND Teacher_idTeacher LIKE $Lehrerid";
-    $thesql="Select Bewertung_idBewertung From Course WHERE Class_idClass Like $KlassenId AND c_Date Like '$timedate' AND Teacher_idTeacher LIKE $Lehrerid";
-    $resultat= $con->query($thesql);
+    $thesql = "Select Bewertung_idBewertung From Course WHERE Class_idClass Like ? AND c_Date Like ? AND Teacher_idTeacher LIKE ?";
+    $kommando3 = $con->prepare($thesql);
+    $kommando3->bind_param("isi", $KlassenId, $timedate, $Lehrerid);
+    $kommando3->execute();
+    $resultat= $kommando3->get_result();
     while ($row = $resultat->fetch_assoc()) {
         $bewertungsid = $row['Bewertung_idBewertung'];
     }
+    /*$thesql="Select Bewertung_idBewertung From Course WHERE Class_idClass Like $KlassenId AND c_Date Like '$timedate' AND Teacher_idTeacher LIKE $Lehrerid";
+    $resultat= $con->query($thesql);
+    while ($row = $resultat->fetch_assoc()) {
+        $bewertungsid = $row['Bewertung_idBewertung'];
+    }*/
 
-
+    // Fragen werte
     $bewertidNR = 0;
 
     $SehrgutG = 0;
@@ -175,261 +246,270 @@
     $F14Schlecht = 0;
     $F14SehrSchlecht = 0;
 
-
+    //Abfrage Für fragen Werte
     for($count = 0; $count<count($bewertungsid); $count++){
-    //$Kursliste= "Select Course.Class_idClass, Course.Semester, Class.c_n From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE '$res'GROUP BY Semester";
-    //$umfragewert= "Select Course.Bewertung_idBewertung, Bewertung.* from Course LEFT JOIN Bewertung ON Course.Bewertung_idBewertung = Bewertung.idBewertung WHERE Course.Class_idClass Like $KlassenId AND Course.Semester Like $Semester AND Course.Teacher_idTeacher LIKE $Lehrerid";
-        $umfragewert= "Select Course.Bewertung_idBewertung, Bewertung.* from Course LEFT JOIN Bewertung ON Course.Bewertung_idBewertung = Bewertung.idBewertung WHERE Course.Class_idClass Like $KlassenId AND Course.c_Date Like '$timedate'  AND Course.Teacher_idTeacher LIKE $Lehrerid";
-        $kommando= $con->query($umfragewert);
-    while ($row1 = $kommando->fetch_assoc()) {
-        $IDBewertungs = $row1['Bewertung_idBewertung'];
-        $IDBewertung = $row1['idBewertung'];
-        $Frage1 = $row1['Frage1'];
-        $Frage2 = $row1['Frage2'];
-        $Frage3 = $row1['Frage3'];
-        $Frage4 = $row1['Frage4'];
-        $Frage5 = $row1['Frage5'];
-        $Frage6 = $row1['Frage6'];
-        $Frage7 = $row1['Frage7'];
-        $Frage8 = $row1['Frage8'];
-        $Frage9 = $row1['Frage9'];
-        $Frage10 = $row1['Frage10'];
-        $Frage11 = $row1['Frage11'];
-        $Frage12 = $row1['Frage12'];
-        $Frage13 = $row1['Frage13'];
-        $Frage14 = $row1['Frage14'];
-        $pos[] = $row1['pos'];
-        $neg[] = $row1['neg'];
-        $bewertidNR++;
+        //$Kursliste= "Select Course.Class_idClass, Course.Semester, Class.c_n From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE '$res'GROUP BY Semester";
+        //$umfragewert= "Select Course.Bewertung_idBewertung, Bewertung.* from Course LEFT JOIN Bewertung ON Course.Bewertung_idBewertung = Bewertung.idBewertung WHERE Course.Class_idClass Like $KlassenId AND Course.Semester Like $Semester AND Course.Teacher_idTeacher LIKE $Lehrerid";
+        $umfragewert = "Select Course.Bewertung_idBewertung, Bewertung.* from Course LEFT JOIN Bewertung ON Course.Bewertung_idBewertung = Bewertung.idBewertung WHERE Course.Class_idClass Like ? AND Course.c_Date Like ?  AND Course.Teacher_idTeacher LIKE ?";
+        $kommando4 = $con->prepare($umfragewert);
+        $kommando4->bind_param("isi", $KlassenId, $timedate, $Lehrerid);
+        $kommando4->execute();
+        $uresultat= $kommando4->get_result();
+        while ($row1 = $uresultat->fetch_assoc()) {
+            $bewertungsid = $row1['Bewertung_idBewertung'];
+            $IDBewertungs = $row1['Bewertung_idBewertung'];
+            $IDBewertung = $row1['idBewertung'];
+            $Frage1 = $row1['Frage1'];
+            $Frage2 = $row1['Frage2'];
+            $Frage3 = $row1['Frage3'];
+            $Frage4 = $row1['Frage4'];
+            $Frage5 = $row1['Frage5'];
+            $Frage6 = $row1['Frage6'];
+            $Frage7 = $row1['Frage7'];
+            $Frage8 = $row1['Frage8'];
+            $Frage9 = $row1['Frage9'];
+            $Frage10 = $row1['Frage10'];
+            $Frage11 = $row1['Frage11'];
+            $Frage12 = $row1['Frage12'];
+            $Frage13 = $row1['Frage13'];
+            $Frage14 = $row1['Frage14'];
+            $pos[] = $row1['pos'];
+            $neg[] = $row1['neg'];
+            $bewertidNR++;
+
+            // $umfragewert= "Select Course.Bewertung_idBewertung, Bewertung.* from Course LEFT JOIN Bewertung ON Course.Bewertung_idBewertung = Bewertung.idBewertung WHERE Course.Class_idClass Like $KlassenId AND Course.c_Date Like '$timedate'  AND Course.Teacher_idTeacher LIKE $Lehrerid";
+            // $kommando= $con->query($umfragewert);
+            // while ($row1 = $kommando->fetch_assoc()) {
 
 
-       switch ($Frage1) {
-            case 0:
-                $F1Sehrgut++;
-                break;
-            case 1:
-                $F1Gut++;
-                break;
-            case 2:
-                $F1Schlecht++;
-                break;
-            case 3:
-                $F1SehrSchlecht++;
-                break;
+
+            switch ($Frage1) {
+                case 0:
+                    $F1Sehrgut++;
+                    break;
+                case 1:
+                    $F1Gut++;
+                    break;
+                case 2:
+                    $F1Schlecht++;
+                    break;
+                case 3:
+                    $F1SehrSchlecht++;
+                    break;
+            }
+            //Frage 2
+            /*$F2Sehrgut = 0;
+            $F2Gut = 0;
+            $F2Schlecht = 0;
+            $F2SehrSchlecht = 0;*/
+            switch ($Frage2) {
+                case 0:
+                    $F2Sehrgut++;
+                    break;
+                case 1:
+                    $F2Gut++;
+                    break;
+                case 2:
+                    $F2Schlecht++;
+                    break;
+                case 3:
+                    $F2SehrSchlecht++;
+                    break;
+            }
+            //Frage 3
+            /*$F3Sehrgut = 0;
+            $F3Gut = 0;
+            $F3Schlecht = 0;
+            $F3SehrSchlecht = 0;*/
+            switch ($Frage3) {
+                case 0:
+                    $F3Sehrgut++;
+                    break;
+                case 1:
+                    $F3Gut++;
+                    break;
+                case 2:
+                    $F3Schlecht++;
+                    break;
+                case 3:
+                    $F3SehrSchlecht++;
+                    break;
+            }
+
+            switch ($Frage4) {
+                case 0:
+                    $F4Sehrgut++;
+                    break;
+                case 1:
+                    $F4Gut++;
+                    break;
+                case 2:
+                    $F4Schlecht++;
+                    break;
+                case 3:
+                    $F4SehrSchlecht++;
+                    break;
+            }
+
+            switch ($Frage5) {
+                case 0:
+                    $F5Sehrgut++;
+                    break;
+                case 1:
+                    $F5Gut++;
+                    break;
+                case 2:
+                    $F5Schlecht++;
+                    break;
+                case 3:
+                    $F5SehrSchlecht++;
+                    break;
+            }
+
+            switch ($Frage6) {
+                case 0:
+                    $F6Sehrgut++;
+                    break;
+                case 1:
+                    $F6Gut++;
+                    break;
+                case 2:
+                    $F6Schlecht++;
+                    break;
+                case 3:
+                    $F6SehrSchlecht++;
+                    break;
+            }
+
+            switch ($Frage7) {
+                case 0:
+                    $F7Sehrgut++;
+                    break;
+                case 1:
+                    $F7Gut++;
+                    break;
+                case 2:
+                    $F7Schlecht++;
+                    break;
+                case 3:
+                    $F7SehrSchlecht++;
+                    break;
+            }
+
+            switch ($Frage8) {
+                case 0:
+                    $F8Sehrgut++;
+                    break;
+                case 1:
+                    $F8Gut++;
+                    break;
+                case 2:
+                    $F8Schlecht++;
+                    break;
+                case 3:
+                    $F8SehrSchlecht++;
+                    break;
+            }
+
+            switch ($Frage9) {
+                case 0:
+                    $F9Sehrgut++;
+                    break;
+                case 1:
+                    $F9Gut++;
+                    break;
+                case 2:
+                    $F9Schlecht++;
+                    break;
+                case 3:
+                    $F9SehrSchlecht++;
+                    break;
+            }
+
+            switch ($Frage10) {
+                case 0:
+                    $F10Sehrgut++;
+                    break;
+                case 1:
+                    $F10Gut++;
+                    break;
+                case 2:
+                    $F10Schlecht++;
+                    break;
+                case 3:
+                    $F10SehrSchlecht++;
+                    break;
+            }
+
+            switch ($Frage11) {
+                case 0:
+                    $F11Sehrgut++;
+                    break;
+                case 1:
+                    $F11Gut++;
+                    break;
+                case 2:
+                    $F11Schlecht++;
+                    break;
+                case 3:
+                    $F11SehrSchlecht++;
+                    break;
+            }
+
+            switch ($Frage12) {
+                case 0:
+                    $F12Sehrgut++;
+                    break;
+                case 1:
+                    $F12Gut++;
+                    break;
+                case 2:
+                    $F12Schlecht++;
+                    break;
+                case 3:
+                    $F12SehrSchlecht++;
+                    break;
+            }
+
+            switch ($Frage13) {
+                case 0:
+                    $F13Sehrgut++;
+                    break;
+                case 1:
+                    $F13Gut++;
+                    break;
+                case 2:
+                    $F13Schlecht++;
+                    break;
+                case 3:
+                    $F13SehrSchlecht++;
+                    break;
+            }
+
+            switch ($Frage14) {
+                case 0:
+                    $F14Sehrgut++;
+                    break;
+                case 1:
+                    $F14Gut++;
+                    break;
+                case 2:
+                    $F14Schlecht++;
+                    break;
+                case 3:
+                    $F14SehrSchlecht++;
+                    break;
+            }
         }
-         //Frage 2
-        /*$F2Sehrgut = 0;
-        $F2Gut = 0;
-        $F2Schlecht = 0;
-        $F2SehrSchlecht = 0;*/
-        switch ($Frage2) {
-            case 0:
-                $F2Sehrgut++;
-                break;
-            case 1:
-                $F2Gut++;
-                break;
-            case 2:
-                $F2Schlecht++;
-                break;
-            case 3:
-                $F2SehrSchlecht++;
-                break;
-        }
-        //Frage 3
-        /*$F3Sehrgut = 0;
-        $F3Gut = 0;
-        $F3Schlecht = 0;
-        $F3SehrSchlecht = 0;*/
-        switch ($Frage3) {
-            case 0:
-                $F3Sehrgut++;
-                break;
-            case 1:
-                $F3Gut++;
-                break;
-            case 2:
-                $F3Schlecht++;
-                break;
-            case 3:
-                $F3SehrSchlecht++;
-                break;
-        }
-
-        switch ($Frage4) {
-            case 0:
-                $F4Sehrgut++;
-                break;
-            case 1:
-                $F4Gut++;
-                break;
-            case 2:
-                $F4Schlecht++;
-                break;
-            case 3:
-                $F4SehrSchlecht++;
-                break;
-        }
-
-        switch ($Frage5) {
-            case 0:
-                $F5Sehrgut++;
-                break;
-            case 1:
-                $F5Gut++;
-                break;
-            case 2:
-                $F5Schlecht++;
-                break;
-            case 3:
-                $F5SehrSchlecht++;
-                break;
-        }
-
-        switch ($Frage6) {
-            case 0:
-                $F6Sehrgut++;
-                break;
-            case 1:
-                $F6Gut++;
-                break;
-            case 2:
-                $F6Schlecht++;
-                break;
-            case 3:
-                $F6SehrSchlecht++;
-                break;
-        }
-
-        switch ($Frage7) {
-            case 0:
-                $F7Sehrgut++;
-                break;
-            case 1:
-                $F7Gut++;
-                break;
-            case 2:
-                $F7Schlecht++;
-                break;
-            case 3:
-                $F7SehrSchlecht++;
-                break;
-        }
-
-        switch ($Frage8) {
-            case 0:
-                $F8Sehrgut++;
-                break;
-            case 1:
-                $F8Gut++;
-                break;
-            case 2:
-                $F8Schlecht++;
-                break;
-            case 3:
-                $F8SehrSchlecht++;
-                break;
-        }
-
-        switch ($Frage9) {
-            case 0:
-                $F9Sehrgut++;
-                break;
-            case 1:
-                $F9Gut++;
-                break;
-            case 2:
-                $F9Schlecht++;
-                break;
-            case 3:
-                $F9SehrSchlecht++;
-                break;
-        }
-
-        switch ($Frage10) {
-            case 0:
-                $F10Sehrgut++;
-                break;
-            case 1:
-                $F10Gut++;
-                break;
-            case 2:
-                $F10Schlecht++;
-                break;
-            case 3:
-                $F10SehrSchlecht++;
-                break;
-        }
-
-        switch ($Frage11) {
-            case 0:
-                $F11Sehrgut++;
-                break;
-            case 1:
-                $F11Gut++;
-                break;
-            case 2:
-                $F11Schlecht++;
-                break;
-            case 3:
-                $F11SehrSchlecht++;
-                break;
-        }
-
-        switch ($Frage12) {
-            case 0:
-                $F12Sehrgut++;
-                break;
-            case 1:
-                $F12Gut++;
-                break;
-            case 2:
-                $F12Schlecht++;
-                break;
-            case 3:
-                $F12SehrSchlecht++;
-                break;
-        }
-
-        switch ($Frage13) {
-            case 0:
-                $F13Sehrgut++;
-                break;
-            case 1:
-                $F13Gut++;
-                break;
-            case 2:
-                $F13Schlecht++;
-                break;
-            case 3:
-                $F13SehrSchlecht++;
-                break;
-        }
-
-        switch ($Frage14) {
-            case 0:
-                $F14Sehrgut++;
-                break;
-            case 1:
-                $F14Gut++;
-                break;
-            case 2:
-                $F14Schlecht++;
-                break;
-            case 3:
-                $F14SehrSchlecht++;
-                break;
-        }
-       }
-}
+    }
 
 
 
-// echo "Gesamtbögen abgabe". $bewertidNR;
+    // echo "Gesamtbögen abgabe". $bewertidNR;
     echo" <tr>
 
-                <th> Gesamt abgegbene bögen: $bewertidNR</th>
-                <td></td>
+                <th> Anzahl abgegebener Bögen: <p style=\" color:red; margin: 0; padding: 0;\">$bewertidNR </p> </th>
+                <th> Anzahl Schüler in der Klasse: <p style=\" color:red\">$anzahl<p></p></th>
                 <td  style=\"background-color:rgb(68, 148, 48);\"></td>
                 <td style=\"background-color:rgb(115, 174, 227);\"></td>
                 <td style=\"background-color:rgb(230, 105, 62);\"></td>
@@ -867,7 +947,7 @@
                 <td>$F12SehrSchlecht</td>
                 <td><div id=\"pie12\" style=\"width: 160px; height: 120px;\"></div></td>
             </tr>";
-        echo"<tr>
+    echo"<tr>
 <script >
         google.charts.load('current', {'packages':['corechart']});
         google.charts.setOnLoadCallback(drawChart);
@@ -905,7 +985,7 @@
             </tr>";
 
 
-            echo"<tr>
+    echo"<tr>
  <script >
         google.charts.load('current', {'packages':['corechart']});
         google.charts.setOnLoadCallback(drawChart);
@@ -945,7 +1025,7 @@
             </tbody>
         </table>";
 
-            echo"
+    echo"
         <table class=\"table table-striped\">
   <thead>
     <tr >
@@ -953,7 +1033,7 @@
    </tr>
    </thead>
   <tbody>";
-            for ($count = 0; $count<count($pos); $count++) {
+    for ($count = 0; $count<count($pos); $count++) {
         //print_r($count);$Nachname[$count]
         $commentpositve= ($pos[$count]);
 
@@ -962,35 +1042,35 @@
 
     echo"</tbody>
 </table>";
-            echo" <table class=\"table table-striped\">
+    echo" <table class=\"table table-striped\">
   <thead>
     <tr >
       <th scope=\"col\">Negatives</th>
      </tr>
   </thead>
   <tbody>";
-for ($count = 0; $count<count($neg); $count++) {
+    for ($count = 0; $count<count($neg); $count++) {
         //print_r($count);$Nachname[$count]
         $CommentNegative= ($neg[$count]);
         echo"<tr><td>$CommentNegative</td></tr>";
-        }
-  echo"
+    }
+    echo"
 </tbody>
 </table>";
 
     //Sehrgut
     $SehrgutG = $F1Sehrgut + $F2Sehrgut + $F3Sehrgut + $F4Sehrgut + $F5Sehrgut + $F6Sehrgut + $F7Sehrgut + $F8Sehrgut+
-    $F9Sehrgut + $F10Sehrgut + $F11Sehrgut + $F12Sehrgut + $F13Sehrgut + $F14Sehrgut;
+        $F9Sehrgut + $F10Sehrgut + $F11Sehrgut + $F12Sehrgut + $F13Sehrgut + $F14Sehrgut;
     //Gut
     $GutG = $F1Gut + $F2Gut + $F3Gut + $F4Gut + $F5Gut + $F6Gut + $F7Gut + $F8Gut + $F9Gut + $F10Gut + $F11Gut + $F12Gut
-    + $F13Gut + $F14Gut;
+        + $F13Gut + $F14Gut;
     //Schlecht
     $SchlechtG = $F1Schlecht + $F2Schlecht + $F3Schlecht +$F4Schlecht + $F5Schlecht + $F6Schlecht +$F7Schlecht + $F8Schlecht+
-            $F9Schlecht + $F10Schlecht + $F11Schlecht + $F12Schlecht + $F13Schlecht + $F14Schlecht;
+        $F9Schlecht + $F10Schlecht + $F11Schlecht + $F12Schlecht + $F13Schlecht + $F14Schlecht;
 
     $SehrSchlechtG = $F1SehrSchlecht + $F2SehrSchlecht + $F3SehrSchlecht + $F4SehrSchlecht + $F5SehrSchlecht + $F6SehrSchlecht+
-                $F7SehrSchlecht + $F8SehrSchlecht + $F9SehrSchlecht + $F10SehrSchlecht + $F11SehrSchlecht + $F12SehrSchlecht + $F13SehrSchlecht + $F14SehrSchlecht;
-            echo"
+        $F7SehrSchlecht + $F8SehrSchlecht + $F9SehrSchlecht + $F10SehrSchlecht + $F11SehrSchlecht + $F12SehrSchlecht + $F13SehrSchlecht + $F14SehrSchlecht;
+    echo"
 <script type=\"text/javascript\">
         google.charts.load('current', {'packages':['corechart']});
         google.charts.setOnLoadCallback(drawChart);
@@ -1020,13 +1100,14 @@ for ($count = 0; $count<count($neg); $count++) {
 
 
 
-        echo"<a href=\"benedictSeite.php\"><button type=\"button\" class=\"btn btn-primary\" style=\"margin-bottom: 5%;\">zurück</button></a>
-<button type=\"button\" class=\"btn btn-primary\" style=\"margin-bottom: 5%;\">drucken</button>";
+    echo"<a href=\"benedictSeite.php\"><button type=\"button\" class=\"btn btn-primary\" style=\"margin-bottom: 5%;\">zurück</button></a>
+<!--<button type=\"button\" class=\"btn btn-primary\" style=\"margin-bottom: 5%;\">drucken</button>-->";
 
     ?>
-    </div>
+
 </section>
 
 
 </body>
 </html>
+

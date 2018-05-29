@@ -1,9 +1,9 @@
 <?php
-session_start();
+//session_start();
 //var_dump($_SESSION);
 
 
-?>
+?><!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +51,7 @@ session_start();
 </header>
 <body>
 <?php
-htmlentities(htmlspecialchars($_SESSION['ID']));
+/*htmlentities(htmlspecialchars($_SESSION['ID']));
 htmlentities(htmlspecialchars($_SESSION['HAsh']));
 htmlentities(htmlspecialchars($_SESSION['NName']));
 htmlentities(htmlspecialchars($_SESSION['VName']));

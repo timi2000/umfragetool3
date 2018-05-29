@@ -75,9 +75,9 @@
     </div>
 </header>
 <section>
-<div class="titeldiv">
-    <h1 class="Uebertitel" > Klassen Übersicht </h1>
-</div>
+    <div class="titeldiv">
+        <h1 class="Uebertitel" > Klassen Übersicht </h1>
+    </div>
     <div class="theButtondiv">
 
     </div>

@@ -30,7 +30,7 @@
         $con = mysqli_connect("127.0.0.1","root","root", "mydb", "3306");
         if (mysqli_connect_errno())
         {
-        echo "failed to conect to MySQL: ".mysqli_connect_error();
+            echo "failed to conect to MySQL: ".mysqli_connect_error();
         }
         $LehrerName1 = $_POST["LehrerName"];
         echo " <div class=\"titeldiv\"  style='padding-bottom: 3%;'>
@@ -43,7 +43,8 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">KlassenName</th>
-                <th scope="col">Semester</th>
+                <!--<th scope="col">Semester</th>-->
+                <th scope="col"></th>
                 <th scope="col">Datum</th>
                 <th scope="col"></th>
             </tr>
@@ -65,40 +66,79 @@
             $vn = $vn.'%';
             $nn = $nn.'%';
 
-            $LehrerID = "Select idTeacher from Teacher Where t_vn like '$vn' and t_nn LIKE '$nn'";
-            $result = $con->query($LehrerID);
-            while ($row1 = $result->fetch_assoc()) {
+
+            $LehrerID = "Select idTeacher from Teacher Where t_vn like ? and t_nn LIKE ?";
+            $kommando1 = $con->prepare($LehrerID);
+            $kommando1->bind_param("ss", $vn, $nn);
+            $kommando1->execute();
+            $Lresult= $kommando1->get_result();
+            while ($row1 = $Lresult->fetch_assoc()) {
                 $res = $row1['idTeacher'];
             }
 
+            /* $LehrerID = "Select idTeacher from Teacher Where t_vn like '$vn' and t_nn LIKE '$nn'";
+             $result = $con->query($LehrerID);
+             while ($row1 = $result->fetch_assoc()) {
+                 $res = $row1['idTeacher'];
+             }
+ */
+            $kurs1 = "Select Class_idClass From Course WHERE Teacher_idTeacher LIKE ?";
+            $kommando2 = $con->prepare($kurs1);
+            $kommando2->bind_param("i",$res);
+            $kommando2->execute();
+            $kresult= $kommando2->get_result();
+            while ($row5 = $kresult->fetch_assoc()) {
+                $res5 = $row5['Class_idClass'];
+            }
+            /*
             $kurs1 ="Select Class_idClass From Course WHERE Teacher_idTeacher LIKE '$res'";
             $result5= $con->query($kurs1);
             while ($row5 = $result5->fetch_assoc()) {
                 $res5 = $row5['Class_idClass'];
-            }
+            }*/
 
 
             try {
-                $Kursliste = "Select Course.Class_idClass, Course.Semester, Course.c_Date, Class.c_n  From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE '$res'GROUP BY Semester , Class_idClass, c_Date";
-                $whatttt = $con->query($Kursliste);
-                while ($zeile = $whatttt->fetch_assoc()) {
+                // $Kursliste = "Select Course.Class_idClass, Course.Semester, Course.c_Date, Class.c_n  From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE '$res'GROUP BY Semester , Class_idClass, c_Date";
+                $Kursliste = "Select Course.Class_idClass, Course.c_Date, Class.c_n From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE ? GROUP BY Class_idClass, c_Date Order by idCourse DESC ";
+                $kommando3 = $con->prepare($Kursliste);
+                $kommando3->bind_param("i",$res);
+                $kommando3->execute();
+                $kursresult= $kommando3->get_result();
+
+
+                /*$Kursliste = "Select Course.Class_idClass, Course.c_Date, Class.c_n From Course LEFT JOIN Class ON Course.Class_idClass = Class.idClass Where Teacher_idTeacher LIKE '$res'GROUP BY Class_idClass, c_Date Order by idCourse DESC ";
+                $whatttt = $con->query($Kursliste);*/
+                while ($zeile = $kursresult->fetch_assoc()) {
+                    $count = 0;
+
                     $idfromClass = $zeile['Class_idClass'];
-                    $Semester1 = $zeile['Semester'];
+
                     $klassenName = $zeile['c_n'];
                     $datum = $zeile['c_Date'];
-                    /*echo "klassenid " . $idfromClass." klassenname " . $klassenName . " Semester " . $Semester1 . "<br />";*/
+                    //NICht löschen dieser code ist für grundausblidung
+                    //$Semester1 = $zeile['Semester'];
+                    /* echo "<form method=\"post\" action=\"BilanzLehrer.php\">
+                 <tr>
+                 <th><input type=\"hidden\" name=\"lehrerid\"  class=\"form-control\"  value='$res' readonly> </th>
+                 <td><input type=\"hidden\" name=\"klassenname\"  class=\"form-control\"  value='$klassenName' readonly>$klassenName</td>
+                 <!--<td><input type=\"hidden\" name=\"Semester\"  class=\"form-control\"  value='$Semester1' readonly><input type=\"hidden\" name=\"Klassenid\"  class=\"form-control\"  value=\"$idfromClass\" readonly>$Semester1</td>--><input type=\"hidden\" name=\"Klassenid\"  class=\"form - control\"  value='$idfromClass' readonly></td>
+                 <td><input type=\"hidden\" name=\"Datum\"  class=\"form-control\"  value='$datum' readonly><input type=\"hidden\" name=\"semester\"  class=\"form-control\"  value='$datum' readonly>$datum</td>
+                 <td scope='row'><button type='submit' class='btn btn-primary'>Zur Auswertung</button></td>
+                 </tr>
+                      </form>";*/
                     echo "<form method=\"post\" action=\"BilanzLehrer.php\">
                 <tr>
                 <th><input type=\"hidden\" name=\"lehrerid\"  class=\"form-control\"  value='$res' readonly> </th>
                 <td><input type=\"hidden\" name=\"klassenname\"  class=\"form-control\"  value='$klassenName' readonly>$klassenName</td>
-                <td><input type=\"hidden\" name=\"Semester\"  class=\"form-control\"  value='$Semester1' readonly><input type=\"hidden\" name=\"Klassenid\"  class=\"form-control\"  value='$idfromClass' readonly>$Semester1</td>
+                <td><input type=\"hidden\" name=\"Klassenid\"  class=\"form - control\"  value='$idfromClass' readonly></td>
                 <td><input type=\"hidden\" name=\"Datum\"  class=\"form-control\"  value='$datum' readonly><input type=\"hidden\" name=\"semester\"  class=\"form-control\"  value='$datum' readonly>$datum</td>
                 <td scope='row'><button type='submit' class='btn btn-primary'>Zur Auswertung</button></td>
                 </tr>
                      </form>";
                 }
             }catch(Exception $e) {
-            echo 'Ein Fehler ist aufgetreten: ',  $e->getMessage(), "\n";
+                echo 'Ein Fehler ist aufgetreten: ',  $e->getMessage(), "\n";
 
             }
 

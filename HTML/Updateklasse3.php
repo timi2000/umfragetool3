@@ -1,6 +1,3 @@
-
-
-
 <head>
     <meta charset="UTF-8">
     <title>Klassenerfassen</title>
@@ -29,15 +26,26 @@ if (mysqli_connect_errno())
 {
     echo "failed to conect to MySQL: ".mysqli_connect_error();
 }
+$Klassideinzeln = $_POST['Klassideinzeln'];
+$Klassen = $_POST["Klassenname"];
+$Nachname =$_POST['Nachname'];
+$Vorname = $_POST['Vorname'];
+$email = $_POST['email'];
+$id = $_POST['id'];
+$Classid = $_POST['ClassID'];
 
-$Nachname = ($_POST['Nachname']);
-$Vorname = ($_POST['Vorname']);
-$email = ($_POST['email']);
-$id = ($_POST['id']);
-$Classid = ($_POST['ClassID']);
-$NeuNachname = ($_POST['Nachname1']);
-$NeuVorname = ($_POST['Vorname1']);
-$NeuEmail = ($_POST['email1']);
+/*$NeuNachname = $_POST['Nachname1'];
+$NeuVorname = $_POST['Vorname1'];
+$NeuEmail = $_POST['email1'];*/
+
+
+$sqlw = "UPDATE Class SET c_n = ? WHERE idClass = ?";
+$kommando = $con->prepare($sqlw);
+$kommando->bind_param("si", $Klassen, $Klassideinzeln);
+$kommando->execute();
+
+//$sql = "UPDATE Class SET c_n = '$Vorname_clean', WHERE idStudent = '$theId'";
+
 
 if(isset($_POST["Submit"])) {
 
@@ -52,47 +60,50 @@ if(isset($_POST["Submit"])) {
         $Classid_clean = htmlentities(mysqli_real_escape_string($con, $Classid[$count]));
 
         if ($Nachname_clean != '' && $Vorname_clean != '' && $email_clean != '') {
-                 $sql = "UPDATE Student SET s_vn = '$Vorname_clean', s_nn ='$Nachname_clean', s_email='$email_clean', Class_idClass = '$Classid_clean'WHERE idStudent = '$theId'";
-            $execution = $con->query($sql);
+            $sql = "UPDATE Student SET s_vn = ?, s_nn =?, s_email=?, Class_idClass = ? WHERE idStudent = ?";
+            $kommando = $con->prepare($sql);
+            $kommando->bind_param("sssii", $Vorname_clean, $Nachname_clean, $email_clean, $Classid_clean, $theId);
+            $kommando->execute();
+            // $sql = "UPDATE Student SET s_vn = '$Vorname_clean', s_nn ='$Nachname_clean', s_email='$email_clean', Class_idClass = '$Classid_clean'WHERE idStudent = '$theId'";
+            // $execution = $con->query($sql);
         }
-        print_r($sql);
-       }
-
+        //print_r($sql);
     }
+
+}
 if(isset($_POST["Nachname1"])&&
     isset($_POST["Vorname1"])&&
-    isset($_POST["email1"])){
+    isset($_POST["email1"])) {
+    $NeuNachname = $_POST['Nachname1'];
+    $NeuVorname =$_POST["Vorname1"];
+    $NeuEmail=$_POST["email1"];
     $query = '';
-    for($count = 0; $count<count($NeuNachname); $count++)
-    {
+    for ($count = 0; $count < count($NeuNachname); $count++) {
 
-        $SNname_clean = mysqli_real_escape_string($con, $NeuNachname[$count]);
-        $SVname_clean = mysqli_real_escape_string($con, $NeuVorname[$count]);
-        $SEmail_clean = mysqli_real_escape_string($con, $NeuEmail[$count]);
-        if($SNname_clean != '' && $SVname_clean != '' && $SEmail_clean != '' )
-        {
+        $SNname_clean = htmlentities(mysqli_real_escape_string($con, $NeuNachname[$count]));
+        $SVname_clean = htmlentities(mysqli_real_escape_string($con, $NeuVorname[$count]));
+        $SEmail_clean = htmlentities(mysqli_real_escape_string($con, $NeuEmail[$count]));
+        if ($SNname_clean != '' && $SVname_clean != '' && $SEmail_clean != '') {
             $query .= '
    INSERT INTO Student(s_vn, s_nn, s_email, Class_idClass) 
-   VALUES("'.$SVname_clean.'", "'.$SNname_clean.'", "'.$SEmail_clean.'", "'.$Classid_clean.'"); 
+   VALUES("' . $SVname_clean . '", "' . $SNname_clean . '", "' . $SEmail_clean . '", "' . $Classid_clean . '"); 
    ';
         }
     }
-    if($query != '')
-    {
-        if(mysqli_multi_query($con, $query))
-        {
+    if ($query != '') {
+        if (mysqli_multi_query($con, $query)) {
             echo 'Item Data Inserted';
+        } else {
+            $con->close();
         }
-        else
-        {
-            echo 'Error';
-        }
-    }
-    else
-    {
-        echo 'All Fields are Required';
     }
 }
+
+/*else
+{
+    echo 'All Fields are Required';
+}*/
+
 /*if(isset($_POST["delet"])){
     $sql= "DELETE FROM Student WHERE idStudent= '$StID'";
 }*/
@@ -103,3 +114,5 @@ echo"<form action=\"Klassenübersicht.php\">
                 </form>";
 
 ?>
+
+

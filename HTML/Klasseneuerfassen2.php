@@ -88,6 +88,7 @@ if(isset($_POST["Nachname"]))
         echo 'All Fields are Required';
     }
 }
-    ?>
+?>
 </body>
 </html>
+

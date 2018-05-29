@@ -11,7 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/normalize.css">
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-   <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script src="../js/javaScripten.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
@@ -77,7 +77,7 @@
 
             <script type="text/javascript">
 
-             function displayResult()
+                function displayResult()
 
                 {
 
@@ -95,7 +95,7 @@
                     cell3.innerHTML="<input type=\"text\" name=\"Vorname[]\" class=\"form-control \"  placeholder=\"Vorname\">";
                     cell4.innerHTML="<input type=\"email\" name=\"Email[]\" class=\"form-control \"   placeholder=\"email\">";
 
-                 }
+                }
 
 
             </script>
@@ -107,11 +107,12 @@
 
 
         <div class= buttongroup1 ><button type="button"  class="btn btn-secundary" onclick="displayResult()">Neue Reihe</button>
-        <button type="button"  class="btn btn-danger" onclick="wegMitDerReihe()">Letzte reihe entfernen</button>
+            <button type="button"  class="btn btn-danger" onclick="wegMitDerReihe()">Letzte reihe entfernen</button>
 
-        <button type="submit" class="btn btn-primary">Klasse erstellen</button>
+            <button type="submit" class="btn btn-primary">Klasse erstellen</button>
         </div>
     </form>
 </section>
 </body>
 </html>
+

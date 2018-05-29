@@ -13,7 +13,7 @@ if(isset($_REQUEST["sid"]))
     {
         echo "failed to conect to MySQL: ".mysqli_connect_error();
     }
-
+// Löscht eine schüler aus einer klassen Liste Funktioniert mit jquery
 
     $id=$_POST['sid'];
     $sql = "delete FROM Student where idStudent=(?)";
