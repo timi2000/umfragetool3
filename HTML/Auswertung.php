@@ -3,8 +3,13 @@
 //var_dump($_SESSION);
 
 
+
 ?><!--
 <!DOCTYPE html>
+=======
+?>
+<!--<!DOCTYPE html>
+>>>>>>> c114f401f1c5850d0eb93677066133ac698ac060
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -44,7 +49,7 @@
                 </h3>
             </div>
             <div class="col-sm" style="margin: 0 auto; padding:0;">
-                <h3 id="h33">Name des Lehrer:<?php echo" ".htmlspecialchars($_SESSION['teacherVn']) ?></h3>
+                <h3 id="h33">Name des Lehrer:<?php echo" ".htmlspecialchars($_SESSION['teacherVn'])." ".htmlentities(htmlspecialchars($_SESSION['teacherNn']));?></h3>
             </div>
         </div>
     </div>
@@ -61,13 +66,11 @@ htmlentities(htmlspecialchars($_SESSION['Semester']));
 htmlentities(htmlspecialchars($_SESSION['Klasse']));
 htmlentities(htmlspecialchars($_SESSION['StudentID']));
 htmlentities(htmlspecialchars($_SESSION['teacherVn']));
-htmlentities(htmlspecialchars($_SESSION['teacherNn']));
+htmlentities(htmlspecialchars($_SESSION['teacherNn']));*/
 ?>
 <section>
 
   <?php
-  $Hashi=htmlentities(htmlspecialchars($_SESSION['HAsh']));
-  $link = "umfrageAuswerten.php?id=$Hashi";
 
   ?>
     <div class="tabelle" >
@@ -517,4 +520,4 @@ htmlentities(htmlspecialchars($_SESSION['teacherNn']));
     </div>
 </section>
 </body>
-</html>
+</html>-->

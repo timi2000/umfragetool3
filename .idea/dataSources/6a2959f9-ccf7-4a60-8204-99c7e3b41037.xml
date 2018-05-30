@@ -49,7 +49,6 @@
     <column id="15" parent="6" name="Semester">
       <Position>7</Position>
       <DataType>INTEGER|0</DataType>
-      <NotNull>1</NotNull>
     </column>
     <column id="16" parent="6" name="Klasse">
       <Position>8</Position>

@@ -5,7 +5,7 @@
  * Date: 17.04.18
  * Time: 13:15
  */
-session_start();
+/*session_start();
 $linkid = $_GET['id'];
 //$linkid = 123123;
 //$linkid = $_['HAsh'];
@@ -69,7 +69,7 @@ $_SESSION[]s
 
 
 
-$_SESSION['ID'] = $dataid;
+/*$_SESSION['ID'] = $dataid;
 $_SESSION['HAsh'] = $Hashcode;
 $_SESSION['NName'] = $nachname;
 $_SESSION['VName'] = $vorname;
@@ -100,7 +100,7 @@ echo "jaaj";
     echo "Fehler: " . $ex->getMessage();
 }
 */
-    header( "Location:Auswertung.php?id=$Hashcode");
+   /* header( "Location:Auswertung.php?id=$Hashcode");
 
 
 
@@ -111,5 +111,5 @@ else {
 }
 
 
-
+*/
 ?>

@@ -112,7 +112,7 @@
 </section>
 </form>
 <?php
-/*$db = new SQLite3("/Users/timwidmer/Desktop/Security.db3");
+$db = new SQLite3("/Users/timwidmer/Desktop/Security.db3");
 $sql = 'DELETE FROM Security '
     . 'WHERE S_Date <= :S_date';
 
@@ -124,10 +124,8 @@ var_dump($stmt);
 $stmt->execute();
 var_dump($stmt);
 $db->close();
-echo "hei tim "
+echo "hei tim ";
 //$sql = "DELETE FROM Security WHERE S_Date <= date('now','-600 min')";
-*/
 ?>
-
 </body>
 </html>

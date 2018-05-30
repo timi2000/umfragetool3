@@ -1,3 +1,4 @@
+
 <head>
     <meta charset="UTF-8">
     <title>Klassenerfassen</title>
@@ -114,5 +115,4 @@ echo"<form action=\"Klassenübersicht.php\">
                 </form>";
 
 ?>
-
 
