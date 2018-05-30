@@ -525,10 +525,10 @@
 
             var data = google.visualization.arrayToDataTable([
                 ['Auswertung', 'chart '],
-                ['Sehrgut' ,     $F1Sehrgut],
+                ['Sehr gut' ,     $F1Sehrgut],
                 ['Gut',      $F1Gut],
                 ['Schlecht ',  $F1Schlecht],
-                ['Sehrschlecht', $F1SehrSchlecht]
+                ['Sehr schlecht', $F1SehrSchlecht]
 
 
             ]);
@@ -563,10 +563,10 @@
 
             var data = google.visualization.arrayToDataTable([
                 ['Auswertung', 'chart '],
-                ['Sehrgut' ,     $F2Sehrgut],
+                ['Sehr gut' ,     $F2Sehrgut],
                 ['Gut',      $F2Gut],
                 ['Schlecht ',  $F2Schlecht],
-                ['Sehrschlecht', $F2SehrSchlecht]
+                ['Sehr schlecht', $F2SehrSchlecht]
 
 
             ]);
@@ -598,10 +598,10 @@
 
             var data = google.visualization.arrayToDataTable([
                 ['Auswertung', 'chart '],
-                ['Sehrgut' ,     $F3Sehrgut],
+                ['Sehr gut' ,     $F3Sehrgut],
                 ['Gut',      $F3Gut],
                 ['Schlecht ',  $F3Schlecht],
-                ['Sehrschlecht', $F3SehrSchlecht]
+                ['Sehr schlecht', $F3SehrSchlecht]
 
 
             ]);
@@ -633,10 +633,10 @@
 
             var data = google.visualization.arrayToDataTable([
                 ['Auswertung', 'chart '],
-                ['Sehrgut' ,     $F4Sehrgut],
+                ['Sehr gut' ,     $F4Sehrgut],
                 ['Gut',      $F4Gut],
                 ['Schlecht ',  $F4Schlecht],
-                ['Sehrschlecht', $F4SehrSchlecht]
+                ['Sehr schlecht', $F4SehrSchlecht]
 
 
             ]);
@@ -670,10 +670,10 @@
 
             var data = google.visualization.arrayToDataTable([
                 ['Auswertung', 'chart '],
-                ['Sehrgut' ,     $F5Sehrgut],
+                ['Sehr gut' ,     $F5Sehrgut],
                 ['Gut',      $F5Gut],
                 ['Schlecht ',  $F5Schlecht],
-                ['Sehrschlecht', $F5SehrSchlecht]
+                ['Sehr schlecht', $F5SehrSchlecht]
 
 
             ]);
@@ -705,10 +705,10 @@
 
             var data = google.visualization.arrayToDataTable([
                 ['Auswertung', 'chart '],
-                ['Sehrgut' ,     $F6Sehrgut],
+                ['Sehr gut' ,     $F6Sehrgut],
                 ['Gut',      $F6Gut],
                 ['Schlecht ',  $F6Schlecht],
-                ['Sehrschlecht', $F6SehrSchlecht]
+                ['Sehr schlecht', $F6SehrSchlecht]
 
 
             ]);
@@ -740,10 +740,10 @@
 
             var data = google.visualization.arrayToDataTable([
                 ['Auswertung', 'chart '],
-                ['Sehrgut' ,     $F7Sehrgut],
+                ['Sehr gut' ,     $F7Sehrgut],
                 ['Gut',      $F7Gut],
                 ['Schlecht ',  $F7Schlecht],
-                ['Sehrschlecht', $F7SehrSchlecht]
+                ['Sehr schlecht', $F7SehrSchlecht]
 
 
             ]);
@@ -777,10 +777,10 @@
 
             var data = google.visualization.arrayToDataTable([
                 ['Auswertung', 'chart '],
-                ['Sehrgut' ,     $F8Sehrgut],
+                ['Sehr gut' ,     $F8Sehrgut],
                 ['Gut',      $F8Gut],
                 ['Schlecht ',  $F8Schlecht],
-                ['Sehrschlecht', $F8SehrSchlecht]
+                ['Sehr schlecht', $F8SehrSchlecht]
 
 
             ]);
@@ -813,10 +813,10 @@
 
             var data = google.visualization.arrayToDataTable([
                 ['Auswertung', 'chart '],
-                ['Sehrgut' ,     $F9Sehrgut],
+                ['Sehr gut' ,     $F9Sehrgut],
                 ['Gut',      $F9Gut],
                 ['Schlecht ',  $F9Schlecht],
-                ['Sehrschlecht', $F9SehrSchlecht]
+                ['Sehr schlecht', $F9SehrSchlecht]
 
 
             ]);
@@ -849,10 +849,10 @@
 
             var data = google.visualization.arrayToDataTable([
                 ['Auswertung', 'chart '],
-                ['Sehrgut' ,     $F10Sehrgut],
+                ['Sehr gut' ,     $F10Sehrgut],
                 ['Gut',      $F10Gut],
                 ['Schlecht ',  $F10Schlecht],
-                ['Sehrschlecht', $F10SehrSchlecht]
+                ['Sehr schlecht', $F10SehrSchlecht]
 
 
             ]);
@@ -884,10 +884,10 @@
 
             var data = google.visualization.arrayToDataTable([
                 ['Auswertung', 'chart '],
-                ['Sehrgut' ,     $F11Sehrgut],
+                ['Sehr gut' ,     $F11Sehrgut],
                 ['Gut',      $F11Gut],
                 ['Schlecht ',  $F11Schlecht],
-                ['Sehrschlecht', $F11SehrSchlecht]
+                ['Sehr schlecht', $F11SehrSchlecht]
 
 
             ]);
@@ -918,10 +918,10 @@
 
             var data = google.visualization.arrayToDataTable([
                 ['Auswertung', 'chart '],
-                ['Sehrgut' ,     $F12Sehrgut],
+                ['Sehr gut' ,     $F12Sehrgut],
                 ['Gut',      $F12Gut],
                 ['Schlecht ',  $F12Schlecht],
-                ['Sehrschlecht', $F12SehrSchlecht]
+                ['Sehr schlecht', $F12SehrSchlecht]
 
 
             ]);
@@ -955,10 +955,10 @@
 
             var data = google.visualization.arrayToDataTable([
                 ['Auswertung', 'chart '],
-                ['Sehrgut' ,    $F13Sehrgut],
+                ['Sehr gut' ,    $F13Sehrgut],
                 ['Gut',      $F13Gut],
                 ['Schlecht ',  $F13Schlecht],
-                ['Sehrschlecht', $F13SehrSchlecht]
+                ['Sehr schlecht', $F13SehrSchlecht]
 
 
             ]);
@@ -993,10 +993,10 @@
 
             var data = google.visualization.arrayToDataTable([
                 ['Auswertung', 'chart '],
-                ['Sehrgut' ,    $F14Sehrgut],
+                ['Sehr gut' ,    $F14Sehrgut],
                 ['Gut',      $F14Gut],
                 ['Schlecht ',  $F14Schlecht],
-                ['Sehrschlecht', $F14SehrSchlecht]
+                ['Sehr schlecht', $F14SehrSchlecht]
 
 
             ]);
@@ -1028,7 +1028,7 @@
         <table class=\"table table-striped\">
   <thead>
     <tr >
-     <th scope=\"col\">Positves</th>
+     <th scope=\"col\" style='color: #449430'>Positves</th>
    </tr>
    </thead>
   <tbody>";
@@ -1044,7 +1044,7 @@
     echo" <table class=\"table table-striped\">
   <thead>
     <tr >
-      <th scope=\"col\">Negatives</th>
+      <th scope=\"col\" style='color: #d82535'>Negatives</th>
      </tr>
   </thead>
   <tbody>";
@@ -1078,14 +1078,14 @@
 
             var data = google.visualization.arrayToDataTable([
                 ['Auswertung', 'chart '],
-                ['Sehrgut' ,     $SehrgutG],
+                ['Sehr gut' ,     $SehrgutG],
                 ['Gut',      $GutG],
                 ['Schlecht ',  $SchlechtG],
-                ['Sehrschlecht', $SehrSchlechtG]
+                ['Sehr schlecht', $SehrSchlechtG]
                 ]);
 
             var options = {
-                title: 'Alle auswertung zusammengefasst',
+                title: 'Alle Auswertungen zusammengefasst',
                 colors:['#449430','#73aee3','#e6693e','#d82535']
             };
 
@@ -1100,7 +1100,7 @@
 
 
     echo"<a href=\"benedictSeite.php\"><button type=\"button\" class=\"btn btn-primary\" style=\"margin-bottom: 5%;\">zurück</button></a>
-<!--<button type=\"button\" class=\"btn btn-primary\" style=\"margin-bottom: 5%;\">drucken</button>-->";
+   <button type=\"button\" class=\"btn btn-sucess\" style=\"margin-bottom: 5%;\" onClick=\"window.print()\">Drucken</button>";
 
     ?>
 

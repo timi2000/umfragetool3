@@ -1,4 +1,6 @@
 AuthType Basic
 AuthName "Password Protected Area"
-AuthUserFile /var/www/vhosts/beneumfrage.ch/httpdocs/HTML/.htpasswd
+#AuthUserFile /var/www/vhosts/beneumfrage.ch/httpdocs/HTML/.htpasswd
+#AuthUserFile /Applications/MAMP/htdocs/auswertung/HTML/.htpasswd
+ AuthUserFile /Applications/MAMP/htdocs/auswertung/HTML/.htpasswd
 Require valid-user

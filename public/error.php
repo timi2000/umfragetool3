@@ -24,7 +24,10 @@
      * Date: 18.04.18
      * Time: 08:31
      */
-
+    /*$dir = dirname(__FILE__);
+    echo "<p>Full path to this dir: " . $dir . "</p>";
+    echo "<p>Full path to a .htpasswd file in this dir: " . $dir . "/.htpasswd" . "</p>";
+*/
     echo '<div style=" width:80%; margin:0 auto; padding-top: 10%;  text-align: center; "><h1>Ihre Seite konnte nicht gefunden werden.</h1></div>';
     ?>
 </section>

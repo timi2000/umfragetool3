@@ -76,11 +76,9 @@
     <div class="HeaderBenedictSeite">
         <nav class="nav">
             <a class="nav-link Schrift"  href="benedictSeite.php">Lehrer Übersicht</a>
-
             <a class="nav-link activ Schrift" href="Formularabsenden.php">Formular absenden</a>
             <a class="nav-link Schrift" href="klasseerfassen.php">Klasse erfassen</a>
             <a class="nav-link Schrift" href="Klassenübersicht.php">Klassenübersicht</a>
-
         </nav>
     </div>
 </header>
@@ -111,21 +109,5 @@
         </div>
 </section>
 </form>
-<?php
-$db = new SQLite3("/Users/timwidmer/Desktop/Security.db3");
-$sql = 'DELETE FROM Security '
-    . 'WHERE S_Date <= :S_date';
-
-$stmt = $db->prepare($sql);
-$date = date('now','-10 min');
-var_dump($date);
-$stmt->bindValue(':S_date',$date);
-var_dump($stmt);
-$stmt->execute();
-var_dump($stmt);
-$db->close();
-echo "hei tim ";
-//$sql = "DELETE FROM Security WHERE S_Date <= date('now','-600 min')";
-?>
 </body>
 </html>

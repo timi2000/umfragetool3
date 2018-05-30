@@ -12,6 +12,30 @@ if (mysqli_connect_errno())
     echo "failed to conect to MySQL: ".mysqli_connect_error();
 }
 
+
+/*$id=$_POST['sid'];
+$sql = "delete FROM Student where idStudent=(?)";
+$kommando = $con->prepare($sql);
+$kommando->bind_param("i", $id);
+$kommando->execute();
+$con->close();
+delete from mytable where datediff(now(), mytable.date) > 5
+$db = new SQLite3("/Users/timwidmer/Desktop/Security.db3");
+$sql = 'DELETE FROM Security '
+    . 'WHERE S_Date >= :S_date';
+
+$stmt = $db->prepare($sql);
+$date = date('now','-10 min');
+Echo $date
+var_dump($date);
+$stmt->bindValue(':S_date',$date);
+var_dump($stmt);
+$stmt->execute();
+var_dump($stmt);
+$db->close();
+echo "hei tim ";
+*/
+
 $Klassen = $_POST["Klassen"];
 $timestamp = time();
 
@@ -122,7 +146,7 @@ while ($row = $Sresult->fetch_assoc()) {
     VALUES ('$hash','$snn','$svn','$semail', '$res3', '$Semester','$res2','$sid','$res5','$res4','$time')";*/
 
         $sql = "INSERT INTO Security (HAsh, NName, VName, email, Tid, Klasse, StudentID, teacherVn, teacherNn, S_Date)
-VALUES ('$hash','$snn','$svn','$semail', '$res3', '$res2','$sid','$res5','$res4','$time')";
+VALUES ('$hash','$snn','$svn','$semail', '$res3', '$res2','$sid','$res5','$res4','$time' )";
 
         if($db->exec($sql)){
             echo "Daten eintragen.<br />";
@@ -179,22 +203,21 @@ try{
     echo "Fehler: " . $ex->getMessage();
 }
 
-
-
-$con->close();
-//Löschen der datenbank sätze nach einer gewissen zeit
-/*
 try{
-    $db = new SQLite3("/Users/timwidmer/Desktop/Security.db3");
-    // $id = $db->escapeString($linkid);
-    $sqldelet = "DELETE FROM Security WHERE  DELETE FROM Security";
+    $db3 = new SQLite3("/Users/timwidmer/Desktop/Security.db3");
 
+    $sql = "DELETE FROM Security WHERE S_Date <= date('now','-1 day')";
 
-    $db->close();
+    $stmt = $db3->prepare($sql);
+    $stmt->execute();
+    $db3->close();
+
 }catch ( Exception $ex ){
     echo "Fehler: " . $ex->getMessage();
-}*/
 
+}
+
+$con->close();
 
 echo"<form action=\"Formularabsenden.php\">
                     <div class=\"col-sm\">

@@ -44,7 +44,7 @@ session_start();
                 </h3>
             </div>-->
             <div class="col-sm" style="margin: 0 auto; padding:0;">
-                <h3 id="h33">Name des Lehrer:<?php echo" ".htmlspecialchars($_SESSION['teacherVn'])." ".htmlentities(htmlspecialchars($_SESSION['teacherNn']));?></h3>
+                <h3 id="h33">Lehrer/in Name:<?php echo" ".htmlspecialchars($_SESSION['teacherVn'])." ".htmlentities(htmlspecialchars($_SESSION['teacherNn']));?></h3>
             </div>
         </div>
     </div>

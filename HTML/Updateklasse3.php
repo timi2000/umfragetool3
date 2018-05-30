@@ -109,9 +109,11 @@ if(isset($_POST["Nachname1"])&&
     $sql= "DELETE FROM Student WHERE idStudent= '$StID'";
 }*/
 echo"<form action=\"Klassenübersicht.php\">
-                    <div class=\"col-sm\">
+
+                    <div class=\"col-sm\" Style='text-align: center; margin-top: 4%;'>
                         <button type=\"submit\" class=\"btn btn-primary\">zurück</button>
                     </div>
+                   
                 </form>";
 
 ?>
